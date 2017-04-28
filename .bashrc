@@ -136,6 +136,7 @@ alias algo="cd ~/Dropbox/study/algorithms/"
 alias computervision="cd ~/Dropbox/study/computervision"
 alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
 alias opengl="cd ~/Dropbox/study/opengl/cpp/sdl"
+alias vim="vim -c 'startinsert'"
 
 
 bind -r '\C-s'
