@@ -1,0 +1,7 @@
+						Amme Sharanam!!!
+
+Instructions for installation of vim. sudo apt-get install vim-gtk. Default vim does not support clipboard integration. To test clipboard integration type vim --version | grep clipboard. If there is a + sign in front of the clipboard then the system supports clipboard.
+
+Installation of vundle
+
+

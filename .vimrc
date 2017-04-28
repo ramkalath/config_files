@@ -12,10 +12,14 @@ Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/Conque-GDB'
-Plugin 'vim-scripts/CSApprox'
-Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'vim-scripts/UltiSnips'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'vim-scripts/Son-of-Obisidian'
+"Plugin 'vim-scripts/CSApprox'
+"Plugin 'evgenyzinoviev/vim-vendetta'
+"Plugin 'vim-scripts/Solarized'
+"Plugin 'gosukiwi/vim-atom-dark'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -24,7 +28,7 @@ set history=5000 undofile undolevels=1000 undoreload=10000
 filetype plugin on
 syntax enable
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 
@@ -41,7 +45,7 @@ set runtimepath^=/home/ram/.vim/bundle/vim-nerdtree-tabs/nerdtree_plugin/vim-ner
 set mouse=a
 
 set term=screen-256color
-colorscheme vendetta
+colorscheme desert
 
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>
@@ -53,4 +57,5 @@ colorscheme vendetta
 :vmap <C-v> p
 :nmap <C-a> ggVG
 :vnoremap <C-X> "+x
+
 

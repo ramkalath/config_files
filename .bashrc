@@ -137,6 +137,8 @@ alias computervision="cd ~/Dropbox/study/computervision"
 alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
 alias opengl="cd ~/Dropbox/study/opengl/cpp/sdl"
 
+
 bind -r '\C-s'
 stty -ixon
 
+export PATH=/home/ram/Downloads/clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-16.04/bin:/home/ram/bin:/home/ram/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/snap/bin
