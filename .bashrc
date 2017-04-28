@@ -115,6 +115,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+if command -v tmux>/dev/null; then
+		  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
+
 force_color_prompt=yes
 PROMPT_DIRTRIM=1
 export LD_LIBRARY_PATH="/usr/local/lib"
