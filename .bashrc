@@ -116,11 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 if command -v tmux>/dev/null; then
 		  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
-
 
 force_color_prompt=yes
 PROMPT_DIRTRIM=1
@@ -128,18 +126,15 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
 export TERM=xterm-256color
-export tasklist="subl -wn --command toggle_full_screen ~/Dropbox/tasklist/tasklist.txt"
-alias subln="subl -wn --command toggle_full_screen"
-alias gdb="gdb -tui"
-alias terminal="xfce4-terminal"
+export tasklist="~/Dropbox/tasklist/tasklist.txt"
+alias work="cd /home/ram/Dropbox/study/computervision/computer_vision_using_python/"
+# alias emacs="emacs -nw"
+# alias subl="subl -n"
 alias algo="cd ~/Dropbox/study/algorithms/"
-alias computervision="cd ~/Dropbox/study/computervision"
-alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
-alias opengl="cd ~/Dropbox/study/opengl/cpp/sdl"
-alias vim="vim -c 'startinsert'"
-
+alias gdb="gdb -tui"
+tmux source-file ~/.tmux.conf
 
 bind -r '\C-s'
 stty -ixon
 
-export PATH=/home/ram/Downloads/clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-16.04/bin:/home/ram/bin:/home/ram/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/snap/bin
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

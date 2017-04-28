@@ -1,61 +1,71 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+" set the runtime path to include Vundle and initialize--------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'eparreno/vim-l9'
-Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/Conque-GDB'
+Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/UltiSnips'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/Son-of-Obisidian'
-"Plugin 'vim-scripts/CSApprox'
-"Plugin 'evgenyzinoviev/vim-vendetta'
-"Plugin 'vim-scripts/Solarized'
-"Plugin 'gosukiwi/vim-atom-dark'
 call vundle#end()            " required
 filetype plugin indent on    " required
+"---------------------------------------------------------------------
 
-set nocompatible hidden backspace=indent,eol,start
-set history=5000 undofile undolevels=1000 undoreload=10000
-filetype plugin on
-syntax enable
+" This enables the airline extension
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 
-let g:ycm_global_ycm_extra_conf = "/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" This sets the color scheme-----------------------------------------
+colorscheme vendetta 
+"--------------------------------------------------------------------
 
 
-map <c-t> :FufFile **/<CR>
-
-set tabstop=4
-set autoindent
-syntax enable
-set clipboard=unnamedplus
-set guioptions+=a
-set number
-set runtimepath^=/home/ram/.vim/bundle/vim-nerdtree-tabs/nerdtree_plugin/vim-nerdtree-tabs.vim
-set mouse=a
-
-set term=screen-256color
-colorscheme desert
-
-:nmap <c-s> :w<CR>
-:imap <c-s> <Esc>:w<CR>
-
-:au FocusLost * silent! wa
-:set autowriteall
-
+" This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
 :vmap <C-c> "+y
 :vmap <C-v> p
 :nmap <C-a> ggVG
 :vnoremap <C-X> "+x
+"-------------------------------------------------------------------
 
 
+" this is for ctrl-s saving both in insert and normal mode----------
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>
+"-------------------------------------------------------------------
+
+" scrolling up and down multiple lines atonce-----------------------
+:nmap <c-up> -10
+:nmap <c-down> +10
+:vmap <c-up> -10
+:nmap <c-down> +10
+"-------------------------------------------------------------------
+
+
+" other editor settings---------------------------------------------
+set tabstop=4
+set number
+set mouse=a
+
+"file manager------------------------------------------------------
+" Increased NERDTree window size
+let g:NERDTreeWinSize=80 
+" navigates to the next buffer
+:ab n :bnext
+" navigates to the previous buffer
+:ab p :bprevious
+" maps ctrl-o to open the files------------------------------------
+:map <c-o> :NERDTree<CR> 
+let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
+" next line kill the open tab
+:ab k :bd
+"-----------------------------------------------------------------
+" press // for comment using nerd commenter
+nmap // <leader>c<space>
+vmap // <leader>c<space>
+"-----------------------------------------------------------------
+"
+"
+"
