@@ -40,7 +40,7 @@ colorscheme vendetta
 :nmap <c-up> -10
 :nmap <c-down> +10
 :vmap <c-up> -10
-:nmap <c-down> +10
+:vmap <c-down> +10
 "-------------------------------------------------------------------
 
 

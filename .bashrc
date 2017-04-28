@@ -116,10 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if command -v tmux>/dev/null; then
-		  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
 force_color_prompt=yes
 PROMPT_DIRTRIM=1
 export LD_LIBRARY_PATH="/usr/local/lib"
@@ -132,6 +128,12 @@ alias work="cd /home/ram/Dropbox/study/computervision/computer_vision_using_pyth
 # alias subl="subl -n"
 alias algo="cd ~/Dropbox/study/algorithms/"
 alias gdb="gdb -tui"
+alias tmux="tmux -2"
+
+if command -v tmux>/dev/null; then
+		  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
 tmux source-file ~/.tmux.conf
 
 bind -r '\C-s'
