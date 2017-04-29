@@ -23,7 +23,6 @@ set laststatus=2
 colorscheme vendetta 
 "--------------------------------------------------------------------
 
-
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
 :vmap <C-c> "+y
 :vmap <C-v> p
@@ -31,19 +30,17 @@ colorscheme vendetta
 :vnoremap <C-X> "+x
 "-------------------------------------------------------------------
 
-
 " this is for ctrl-s saving both in insert and normal mode----------
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>
 "-------------------------------------------------------------------
 
 " scrolling up and down multiple lines atonce-----------------------
-:nmap <c-up> -10
-:nmap <c-down> +10
-:vmap <c-up> -10
-:vmap <c-down> +10
+:nmap <c-up> -3
+:nmap <c-down> +3
+:vmap <c-up> -3
+:vmap <c-down> +3
 "-------------------------------------------------------------------
-
 
 " other editor settings---------------------------------------------
 set tabstop=4
@@ -66,4 +63,15 @@ let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
 vmap // <leader>c<space>
+"-----------------------------------------------------------------
+" toggling between insert and visual mode upon triple key press
+:imap vvv <Esc>v
+:nmap vvv <Esc>v
+:vmap iii <Esc>i
+:nmap iii <Esc>i
+"-----------------------------------------------------------------
+
+" preventing vim from creating swap files all over the place------
+set swapfile
+set dir=~/.vim_tmp
 "-----------------------------------------------------------------
