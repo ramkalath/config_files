@@ -1,0 +1,27 @@
+Introduction:
+Installation requires Git and triggers git clone for each configured repository to ~/.vim/bundle/ by default. Curl is required for search.
+If you are using Windows, go directly to Windows setup. If you run into any issues, please consult the FAQ. See Tips for some advanced configurations.
+Using non-POSIX shells, such as the popular Fish shell, requires additional setup. Please check the FAQ.
+
+Set up Vundle:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Configure Plugins:
+Put this at the top of your .vimrc to use Vundle. Remove plugins you don't need, they are for illustration purposes.
+
+	set nocompatible              " be iMproved, required
+	filetype off                  " required
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'tpope/vim-fugitive'
+	Plugin 'git://git.wincent.com/command-t.git'
+	Plugin 'file:///home/gmarik/path/to/plugin'
+	Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+	
+	call vundle#end()            
+	filetype plugin indent on    
+
+Install Plugins:
+Launch vim and run :PluginInstall
