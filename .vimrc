@@ -10,6 +10,7 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -66,6 +67,3 @@ let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 nmap // <leader>c<space>
 vmap // <leader>c<space>
 "-----------------------------------------------------------------
-"
-"
-"

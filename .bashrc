@@ -131,7 +131,7 @@ alias gdb="gdb -tui"
 alias tmux="tmux -2"
 
 if command -v tmux>/dev/null; then
-		  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
 tmux source-file ~/.tmux.conf
