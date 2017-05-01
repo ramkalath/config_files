@@ -1,5 +1,6 @@
 " set the runtime path to include Vundle and initialize--------------
 set hidden
+set autochdir
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
