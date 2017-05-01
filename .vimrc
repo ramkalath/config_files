@@ -1,4 +1,5 @@
 " set the runtime path to include Vundle and initialize--------------
+set hidden
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -51,9 +52,13 @@ set mouse=a
 " Increased NERDTree window size
 let g:NERDTreeWinSize=80 
 " navigates to the next buffer
-:ab n :bnext
-" navigates to the previous buffer
-:ab p :bprevious
+:imap <c-t> :bnext<CR>
+:vmap <c-t> :bnext<CR>
+:nmap <c-t> :bnext<CR>
+:imap <c-w> :w\|bd<cr>
+:vmap <c-w> :w\|bd<cr>
+:nmap <c-w> :w\|bd<cr>
+
 " maps ctrl-o to open the files------------------------------------
 :map <c-o> :NERDTree<CR> 
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
@@ -70,8 +75,6 @@ vmap // <leader>c<space>
 :vmap iii <Esc>i
 :nmap iii <Esc>i
 "-----------------------------------------------------------------
-
-" preventing vim from creating swap files all over the place------
-set swapfile
-set dir=~/.vim_tmp
-"-----------------------------------------------------------------
+" once the header trigger is entered, ultisnips expands when enter is pressed
+let g:UltiSnipsExpandTrigger = "<nop>"
+inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"

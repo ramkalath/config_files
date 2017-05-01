@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -122,13 +123,12 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
 export TERM=xterm-256color
-export tasklist="~/Dropbox/tasklist/tasklist.txt"
-alias work="cd /home/ram/Dropbox/study/computervision/computer_vision_using_python/"
-# alias emacs="emacs -nw"
-# alias subl="subl -n"
-alias algo="cd ~/Dropbox/study/algorithms/"
+alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias gdb="gdb -tui"
 alias tmux="tmux -2"
+alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
+alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw/new/"
+alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
