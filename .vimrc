@@ -63,8 +63,8 @@ let g:NERDTreeWinSize=80
 " maps ctrl-o to open the files------------------------------------
 :map <c-o> :NERDTree<CR> 
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-" next line kill the open tab
-:ab k :bd
+" save and close only current file not vim entirely
+:ab wq :w\|bd
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -80,5 +80,7 @@ vmap // <leader>c<space>
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 "-----------------------------------------------------------------
-"short cut to open tasklist
+" short cut to open tasklist
 :ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
+"-----------------------------------------------------------------
+
