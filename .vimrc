@@ -79,3 +79,6 @@ vmap // <leader>c<space>
 " once the header trigger is entered, ultisnips expands when enter is pressed
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
+"-----------------------------------------------------------------
+"short cut to open tasklist
+:ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
