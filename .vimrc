@@ -13,6 +13,7 @@ Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
+Plugin 'vim-latex/vim-latex'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -82,5 +83,5 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" 
 "-----------------------------------------------------------------
 " short cut to open tasklist
 :ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
-"-----------------------------------------------------------------
+"----------------------------------------------------------------
 
