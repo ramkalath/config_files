@@ -65,7 +65,7 @@ let g:NERDTreeWinSize=80
 :map <c-o> :NERDTree<CR> 
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 " save and close only current file not vim entirely
-:ab wq :w\|bd
+":ab wq :w\|bd
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
