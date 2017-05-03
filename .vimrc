@@ -34,8 +34,8 @@ colorscheme vendetta
 "-------------------------------------------------------------------
 
 " this is for ctrl-s saving both in insert and normal mode----------
-" :nmap <c-s> :w<CR>
-" :imap <c-s> <Esc>:w<CR>\|i
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>\|i
 "-------------------------------------------------------------------
 " :imap <c-z> <Esc>:u<CR>\|i
 " scrolling up and down multiple lines atonce-----------------------
@@ -57,7 +57,7 @@ let g:NERDTreeWinSize=80
 :imap <c-t> :bnext<CR>
 :vmap <c-t> :bnext<CR>
 :nmap <c-t> :bnext<CR>
-:imap <c-w> :w\|bd<cr>
+:imap <c-w> <Esc>:w\|bd<cr>
 :vmap <c-w> :w\|bd<cr>
 :nmap <c-w> :w\|bd<cr>
 
