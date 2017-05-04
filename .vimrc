@@ -34,7 +34,9 @@ colorscheme vendetta
 "-------------------------------------------------------------------
 " converting normal make type into !make
 :ab make :!make
-
+"-------------------------------------------------------------------
+" wrapping lines when arrows are pressed
+set whichwrap+=<,>,h,l,[,]
 
 " this is for ctrl-s saving both in insert and normal mode----------
 :nmap <c-s> :w<CR>
