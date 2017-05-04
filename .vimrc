@@ -32,6 +32,9 @@ colorscheme vendetta
 :nmap <C-a> ggVG
 :vnoremap <C-X> "+x
 "-------------------------------------------------------------------
+" converting normal make type into !make
+:ab make :!make
+
 
 " this is for ctrl-s saving both in insert and normal mode----------
 :nmap <c-s> :w<CR>
