@@ -128,7 +128,7 @@ alias gdb="gdb -tui"
 alias tmux="tmux -2"
 alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw/new/"
-alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
+alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py -c clang-3.8"
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
