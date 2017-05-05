@@ -5,6 +5,9 @@ FILENAME =
 all:
 	@pdflatex --interaction=batchmode $(FILENAME).tex
 
+run:
+	evince $(FILENAME).pdf &
+
 clean:
 	rm $(FILENAME).log $(FILENAME).aux
 
