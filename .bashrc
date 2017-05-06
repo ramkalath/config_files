@@ -123,13 +123,14 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
 export TERM=xterm-256color
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
+alias tasklist="subl -n ~/Dropbox/tasklist/tasklist.txt"
 alias gdb="gdb -tui"
 alias tmux="tmux -2"
 alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
-alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw/new/"
+alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw"
 alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 alias paperwork="cd ~/Dropbox/study/phd/paper_work/21_collab_labs"
+alias snippet="cd ~/.config/sublime-text-3/Packages/User"
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
