@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+# enter filename without extension
+FILENAME = 
+
+all:
+	pdflatex \$(FILENAME).tex
+
+run:
+	evince \$(FILENAME).pdf &
+
+clean:
+	rm \$(FILENAME).aux \$(FILENAME).log
+
+]]></content>
+  <tabTrigger>Makefile_latex</tabTrigger>
+</snippet>

@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+CC = g++
+
+INCLUDE =
+
+LIBS = 
+
+# enter filename without extension
+FILENAME = 
+
+all: \$(FILENAME).cpp
+	@\$(CC) -g \$(INCLUDE) \$(FILENAME).cpp -o \$(FILENAME) \$(LIBS)
+
+run:
+	@./\$(FILENAME)
+
+clean:
+	rm ./\$(FILENAME)
+
+]]></content>
+  <tabTrigger>Makefile</tabTrigger>
+</snippet>

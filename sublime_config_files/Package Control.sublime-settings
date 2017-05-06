@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ClearConsole",
+		"Grandson-of-Obsidian",
+		"LaTeX-cwl",
+		"LaTeXing",
+		"LaTeXTools",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"SublimeGDB"
+	],
+	"repositories":
+	[
+		"https://github.com/quarnster/SublimeGDB"
+	]
+}

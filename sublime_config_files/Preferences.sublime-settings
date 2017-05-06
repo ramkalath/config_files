@@ -1,0 +1,26 @@
+{
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex"
+		}
+	],
+	"color_scheme": "Packages/Grandson-of-Obsidian/GrandsonOfObsidian.tmTheme",
+	"font_size": 9,
+	"hide_menu": true,
+	"hide_status_bar": true,
+	"hide_tabs": false,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"word_wrap": true,
+	"wrap_width": 120
+}

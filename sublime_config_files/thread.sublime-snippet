@@ -1,0 +1,6 @@
+<snippet>
+  <content><![CDATA[##${1/./#/g}#
+# ${1:header}
+##${1/./#/g}#]]></content>
+  <tabTrigger>thead</tabTrigger>
+</snippet>
