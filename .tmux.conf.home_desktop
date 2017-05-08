@@ -1,6 +1,5 @@
 set-window-option -g xterm-keys on
-set-option -g default-shell /bin/bash
-set-option -g default-command /bin/bash
+
 #unbinding all the ctrl operations that was set by default so that we can map it to something else
 unbind-key -n C-Left
 unbind-key -n C-Right
@@ -25,5 +24,16 @@ bind-key n previous-window
 #set active window border to red
 set-option -g pane-active-border-fg red
 
-bind 'k' kill-pane \; select-pane -t 0;  
-bind -n C-d-d split-window -v -c '#{pane_current_path}' \; break-pane \; join-pane -t 0.1 \; resize-pane -t 2 -y 40 \; send-keys Up Up C-m \;
+bind -n C-e select-pane -t 1\; send-keys Up C-m \; last-pane
+
+bind -n C-d \
+	if-shell 'tmux select-window -t :0' '' 'move-window -t :0' \; \
+	if-shell 'test $(tmux list-panes | wc -l) -gt 1' '' 'split-window -h' \; \
+	if-shell 'tmux select-window -t :1' '' 'new-window' \; \
+	select-window -t 0 \; \
+	select-pane -t 1 \; \
+	join-pane -t 1.0 \; \
+	select-pane -U \; \
+	join-pane -h -t 0.0 \; \
+	last-pane
+

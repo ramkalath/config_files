@@ -78,17 +78,15 @@ vmap // <leader>c<space>
 :nmap vv <Esc>v
 :vmap ii <Esc>i
 :nmap ii <Esc>i
-:imap nn <Esc>n
-:vmap nn <Esc>n
 
-" for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
-" autosaves.
-:imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
-:nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
-:imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
-:nmap <c-c><c-c><c-r> :update<CR>\|<Esc>:!make && make run<CR>
-:imap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
-:nmap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
+ "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
+ "autosaves.
+":imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
+":nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
+":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
+":nmap <c-c><c-c><c-r> :update<CR>\|<Esc>:!make && make run<CR>
+":imap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
+":nmap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
 
 " lets add other simple features to this vimrc file
 :imap qq <Esc>:
