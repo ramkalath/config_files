@@ -1,0 +1,29 @@
+set-window-option -g xterm-keys on
+set-option -g default-shell /bin/bash
+set-option -g default-command /bin/bash
+#unbinding all the ctrl operations that was set by default so that we can map it to something else
+unbind-key -n C-Left
+unbind-key -n C-Right
+unbind-key -n C-Up
+unbind-key -n C-Down
+
+#binding movement keys to shift between panes
+bind -n M-Right select-pane -R
+bind -n M-Left select-pane -L
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+##binding splitting keys to ctrl h and ctrl v
+bind '|' split-window -h -c '#{pane_current_path}'  # Split panes horizontal
+bind '"' split-window -v -c '#{pane_current_path}' # Split panes vertically
+
+
+#bind-key n new-window
+bind-key k kill-window
+bind-key n previous-window
+
+#set active window border to red
+set-option -g pane-active-border-fg red
+
+bind 'k' kill-pane \; select-pane -t 0;  
+bind -n C-d-d split-window -v -c '#{pane_current_path}' \; break-pane \; join-pane -t 0.1 \; resize-pane -t 2 -y 40 \; send-keys Up Up C-m \;
