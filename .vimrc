@@ -13,7 +13,7 @@ Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
-"Plugin 'vim-latex/vim-latex'
+" Plugin 'vim-latex/vim-latex'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
