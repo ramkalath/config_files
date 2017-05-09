@@ -1,9 +1,9 @@
 snippet make_latex "this creates a simple makefile for latex" b 
 # enter a filename without the extension
-FILENAME =
+FILENAME = 
 
 all:
-	@pdflatex --interaction=batchmode $(FILENAME).tex
+	pdflatex $(FILENAME).tex
 
 run:
 	evince $(FILENAME).pdf &
