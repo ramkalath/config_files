@@ -18,6 +18,10 @@ Plugin 'SirVer/ultisnips'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
+" prevent vim from giving a warning it the swp file is open
+set shortmess=A
+"---------------------------------------------------------------------
+
 
 " This enables the airline extension
 let g:airline#extensions#tabline#enabled = 1
