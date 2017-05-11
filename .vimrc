@@ -8,6 +8,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'Valloric/YouCompleteMe'
@@ -21,6 +22,31 @@ filetype plugin indent on    " required
 " This enables the airline extension
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
+let g:airline_powerline_fonts = 1 
+
+"set background=light
+set guifont=Monaco:h18
+"let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let g:airline_left_alt_sep = '⟩'
+let g:airline_right_alt_sep = '⟨'
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.space = ' '
+let g:airline_right_alt_sep = '<'
+let g:airline_right_sep = '<'
+let g:airline_left_alt_sep= '>'
+let g:airline_left_sep = '>'
+" Don't show seperators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " This sets the color scheme-----------------------------------------
 colorscheme vendetta 
