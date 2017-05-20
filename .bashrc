@@ -133,6 +133,7 @@ alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 alias paperwork="cd ~/Dropbox/study/phd/paper_work/21_collab_labs"
 alias snippet="cd ~/.config/sublime-text-3/Packages/User"
 alias cbproject="python ~/config_files/cbproject.py"
+alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux

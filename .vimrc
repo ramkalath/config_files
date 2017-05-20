@@ -22,7 +22,6 @@ filetype plugin indent on    " required
 set shortmess=A
 "---------------------------------------------------------------------
 
-
 " This enables the airline extension
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
@@ -55,7 +54,7 @@ let g:airline_right_sep=''
 " This sets the color scheme-----------------------------------------
 colorscheme vendetta 
 "--------------------------------------------------------------------
-
+let g:ycm_autoclose_preview_window_after_insertion = 1
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
 :vmap <C-c> "+y
 :vmap <C-v> p
@@ -111,8 +110,8 @@ vmap // <leader>c<space>
 
  "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
  "autosaves.
-":imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
-":nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
+:imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
+:nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 ":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
 ":nmap <c-c><c-c><c-r> :update<CR>\|<Esc>:!make && make run<CR>
 ":imap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
