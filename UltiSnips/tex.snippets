@@ -77,7 +77,7 @@ snippet code_header "this is to add a code header" b
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{frame=tb,
-  language=python,
+  language=c++,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -88,6 +88,7 @@ snippet code_header "this is to add a code header" b
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
+  escapeinside={<@}{@>},
   breaklines=true,
   breakatwhitespace=true,
   tabsize=3
@@ -112,3 +113,19 @@ snippet code_insert "this is to insert a code" b
 \end{mdframed} 
 
 endsnippet
+
+
+
+
+
+
+snippet terminal_code_insert "this is to insert terminal commands" b
+
+\begin{mdframed}[backgroundcolor=black, roundcorner=0pt,leftmargin=0, rightmargin=0, innerleftmargin=0, innertopmargin=0, innerbottommargin=0, outerlinewidth=0, linecolor=black]
+\begin{lstlisting}
+	<@ \textcolor{green}{command} @>
+\end{lstlisting}
+\end{mdframed} 
+
+endsnippet
+

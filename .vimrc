@@ -85,7 +85,6 @@ set mouse=a
 " Increased NERDTree window size
 let g:NERDTreeWinSize=80 
 " navigates to the next buffer
-:imap <c-t> :bnext<CR>
 :vmap <c-t> :bnext<CR>
 :nmap <c-t> :bnext<CR>
 :imap <c-w> <Esc>:w\|bd<cr>
@@ -110,6 +109,15 @@ vmap // <leader>c<space>
 
  "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
  "autosaves.
+ 
+function Compile()
+	let save_pos = getpos(".")
+	echom "Amme Sharanam"
+	"<Esc>update<CR>\|<Esc>:!make<CR>
+	call setpos('.', save_pos)
+endfunction
+						
+
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 ":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
@@ -154,13 +162,18 @@ filetype indent on
 let g:tex_flavor='latex'
 "-------------------------------------------------------------------
 " scroll line by display rather than line by linebreaks
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+:nnoremap j gj
+:nnoremap k gk
+:vnoremap j gj
+:vnoremap k gk
+:nnoremap <Down> gj
+:nnoremap <Up> gk
+:vnoremap <Down> gj
+:vnoremap <Up> gk
+:inoremap <Down> <C-o>gj
+:inoremap <Up> <C-o>gk
+"------------------------------------------------------------------
+" in normal mode we cant navigate after the end of the line. This enables us
+" to move a character after the end of the line.
+set virtualedit=onemore 
+
