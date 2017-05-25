@@ -1,4 +1,4 @@
-" set the runtime path to include Vundle and initialize--------------
+" set theruntime path to include Vundle and initialize--------------
 set hidden
 set autochdir
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,10 +11,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'evgenyzinoviev/vim-vendetta'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 " Plugin 'vim-latex/vim-latex'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -52,6 +52,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " This sets the color scheme-----------------------------------------
+"enable syntax highlighting
+syntax on
 colorscheme vendetta 
 "--------------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_insertion = 1
