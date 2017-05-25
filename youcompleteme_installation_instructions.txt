@@ -29,3 +29,12 @@ Note you need a proper working makefile for the project to make the autocompleti
 2) run ~/.vim/bundle/YouCompleteMe/YCM-Generator/.config_gen.py . -c clang-3.8 (substitute it with your version of clang)
 	This will look for a Makefile and automatically insert a .ycm*.py file that carries the custom configuration 
 3) you cannot type the command in point 2 of testing all the time. To fix this add it as an alias to the .bashrc 
+--------------------------------------------------------------
+
+here is how you install it in arch linux
+1) fist goto github page of YCM and clone it in ~/.vim/bundle/ directory -> git clone https://github.com/Valloric/YouCompleteMe ~/.vim/bundle.
+2) "git submodule update --init --recursive" inside the YouCompleteMe directory
+3) sudo pacman -S clang. This will install the latest version of clang.
+4) python3 install.py --clang-completer --system-libclang
+5) now inside the ~/.vim/YouCompleteMe folder git clone https://github.com/rdnetto/YCM-Generator.
+6) thats it.... create a Makefile for you code and type "ac ."
