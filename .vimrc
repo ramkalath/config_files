@@ -7,14 +7,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/Conque-GDB'
-Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
-" Plugin 'vim-latex/vim-latex'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
+Plugin 'powerline/fonts'
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'evgenyzinoviev/vim-vendetta'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -22,39 +23,16 @@ filetype plugin indent on    " required
 set shortmess=A
 "---------------------------------------------------------------------
 
-" This enables the airline extension
+ "This enables the airline extension
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-
-"set background=light
-set guifont=Monaco:h18
-"let g:airline_theme = 'solarized'
-let g:airline_powerline_fonts = 1
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let g:airline_left_alt_sep = '⟩'
-let g:airline_right_alt_sep = '⟨'
-let g:airline_symbols = {}
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.space = ' '
-let g:airline_right_alt_sep = '<'
-let g:airline_right_sep = '<'
-let g:airline_left_alt_sep= '>'
-let g:airline_left_sep = '>'
-" Don't show seperators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_theme='solarized'
 
 " This sets the color scheme-----------------------------------------
 "enable syntax highlighting
-syntax on
-colorscheme vendetta 
+syntax enable
+colorscheme solarized8_dark
 "--------------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
@@ -111,15 +89,6 @@ vmap // <leader>c<space>
 
  "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
  "autosaves.
- 
-function Compile()
-	let save_pos = getpos(".")
-	echom "Amme Sharanam"
-	"<Esc>update<CR>\|<Esc>:!make<CR>
-	call setpos('.', save_pos)
-endfunction
-						
-
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 ":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
