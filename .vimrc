@@ -4,8 +4,6 @@ set autochdir
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
@@ -114,6 +112,8 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 "-----------------------------------------------------------------
 " short cut to open tasklist
 :ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
+:ab f /
+:map <C-r> :%s!<!\&lt;!<cr>:%s!>!\&gt;!<cr>
 "----------------------------------------------------------------
 " some vim-latex stuff that they said is necessary to be put in bashrc--------
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
@@ -151,3 +151,18 @@ let g:tex_flavor='latex'
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
 set virtualedit=onemore 
+
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endifi
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+map <C-f> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+
+
