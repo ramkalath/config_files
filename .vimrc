@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
@@ -28,16 +29,6 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
 let g:airline_theme='solarized'
-
-" old vim-powerline symbols
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
-
 
 " This sets the color scheme-----------------------------------------
 "enable syntax highlighting
@@ -81,12 +72,14 @@ let g:NERDTreeWinSize=80
 :imap <c-w> <Esc>:w\|bd<cr>
 :vmap <c-w> :w\|bd<cr>
 :nmap <c-w> :w\|bd<cr>
+" Tab navigation like Firefox.
 
 " maps ctrl-o to open the files------------------------------------
 :map <c-o> :NERDTree<CR> 
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 " save and close only current file not vim entirely
 ":ab wq :w\|bd
+:set guitablabel=%t
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
