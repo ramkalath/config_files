@@ -11,10 +11,10 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'evgenyzinoviev/vim-vendetta'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -29,6 +29,16 @@ set laststatus=2
 let g:airline_powerline_fonts = 1 
 let g:airline_theme='solarized'
 
+" old vim-powerline symbols
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
+"let g:airline_symbols.linenr = '⭡'
+
+
 " This sets the color scheme-----------------------------------------
 "enable syntax highlighting
 syntax enable
@@ -36,10 +46,11 @@ colorscheme solarized8_dark
 "--------------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
-:vmap <C-c> "+y
-:vmap <C-v> p
+:vmap <C-c> "*y
+:nmap <C-v> "*p
 :nmap <C-a> ggVG
 :vnoremap <C-X> "+x
+set backspace=indent,eol,start
 "-------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
@@ -87,9 +98,9 @@ vmap // <leader>c<space>
 :vmap ii <Esc>i
 :nmap ii <Esc>i
 
- "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
- "autosaves.
-:imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
+"for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
+"autosaves.
+:imap <c-c><c-c> <Esc>:update <CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 ":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
 ":nmap <c-c><c-c><c-r> :update<CR>\|<Esc>:!make && make run<CR>
@@ -147,4 +158,3 @@ let g:tex_flavor='latex'
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
 set virtualedit=onemore 
-
