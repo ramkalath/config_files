@@ -42,3 +42,6 @@ git clone https://github.com/powerline/fonts.git
 cd fonts/
 ./install.sh
 cd ..
+
+# copy .vimrc into home folder --------------------------------------------------------
+cp /home/$USER/config_files/vim/.vimrc /home/$USER/
