@@ -1,4 +1,6 @@
+cd ~/Downloads/
 git clone https://github.com/vim/vim
+cd ~/Download/vim
 ./configure \
     --enable-perlinterp \
     --enable-python3interp \
