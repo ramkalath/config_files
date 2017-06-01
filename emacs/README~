@@ -1,0 +1,7 @@
+visit https://www.emacswiki.org/emacs/CuaModeTerminalProblems
+
+paste the below code in ~/.bashrc
+
+ if [ "$TERM" = "linux" ] ; then
+    loadkeys -q .keymap
+ fi
