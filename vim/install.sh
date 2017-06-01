@@ -23,6 +23,7 @@ make install
 git clone https://github.com/VundleVim/Vundle.vim.git /home/$USER/.vim/bundle/Vundle.vim
 
 # installing youcompleteme--------------------------------------------------------------
+# make sure that clang is already installed
 git clone https://github.com/Valloric/YouCompleteMe /home/$USER/.vim/bundle/
 cd /home/$USER/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
@@ -33,3 +34,11 @@ cd /home/$USER/
 cd /home/$USER/config_files/vim/
 cp -rf Ultisnips/ /home/$USER/.vim/
 cd /home/$USER/
+
+
+# Powerline fonts ---------------------------------------------------------------------
+cd /home/$USER/Downloads
+git clone https://github.com/powerline/fonts.git
+cd fonts/
+./install.sh
+cd ..
