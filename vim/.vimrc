@@ -34,8 +34,11 @@ colorscheme solarized8_dark
 "--------------------------------------------------------------------
 "let g:ycm_key_list_select_completion=[]
 "let g:ycm_key_list_previous_completion=[]
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = "."
+let g:ycm_global_ycm_extra_conf = "~/home/$USER/.vim/bundle/YouCompleteMe"
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
 "'/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_config.py'
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
 :vmap <C-c> "*y
@@ -60,7 +63,9 @@ set whichwrap+=<,>,h,l,[,]
 "-------------------------------------------------------------------
 
 " other editor settings---------------------------------------------
-set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
 set number
 set mouse=a
 
@@ -103,9 +108,10 @@ vmap // <leader>c<space>
 
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
-:imap <c-c><c-c> <Esc>:update <CR>\|<Esc>:!make<CR>
+:imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
-
+:imap <c-x><c-x> <Esc>:update <CR>\|<Esc>:!make run<CR>
+:nmap <c-x><c-x> :update<CR>\|<Esc>:!make run<CR>
 " lets add other simple features to this vimrc file
 :imap qq <Esc>:
 :vmap qq <Esc>:
