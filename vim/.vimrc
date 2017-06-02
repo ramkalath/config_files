@@ -14,7 +14,6 @@ Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'evgenyzinoviev/vim-vendetta'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -67,7 +66,15 @@ set mouse=a
 
 "file manager------------------------------------------------------
 " Increased NERDTree window size
-let g:NERDTreeWinSize=80 
+let g:NERDTreeWinSize=60 
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" -----------------------------------------------------------------
+
 " navigates to the next buffer
 :vmap <c-t> :bnext<CR>
 :nmap <c-t> :bnext<CR>
@@ -81,6 +88,7 @@ let g:NERDTreeWinSize=80
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 " save and close only current file not vim entirely
 ":ab wq :w\|bd
+:ab Wq :wq
 :set guitablabel=%t
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
@@ -97,10 +105,6 @@ vmap // <leader>c<space>
 "autosaves.
 :imap <c-c><c-c> <Esc>:update <CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
-":imap <c-c><c-c><c-r> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
-":nmap <c-c><c-c><c-r> :update<CR>\|<Esc>:!make && make run<CR>
-":imap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
-":nmap <c-c><c-c><c-d> :update<CR>\|<Esc>:!make && make debug<CR>
 
 " lets add other simple features to this vimrc file
 :imap qq <Esc>:
@@ -155,18 +159,5 @@ let g:tex_flavor='latex'
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
 set virtualedit=onemore 
-
-
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endifi
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-
-
+:nnoremap <leader>ri :RunInInteractiveShell<space>
 
