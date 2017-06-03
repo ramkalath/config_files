@@ -30,7 +30,7 @@ Prerequsites:
 Installation Instructions:
 1) git clone https://github.com/ramkalath/config_files
 2) cd config_files/vim/
-3) sudo ./install.sh
+3) sudo source ./install.sh
 
 4) manually start vim and type <Esc> :PluginInstall and wait
 Enjoy!!!

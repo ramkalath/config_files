@@ -1,8 +1,7 @@
 # configuring basic vim-------------------------------------------------------------
 # this has both python3 and clipboard support
 pushd /home/$USER/Downloads/ > /dev/null
-echo $PWD
-git clone https://github.com/vim/vim
+#git clone https://github.com/vim/vim
 pushd vim/ > /dev/null
 ./configure \
     --enable-perlinterp \
@@ -18,7 +17,9 @@ pushd vim/ > /dev/null
     --with-compiledby="Senor QA <senor@qa>" \
     --with-python3-config-dir=/usr/lib/python3.3/config-3.3m-x86_64-linux-gnu
 make
-sudo make install
+make install
+
+popd /dev/null
 
 # installing vundle----------------------------------------------------------------------
 git clone https://github.com/VundleVim/Vundle.vim.git /home/$USER/.vim/bundle/Vundle.vim
@@ -26,19 +27,22 @@ git clone https://github.com/VundleVim/Vundle.vim.git /home/$USER/.vim/bundle/Vu
 # installing youcompleteme--------------------------------------------------------------
 # make sure that clang is already installed
 git clone https://github.com/Valloric/YouCompleteMe /home/$USER/.vim/bundle/YouCompleteMe/
-pushd /home/$USER/.vim/bundle/YouCompleteMe/ > /dev/null
-echo $PWD
+cd /home/$USER/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 python3 install.py --clang-completer --system-libclang
+cd /home/$USER/
 
 # Setting up Ultisnips ----------------------------------------------------------------
-cp -rf /home/$USER/config_files/vim/UltiSnips/ /home/$USER/.vim/
+cd /home/$USER/config_files/vim/
+cp -rf UltiSnips/ /home/$USER/.vim/
+cd /home/$USER/
 
 # Powerline fonts ---------------------------------------------------------------------
-pushd /home/$USER/Downloads > /dev/null
-git clone https://github.com/powerline/fonts.git
-pushd /home/$USER/Downloads/fonts
-./install.sh
+#cd /home/$USER/Downloads
+#git clone https://github.com/powerline/fonts.git
+#cd fonts/
+#./install.sh
+#cd ..
 
 # copy .vimrc into home folder --------------------------------------------------------
 cp /home/$USER/config_files/vim/.vimrc /home/$USER/
