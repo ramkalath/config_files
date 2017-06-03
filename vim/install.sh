@@ -38,7 +38,7 @@ cp -rf /home/$USER/config_files/vim/UltiSnips/ /home/$USER/.vim/
 pushd /home/$USER/Downloads > /dev/null
 git clone https://github.com/powerline/fonts.git
 pushd /home/$USER/Downloads/fonts
-./install.sh
+sudo ./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
 cp /home/$USER/config_files/vim/.vimrc /home/$USER/

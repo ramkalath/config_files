@@ -26,6 +26,7 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " This sets the color scheme-----------------------------------------
 "enable syntax highlighting
@@ -38,7 +39,7 @@ let g:ycm_global_ycm_extra_conf = "~/home/$USER/.vim/bundle/YouCompleteMe"
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 set completeopt-=preview
-let g:ycm_show_diagnostics_ui = 0
+"let g:ycm_show_diagnostics_ui = 0
 "'/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_config.py'
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
 :vmap <C-c> "*y
