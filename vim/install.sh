@@ -36,8 +36,10 @@ cp -rf /home/$USER/config_files/vim/UltiSnips/ /home/$USER/.vim/
 
 # Powerline fonts ---------------------------------------------------------------------
 pushd /home/$USER/Downloads > /dev/null
+echo $PWD
 git clone https://github.com/powerline/fonts.git
 pushd /home/$USER/Downloads/fonts
+echo $PWD
 sudo ./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
