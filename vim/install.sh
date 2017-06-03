@@ -40,7 +40,7 @@ echo $PWD
 git clone https://github.com/powerline/fonts.git
 pushd /home/$USER/Downloads/fonts
 echo $PWD
-sudo ./install.sh
+./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
 cp /home/$USER/config_files/vim/.vimrc /home/$USER/
