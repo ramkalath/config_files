@@ -3,12 +3,12 @@ snippet make_latex "this creates a simple makefile for latex" b
 FILENAME = 
 
 all:
-	pdflatex $(FILENAME).tex
+    pdflatex $(FILENAME).tex
 
 run:
-	evince $(FILENAME).pdf &
+    evince $(FILENAME).pdf &
 
 clean:
-	rm $(FILENAME).log $(FILENAME).aux
+    rm $(FILENAME).log $(FILENAME).aux
 
 endsnippet
