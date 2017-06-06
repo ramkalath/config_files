@@ -64,9 +64,6 @@ set whichwrap+=<,>,h,l,[,]
 "-------------------------------------------------------------------
 
 " other editor settings---------------------------------------------
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
 set number
 set mouse=a
 
