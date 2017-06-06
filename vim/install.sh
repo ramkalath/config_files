@@ -30,6 +30,7 @@ pushd /home/$USER/.vim/bundle/YouCompleteMe/ > /dev/null
 echo $PWD
 git submodule update --init --recursive
 python3 install.py --clang-completer --system-libclang
+git clone https://github.com/rdnetto/YCM-Generator
 
 # Setting up Ultisnips ----------------------------------------------------------------
 cp -rf /home/$USER/config_files/vim/UltiSnips/ /home/$USER/.vim/
