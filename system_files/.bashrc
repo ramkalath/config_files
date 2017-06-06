@@ -128,16 +128,16 @@ alias gdb="gdb -tui"
 alias tmux="tmux -2"
 alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw"
-#alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 #alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py -c clang-3.8"
-#alias vim="nvim"
+#alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 alias paperwork="cd ~/Dropbox/study/phd/paper_work/21_collab_labs"
 alias snippet="cd ~/.config/sublime-text-3/Packages/User"
 alias cbproject="python ~/config_files/cbproject.py"
 alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
 alias book="cd ~/Dropbox/study/computervision/augmented\ reality\ book/AR_book"
-
+alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
+alias python="python2"
 if command -v tmux>/dev/null; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
