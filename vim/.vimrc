@@ -74,26 +74,23 @@ set mouse=a
 " Increased NERDTree window size
 let g:NERDTreeWinSize=60 
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " -----------------------------------------------------------------
 
 " navigates to the next buffer
-:vmap <c-t> :bnext<CR>
-:nmap <c-t> :bnext<CR>
+:vmap gt :bnext<CR>
+:nmap gt :bnext<CR>
 :imap <c-w> <Esc>:w\|bd<cr>
 :vmap <c-w> :w\|bd<cr>
 :nmap <c-w> :w\|bd<cr>
 " Tab navigation like Firefox.
 
-" maps ctrl-o to open the files------------------------------------
-:map <c-o> :NERDTree<CR> 
-let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 " save and close only current file not vim entirely
-":ab wq :w\|bd
 :ab Wq :wq
 :set guitablabel=%t
 "-----------------------------------------------------------------
@@ -166,5 +163,5 @@ let g:tex_flavor='latex'
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
 set virtualedit=onemore 
-:nnoremap <leader>ri :RunInInteractiveShell<space>
+":nnoremap <leader>ri :RunInInteractiveShell<space>
 
