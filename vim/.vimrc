@@ -33,6 +33,17 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 syntax enable
 colorscheme solarized8_dark
 "--------------------------------------------------------------------
+" This sets the relative numbering scheme
+function! ToggleRelativeNumber()
+	if &relativenumber
+	   set norelativenumber
+	else
+	   set relativenumber
+	endif
+endfunction
+
+nmap ;r :call ToggleRelativeNumber()<CR>
+"--------------------------------------------------------------------
 "let g:ycm_key_list_select_completion=[]
 "let g:ycm_key_list_previous_completion=[]
 let g:ycm_global_ycm_extra_conf = "~/home/$USER/.vim/bundle/YouCompleteMe"
