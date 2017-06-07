@@ -90,6 +90,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " save and close only current file not vim entirely
 :ab Wq :wq
 :set guitablabel=%t
+:au FocusLost * :wa  " save when focus is lost
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
