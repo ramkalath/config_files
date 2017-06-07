@@ -121,7 +121,7 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 "-----------------------------------------------------------------
 " short cut to open tasklist
 :ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
-:ab f /
+:ab _find /
 :map <C-r> :%s!<!\&lt;!<cr>:%s!>!\&gt;!<cr>
 "----------------------------------------------------------------
 " some vim-latex stuff that they said is necessary to be put in bashrc--------
