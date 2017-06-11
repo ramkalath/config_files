@@ -135,7 +135,7 @@ alias paperwork="cd ~/Dropbox/study/phd/paper_work/21_collab_labs"
 alias snippet="cd ~/.config/sublime-text-3/Packages/User"
 alias cbproject="python ~/config_files/cbproject.py"
 alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
-alias book="cd ~/Dropbox/study/computervision/augmented\ reality\ book/AR_book"
+alias book="cd ~/home/ram/Dropbox/study/computervision/Augmented_Reality_book"
 alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
 alias python="python2"
 if command -v tmux>/dev/null; then
