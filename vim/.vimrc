@@ -14,12 +14,15 @@ Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open
 set shortmess=A
 "---------------------------------------------------------------------
+let g:ctrlp_show_hidden = 1
+:nmap <c-t> :CtrlP ~/<CR>
 
  "This enables the airline extension
 let g:airline#extensions#tabline#enabled = 1
@@ -93,15 +96,11 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " navigates to the next buffer
 :vmap gt :bnext<CR>
 :nmap gt :bnext<CR>
-:imap <c-w> <Esc>:w\|bd<cr>
-:vmap <c-w> :w\|bd<cr>
-:nmap <c-w> :w\|bd<cr>
-" Tab navigation like Firefox.
 
 " save and close only current file not vim entirely
 :ab Wq :wq
-:set guitablabel=%t
-:au FocusLost * :wa  " save when focus is lost
+:set guitablabel=%t  " show only the file name an not the path 
+:au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 "-----------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -110,8 +109,6 @@ vmap // <leader>c<space>
 " toggling between insert, normal and visual mode upon triple key press
 :imap vv <Esc>v
 :nmap vv <Esc>v
-:vmap ii <Esc>i
-:nmap ii <Esc>i
 
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
@@ -119,12 +116,6 @@ vmap // <leader>c<space>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 :imap <c-x><c-x> <Esc>:update <CR>\|<Esc>:!make run<CR>
 :nmap <c-x><c-x> :update<CR>\|<Esc>:!make run<CR>
-" lets add other simple features to this vimrc file
-:imap qq <Esc>:
-:vmap qq <Esc>:
-:nmap qq <Esc>:
-:vmap <Tab> >gv
-:vmap <S-Tab> <gv
 "-----------------------------------------------------------------
 " once the header trigger is entered, ultisnips expands when enter is pressed
 let g:UltiSnipsExpandTrigger = "<nop>"
@@ -134,7 +125,6 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 " short cut to open tasklist
 :ab tasklist :e ~/Dropbox/tasklist/tasklist.txt
 :ab _find /
-:map <C-r> :%s!<!\&lt;!<cr>:%s!>!\&gt;!<cr>
 "----------------------------------------------------------------
 " some vim-latex stuff that they said is necessary to be put in bashrc--------
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
@@ -158,16 +148,16 @@ filetype indent on
 let g:tex_flavor='latex'
 "-------------------------------------------------------------------
 " scroll line by display rather than line by linebreaks
-:nnoremap j gj
-:nnoremap k gk
-:vnoremap j gj
-:vnoremap k gk
-:nnoremap <Down> gj
-:nnoremap <Up> gk
-:vnoremap <Down> gj
-:vnoremap <Up> gk
-:inoremap <Down> <C-o>gj
-:inoremap <Up> <C-o>gk
+":nnoremap j gj
+":nnoremap k gk
+":vnoremap j gj
+":vnoremap k gk
+":nnoremap <Down> gj
+":nnoremap <Up> gk
+":vnoremap <Down> gj
+":vnoremap <Up> gk
+":inoremap <Down> <C-o>gj
+":inoremap <Up> <C-o>gk
 "------------------------------------------------------------------
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
