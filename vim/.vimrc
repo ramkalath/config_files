@@ -8,13 +8,14 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'lifepillar/vim-solarized8'
+"Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'evgenyzinoviev/vim-vendetta'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -28,13 +29,14 @@ let g:ctrlp_show_hidden = 1
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " This sets the color scheme-----------------------------------------
 "enable syntax highlighting
 syntax enable
-colorscheme solarized8_dark
+colorscheme vendetta
+"colorscheme solarized8_dark
 "--------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
