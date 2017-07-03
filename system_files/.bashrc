@@ -138,6 +138,8 @@ alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
 alias python="python2"
+alias thesis="cd ~/Dropbox/study/phd/thesis"
+alias ml="cd /home/ram/workarea/BuildingMachineLearningSystemsWithPython/Practice/"
 if command -v tmux>/dev/null; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
