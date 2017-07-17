@@ -82,7 +82,7 @@ set whichwrap+=<,>,h,l,[,]
 " other editor settings---------------------------------------------
 set number
 set mouse=a
-
+set tabstop=4
 "file manager------------------------------------------------------
 " Increased NERDTree window size
 let g:NERDTreeWinSize=60 
