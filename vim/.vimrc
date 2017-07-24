@@ -54,6 +54,7 @@ nmap ;r :call ToggleRelativeNumber()<CR>
 let g:ycm_global_ycm_extra_conf = "~/home/$USER/.vim/bundle/YouCompleteMe"
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_confirm_extra_conf = 0
 set completeopt-=preview
 "let g:ycm_show_diagnostics_ui = 0
 "'/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_config.py'
