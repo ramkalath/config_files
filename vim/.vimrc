@@ -108,10 +108,8 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 "-----------------------------------------------------------------
 " toggling between insert, normal and visual mode upon triple key press
-:imap vvv <Esc>v
-:nmap vvv <Esc>v
-:imap nnn <Esc>
-:vmap nnn <Esc>
+:imap vv <Esc>v
+:nmap vv <Esc>v
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
