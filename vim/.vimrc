@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'evgenyzinoviev/vim-vendetta'
+Plugin 'tikhomirov/vim-glsl'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -59,10 +60,7 @@ set completeopt-=preview
 "let g:ycm_show_diagnostics_ui = 0
 "'/home/ram/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_config.py'
 " This is for mapping ctrl-c, ctrl-v, ctrl-a------------------------
-:vmap <C-c> "*y
-:nmap <C-v> "*p
 :nmap <C-a> ggVG
-:vnoremap <C-X> "+x
 set backspace=indent,eol,start
 "-------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -110,9 +108,10 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 "-----------------------------------------------------------------
 " toggling between insert, normal and visual mode upon triple key press
-:imap vv <Esc>v
-:nmap vv <Esc>v
-
+:imap vvv <Esc>v
+:nmap vvv <Esc>v
+:imap nnn <Esc>
+:vmap nnn <Esc>
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
