@@ -22,6 +22,13 @@ filetype plugin indent on    " required
 "---------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open
 set shortmess=A
+" Set split separator to Unicode box drawing character
+set encoding=utf8
+set fillchars=vert:│
+
+" Override color scheme to make split the same color as tmux's default
+autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
+
 "---------------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
 :nmap <c-t> :CtrlP ~/<CR>
@@ -114,18 +121,13 @@ vmap // <leader>c<space>
 "autosaves.
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
-:imap <c-x><c-x> <Esc>:update <CR>\|<Esc>:!make run<CR>
-:nmap <c-x><c-x> :update<CR>\|<Esc>:!make run<CR>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
+:nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
 "-----------------------------------------------------------------
+:imap <C-Right> e
+:nmap <C-Right> e
 " once the header trigger is entered, ultisnips expands when enter is pressed
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsSnippetDirectories = ['/home/ram/.config/nvim/UltiSnips', 'UltiSnips']
@@ -155,18 +157,6 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 "-------------------------------------------------------------------
-" scroll line by display rather than line by linebreaks
-":nnoremap j gj
-":nnoremap k gk
-":vnoremap j gj
-":vnoremap k gk
-":nnoremap <Down> gj
-":nnoremap <Up> gk
-":vnoremap <Down> gj
-":vnoremap <Up> gk
-":inoremap <Down> <C-o>gj
-":inoremap <Up> <C-o>gk
-"------------------------------------------------------------------
 " in normal mode we cant navigate after the end of the line. This enables us
 " to move a character after the end of the line.
 set virtualedit=onemore 
