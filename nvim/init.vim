@@ -56,6 +56,7 @@ function! ToggleRelativeNumber()
 endfunction
 
 nmap ;r :call ToggleRelativeNumber()<CR>
+set relativenumber
 "--------------------------------------------------------------------
 "let g:ycm_key_list_select_completion=[]
 "let g:ycm_key_list_previous_completion=[]
@@ -83,6 +84,10 @@ set whichwrap+=<,>,h,l,[,]
 :nmap <c-down> +3
 :vmap <c-up> -3
 :vmap <c-down> +3
+:nmap <c-k> -3
+:nmap <c-j> +3
+:vmap <c-k> -3
+:vmap <c-j> +3
 "-------------------------------------------------------------------
 
 " other editor settings---------------------------------------------
@@ -124,7 +129,6 @@ vmap // <leader>c<space>
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
 :nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
 "-----------------------------------------------------------------
-:imap <C-Right> e
 :nmap <C-Right> e
 " once the header trigger is entered, ultisnips expands when enter is pressed
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
