@@ -119,30 +119,32 @@ fi
 
 force_color_prompt=yes
 PROMPT_DIRTRIM=1
-export LD_LIBRARY_PATH="/usr/local/lib"
-export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
-export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
+#export LD_LIBRARY_PATH="/usr/local/lib"
+#export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
+#export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
+#export LD_LIBRARY_PATH="/home/ram/Downloads/glfw/build/src"
 export TERM=xterm-256color
+alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias gdb="gdb -tui"
 alias tmux="tmux -2"
+alias run="make && ./main"
 alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
-alias glfw="cd /home/ram/Dropbox/study/opengl/cpp/glfw"
+alias opengl="cd /home/ram/Dropbox/study/opengl/cpp/glfw"
 alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
 #alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py -c clang-3.8"
 #alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-alias paperwork="cd ~/Dropbox/study/phd/paper_work/21_collab_labs"
+alias paper="cd ~/Dropbox/study/phd/paper_work/"
 alias snippet="cd ~/.config/sublime-text-3/Packages/User"
 alias cbproject="python ~/config_files/cbproject.py"
 alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
-alias sift="cd ~/Dropbox/study/computervision/computer_vision_using_python/sift/siftImplementationUsingDavidLoweBinary"
 alias python="python2"
 alias thesis="cd ~/Dropbox/study/phd/thesis"
-alias ml="cd /home/ram/workarea/BuildingMachineLearningSystemsWithPython/Practice/"
-if command -v tmux>/dev/null; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+
+#if command -v tmux>/dev/null; then
+	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
 
 tmux source-file ~/.tmux.conf
 
