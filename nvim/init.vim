@@ -17,6 +17,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'evgenyzinoviev/vim-vendetta'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'enricobacis/vim-airline-clock'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
@@ -29,6 +30,8 @@ set fillchars=vert:│
 " Override color scheme to make split the same color as tmux's default
 autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 
+" remove autocomment in the next line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "---------------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
 :nmap <c-t> :CtrlP ~/<CR>
