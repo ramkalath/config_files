@@ -87,10 +87,6 @@ set whichwrap+=<,>,h,l,[,]
 :nmap <c-down> +3
 :vmap <c-up> -3
 :vmap <c-down> +3
-:nmap <c-k> -3
-:nmap <c-j> +3
-:vmap <c-k> -3
-:vmap <c-j> +3
 "-------------------------------------------------------------------
 
 " other editor settings---------------------------------------------
