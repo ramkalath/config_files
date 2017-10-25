@@ -103,9 +103,9 @@ alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias python="python2"
 alias thesis="cd ~/Dropbox/study/phd/thesis"
 
-#if command -v tmux>/dev/null; then
-	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
 
 tmux source-file ~/.tmux.conf
 
