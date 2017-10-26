@@ -86,10 +86,10 @@ set whichwrap+=<,>,h,l,[,]
 "-------------------------------------------------------------------
 " :imap <c-z> <Esc>:u<CR>\|i
 " scrolling up and down multiple lines atonce-----------------------
-:nmap <c-up> -3
-:nmap <c-down> +3
-:vmap <c-up> -3
-:vmap <c-down> +3
+:nmap <c-k> -3
+:nmap <c-j> +3
+:vmap <c-k> -3
+:vmap <c-j> +3
 "-------------------------------------------------------------------
 
 " other editor settings---------------------------------------------
