@@ -27,6 +27,7 @@ set shortmess=A
 " Set split separator to Unicode box drawing character
 set encoding=utf8
 set fillchars=vert:│
+set ignorecase
 
 " Override color scheme to make split the same color as tmux's default
 autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
