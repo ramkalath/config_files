@@ -1,0 +1,19 @@
+Amme Sharanam!
+
+ngrok allows us to connect to a remote system over the internet like doing an ssh.
+Download ngrok and run the binary file using the command
+
+1) ./ngrok authtoken 3F3eLQRVsUG5gqVPTND3A_2vXXtPCjK3TnnEazxHE7a
+
+This will enable the authentication token
+
+2) make sure ssh you are able to connect to ssh locally
+
+3) "./ngrok tcp 22" for tcp and "./ngrok http 80" for http. This should be done on the server.
+
+4) On the client side "ssh uname@0.0.tcp.ngrok.io -P 15439". But its very slow.
+
+5) to scp a file into a remote computer, "scp -P <port #> <filepath/on/local/pc> uname@0.tcp.ngrok.io:<filepath/on/remote/pc>"
+
+
+tasks: ssh is very slow as it tries to update character by character. If this process can be done in chunks it will be so much more faster.
