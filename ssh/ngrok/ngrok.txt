@@ -11,7 +11,7 @@ This will enable the authentication token
 
 3) "./ngrok tcp 22" for tcp and "./ngrok http 80" for http. This should be done on the server.
 
-4) On the client side "ssh uname@0.0.tcp.ngrok.io -P 15439". But its very slow.
+4) On the client side "ssh uname@0.0.tcp.ngrok.io -p <port>". But its very slow.
 
 5) to scp a file into a remote computer, "scp -P <port #> <filepath/on/local/pc> uname@0.tcp.ngrok.io:<filepath/on/remote/pc>"
 
