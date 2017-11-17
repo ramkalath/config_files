@@ -104,6 +104,7 @@ alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias python="python2"
 alias thesis="cd ~/Dropbox/study/phd/thesis"
 alias visa="cd ~/Dropbox/study/phd/visa_application_switz_vienna"
+alias skype="./Downloads/skype/usr/bin/skypeforlinux"
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
