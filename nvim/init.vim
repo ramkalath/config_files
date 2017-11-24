@@ -1,8 +1,11 @@
 " set theruntime path to include Vundle and initialize--------------
 set hidden
 set autochdir
+set nocompatible
+filetype off
+
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
