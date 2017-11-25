@@ -15,5 +15,6 @@ This will enable the authentication token
 
 5) to scp a file into a remote computer, "scp -P <port #> <filepath/on/local/pc> uname@0.tcp.ngrok.io:<filepath/on/remote/pc>"
 
+6) to sshfs into a directory on a remote computer, "sshfs ram@0.tcp.ngrok.io:<path to remote directory> <path to local directory> -p <port #>"
 
 tasks: ssh is very slow as it tries to update character by character. If this process can be done in chunks it will be so much more faster.
