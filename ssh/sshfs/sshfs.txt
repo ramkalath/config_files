@@ -1,0 +1,3 @@
+sshfs user@domain:/remote/directory/ /local/directory/
+
+that will create a local copy of the repo while live updating the remote repo
