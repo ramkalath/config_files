@@ -17,7 +17,7 @@ sudo pip install neovim
 pushd $HOME/.config/nvim/bundle
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.config/nvim/bundle/YouCompleteMe
 pushd $HOME/.config/nvim/bundle/YouCompleteMe
-#git submodule update --init --recursive
-#python install.py --clang-completer --system-libclang
+git submodule update --init --recursive
+python install.py --clang-completer --system-libclang
 
 nvim $HOME/.config/nvim/init.vim
