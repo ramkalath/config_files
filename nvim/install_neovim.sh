@@ -21,3 +21,7 @@ pushd $HOME/.config/nvim/bundle/YouCompleteMe
 #python install.py --clang-completer --system-libclang
 
 nvim $HOME/.config/nvim/init.vim
+
+# dunno powerline fonts require something else
+git clone https://github.com/powerline/fonts $HOME/Downloads/powerline_fonts
+pushd $HOME/Downloads/powerline_fonts
