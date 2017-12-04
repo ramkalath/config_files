@@ -35,8 +35,46 @@ set ignorecase
 " Override color scheme to make split the same color as tmux's default
 autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 
-" remove autocomment in the next line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" inserts an automatic header for c, cpp, h and hpp files and modifies the time ----------
+function! s:insert_description()
+	let template = $HOME . "/config_files/nvim/templates/cpp.template"
+	let file_name = expand("%:t") " Get file name without path
+	let date = strftime(strftime('%c')) " Get the current year in format YYYY
+	let i = 0
+	for line in readfile(template)
+		let line = substitute(line, "<file_name>", file_name, "ge")
+		let line = substitute(line, "<date>", date, "ge")
+		let line = substitute(line, "<modified_date>", date, "ge")
+		call append(i, line)
+		let i += 1
+	endfor
+	execute "normal! Go\<Esc>k"
+endfunction
+autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
+autocmd Bufwritepre,filewritepre *.cpp exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd Bufwritepre,filewritepre *.h exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd Bufwritepre,filewritepre *.hpp exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+
+
+
+" inserts an automatic header for python files and modifies the time ----------
+function! s:insert_description_py()
+	let template = $HOME . "/config_files/nvim/templates/python.template"
+	let file_name = expand("%:t") " Get file name without path
+	let date = strftime(strftime('%c')) " Get the current year in format YYYY
+	let i = 0
+	for line in readfile(template)
+		let line = substitute(line, "<file_name>", file_name, "ge")
+		let line = substitute(line, "<date>", date, "ge")
+		let line = substitute(line, "<modified_date>", date, "ge")
+		call append(i, line)
+		let i += 1
+	endfor
+	execute "normal! Go\<Esc>k"
+endfunction
+autocmd BufNewFile *.py call <SID>insert_description_py()
+autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
 "---------------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
 :nmap <c-t> :CtrlP ~/<CR>
