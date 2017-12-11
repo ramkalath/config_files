@@ -1,5 +1,4 @@
-" set theruntime path to include Vundle and initialize--------------
-set hidden
+
 set autochdir
 set nocompatible
 filetype off
