@@ -1,4 +1,5 @@
-
+" set theruntime path to include Vundle and initialize--------------
+set hidden
 set autochdir
 set nocompatible
 filetype off
@@ -20,6 +21,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'enricobacis/vim-airline-clock'
 Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
