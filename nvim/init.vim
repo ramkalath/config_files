@@ -129,8 +129,8 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " navigates to the next buffer --------------------------------------
-:vmap gt :bnext<CR>
-:nmap gt :bnext<CR>
+:vmap <c-n> :bnext<CR>
+:nmap <c-n> :bnext<CR>
 
 :ab Wq :wq
 :set guitablabel=%t  " show only the file name an not the path 
