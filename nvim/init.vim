@@ -133,6 +133,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 :nmap <c-n> :bnext<CR>
 
 :ab Wq :wq
+:ab W :w
 :set guitablabel=%t  " show only the file name an not the path 
 :au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 "-----------------------------------------------------------------
