@@ -1,4 +1,4 @@
-" set theruntime path to include Vundle and initialize--------------
+" set theruntime path to include Vundle and initialize-------------- 
 set hidden
 set autochdir
 set nocompatible
@@ -146,7 +146,9 @@ vmap // <leader>c<space>
 :nmap vv <Esc>v
 :imap <c-l> <Esc>ea
 :nmap <c-l> e
+:nmap <c-h> b
 :imap hh <Esc>i
+:imap jj <Esc>
 " Add brackets with closing bracket
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
