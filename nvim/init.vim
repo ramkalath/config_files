@@ -144,6 +144,9 @@ vmap // <leader>c<space>
 " toggling between insert, normal and visual mode upon triple key press
 :imap vv <Esc>v
 :nmap vv <Esc>v
+:imap <c-l> <Esc>ea
+:nmap <c-h> b
+:nmap <c-l> e
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
@@ -183,4 +186,5 @@ let g:tex_flavor='latex'
 " to move a character after the end of the line.
 set virtualedit=onemore 
 ":nnoremap <leader>ri :RunInInteractiveShell<space>
+
 
