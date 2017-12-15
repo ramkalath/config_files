@@ -145,8 +145,9 @@ vmap // <leader>c<space>
 :imap vv <Esc>v
 :nmap vv <Esc>v
 :imap <c-l> <Esc>ea
-:nmap <c-h> b
 :nmap <c-l> e
+:imap hh <Esc>i
+" Add brackets with closing bracket
 "for compiling, running and debugging press ctrl cc, ctrl ccr, ctrl ccd. It
 "autosaves.
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>
