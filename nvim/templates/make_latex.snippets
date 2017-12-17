@@ -1,0 +1,14 @@
+snippet make_latex "this creates a simple makefile for latex" b 
+# enter a filename without the extension
+FILENAME = 
+
+all:
+	pdflatex $(FILENAME).tex
+
+run:
+	evince $(FILENAME).pdf &
+
+clean:
+	rm $(FILENAME).log $(FILENAME).aux
+
+endsnippet
