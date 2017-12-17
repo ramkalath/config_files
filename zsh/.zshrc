@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-plugins=(... fzf-zsh ...plugins=(... fzf-zsh ...plugins=(... fzf-zsh ...)
+plugins=(... fzf-zsh ...)
 
 force_color_prompt=yes
 alias vim="nvim"
