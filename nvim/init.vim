@@ -12,7 +12,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
@@ -23,7 +22,6 @@ Plugin 'enricobacis/vim-airline-clock'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'karlmoritz/vim-latex'
-Plugin 'vim-scripts/Solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
