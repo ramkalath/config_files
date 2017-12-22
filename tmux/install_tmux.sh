@@ -1,3 +1,3 @@
-sudo pacman -S tmux
+sudo pacman -S tmux --noconfirm
 git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/Downloads/tmux-resurrect
-cp $HOME/config_files/tmux/.tmux.conf $HOME
+ln -s $HOME/config_files/tmux/.tmux.conf $HOME/.tmux.conf

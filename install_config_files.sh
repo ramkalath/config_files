@@ -1,3 +1,5 @@
+# This install script will install all the script files and setup the entire environment properly
+
 # nvim installation
 pushd $HOME/config_files/nvim/
 ./install_neovim.sh

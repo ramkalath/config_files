@@ -1,7 +1,7 @@
 # nvim installation instructions in arch linux
 
-sudo pacman -S neovim git clang cmake yaourt xclip
-yaourt -S powerline-fonts-git
+sudo pacman -S neovim git clang cmake yaourt xclip --noconfirm
+yaourt -S powerline-fonts-git --noconfirm
 
 mkdir $HOME/.config/nvim
 git clone https://github.com/ramkalath/config_files $HOME/config_files
@@ -24,4 +24,3 @@ nvim $HOME/.config/nvim/init.vim
 # dunno powerline fonts require something else
 git clone https://github.com/powerline/fonts $HOME/Downloads/powerline_fonts
 pushd $HOME/Downloads/powerline_fonts
-
