@@ -12,7 +12,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
@@ -23,7 +22,6 @@ Plugin 'enricobacis/vim-airline-clock'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'karlmoritz/vim-latex'
-Plugin 'vim-scripts/Solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -36,7 +34,7 @@ set ignorecase
 " ----------------------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
-	let template = $HOME . "/config_files/nvim/templates/cpp.template"
+	let template = $HOME . "/config_files/nvim/UltiSnips/cpp.template"
 	let file_name = expand("%:t") " Get file name without path
 	let date = strftime(strftime('%c')) " Get the current year in format YYYY
 	let i = 0
@@ -53,7 +51,7 @@ autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
 " ----------------------------------------------------------------------------------------
 " inserts an automatic header for python files and modifies the time
 function! s:insert_description_py()
-	let template = $HOME . "/config_files/nvim/templates/python.template"
+	let template = $HOME . "/config_files/nvim/UltiSnips/python.template"
 	let file_name = expand("%:t") " Get file name without path
 	let date = strftime(strftime('%c')) " Get the current year in format YYYY
 	let i = 0
