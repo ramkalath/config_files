@@ -1,1 +1,1 @@
-sudo pacman -S texlive-most
+sudo pacman -S texlive-most biber
