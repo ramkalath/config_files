@@ -12,6 +12,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
+"Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
@@ -22,6 +23,7 @@ Plugin 'enricobacis/vim-airline-clock'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'karlmoritz/vim-latex'
+Plugin 'vim-scripts/Solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -165,7 +167,7 @@ vmap // <leader>c<space>
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
-let g:UltiSnipsSnippetDirectories = ['/$HOME/.config/nvim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['/$HOME/config_files/nvim/UltiSnips', 'UltiSnips']
 
 " -----------------------------------------------------------------------------------------
 " latex stuff 
