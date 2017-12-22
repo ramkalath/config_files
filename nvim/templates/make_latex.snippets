@@ -8,6 +8,9 @@ all:
 run:
 	evince $(FILENAME).pdf &
 
+bib:
+	biber $(FILENAME)
+
 clean:
 	rm $(FILENAME).log $(FILENAME).aux
 
