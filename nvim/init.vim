@@ -12,7 +12,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'lifepillar/vim-solarized8'
+"Plugin 'lifepillar/vim-solarized8'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'powerline/fonts'
@@ -22,6 +22,8 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'enricobacis/vim-airline-clock'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'karlmoritz/vim-latex'
+Plugin 'vim-scripts/Solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -105,7 +107,7 @@ set backspace=indent,eol,start
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
-
+set foldmethod=manual
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-k> -3
