@@ -6,10 +6,10 @@ all:
 	pdflatex $(FILENAME).tex
 
 run:
-	evince $(FILENAME).pdf &
-
-bib:
+	pdflatex $(FILENAME).tex
 	biber $(FILENAME)
+	pdflatex $(FILENAME).tex
+	evince $(FILENAME).pdf &!
 
 clean:
 	rm $(FILENAME).log $(FILENAME).aux
