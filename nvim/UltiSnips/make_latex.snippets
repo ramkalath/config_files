@@ -6,7 +6,6 @@ all:
 	pdflatex $(FILENAME).tex
 
 run:
-	pdflatex $(FILENAME).tex
 	biber $(FILENAME)
 	pdflatex $(FILENAME).tex
 	evince $(FILENAME).pdf &!
