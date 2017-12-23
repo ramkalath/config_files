@@ -116,6 +116,3 @@ tmux source-file ~/.tmux.conf
 
 # bind -r '\C-s'
 stty -ixon
-
-# this enables the vi mode in zsh
-bindkey -v
