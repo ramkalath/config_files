@@ -107,6 +107,7 @@ alias thesis="cd ~/Dropbox/study/phd/thesis"
 alias visa="cd ~/Dropbox/study/phd/visa_application_switz_vienna"
 alias skype="./Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='./Downloads/popcorn/Popcorn-Time'
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
