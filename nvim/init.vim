@@ -2,7 +2,8 @@
 " set theruntime path to include Vundle and initialize
 set hidden
 set autochdir
-set nocompatible
+set nocompatible " This tells vim not to act like it predecessor vi
+syntax enable " enables syntax highlighting
 filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
@@ -75,7 +76,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-syntax enable
 colorscheme atom-dark-256
 
 " -----------------------------------------------------------------------------------------

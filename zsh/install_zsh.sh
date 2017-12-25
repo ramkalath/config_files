@@ -8,8 +8,9 @@ ln -s $HOME/config_files/zsh/.zshrc $HOME/.zshrc
 
 # install fzf with oh-my-zsh
 git clone https://github.com/junegunn/fzf.git ${ZSH}/custom/plugins/fzf
-${ZSH}/custom/plugins/fzf/install --bin
+pushd ${ZSH}/custom/plugins/fzf/
+sudo ./install --bin
 
 git clone https://github.com/Treri/fzf-zsh.git ${ZSH}/custom/plugins/fzf-zsh
 
-plugins=(... fzf-zsh ...)
+echo "plugins=(... fzf-zsh ...)" >> $(HOME)/config_files/zsh/.zshrc
