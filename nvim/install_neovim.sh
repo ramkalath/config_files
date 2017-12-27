@@ -1,6 +1,6 @@
 # nvim installation instructions in arch linux
 
-sudo pacman -S neovim git clang cmake yaourt xclip --noconfirm
+sudo pacman -S neovim git clang cmake yaourt xclip gdb --noconfirm
 yaourt -S powerline-fonts-git --noconfirm
 
 mkdir $HOME/.config/nvim
