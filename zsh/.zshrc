@@ -86,11 +86,18 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 plugins=(... fzf-zsh ...)
 
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
+tmux source-file ~/.tmux.conf
+# bind -r '\C-s'stty -ixon
+
 force_color_prompt=yes
+
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias tmux="tmux -2"
-alias run="make && ./main"
 alias opengl="cd ~/Dropbox/study/opengl/cpp/glfw"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 alias paper="cd ~/Dropbox/study/phd/paper_work/"
@@ -98,15 +105,7 @@ alias paper="cd ~/Dropbox/study/phd/paper_work/"
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias python="python2"
 alias thesis="cd ~/Dropbox/study/phd/thesis"
-alias visa="cd ~/Dropbox/study/phd/visa_application_switz_vienna"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
-tmux source-file ~/.tmux.conf
-
-# bind -r '\C-s'stty -ixon
+alias pendrive="cd /run/media/$USER/Pendrive"
