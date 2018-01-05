@@ -26,10 +26,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " ---------------------------------------------------------------------------------------
-" prevent vim from giving a warning it the swp file is open 
-set shortmess=A
-set encoding=utf8
-set ignorecase
+"" prevent vim from giving a warning it the swp file is open 
+"set shortmess=A
+"set encoding=utf8
+"set ignorecase
 
 " ----------------------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 

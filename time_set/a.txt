@@ -1,0 +1,7 @@
+                      Local time: Fri 2018-01-05 22:17:09 IST
+                  Universal time: Fri 2018-01-05 16:47:09 UTC
+                        RTC time: Fri 2018-01-05 16:47:09
+                       Time zone: Asia/Kolkata (IST, +0530)
+       System clock synchronized: no
+systemd-timesyncd.service active: no
+                 RTC in local TZ: no
