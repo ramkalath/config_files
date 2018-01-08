@@ -94,6 +94,7 @@ tmux source-file ~/.tmux.conf
 # bind -r '\C-s'stty -ixon
 
 force_color_prompt=yes
+export LD_LIBRARY_PATH="/usr/local/lib/"
 
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
