@@ -41,7 +41,7 @@ if __name__ == "__main__":
 	file_list = list_c_cpp_files(path)
 	
 	new_project_name = path.split("/")[-2]
-	template = "/home/ram/config_files/template.cbp"
+	template = "/home/ram/config_files/codeblocks/template.cbp"
 	tree = ET.parse(template)
 	root = tree.getroot()
 
