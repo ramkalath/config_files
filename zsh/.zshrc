@@ -112,3 +112,5 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias pendrive="cd /run/media/$USER/Pendrive"
 alias settime="python2 $HOME/config_files/time_set/time_set.py"
 alias debug="codeblocks *.cbp&!"
+alias debugpy="python -m pudb "
+alias algorithms="~/Dropbox/study/algorithms"
