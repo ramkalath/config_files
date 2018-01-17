@@ -19,8 +19,9 @@ Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'gosukiwi/vim-atom-dark'
+"Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'ericbn/vim-solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -70,12 +71,13 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='distinguished'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-colorscheme atom-dark-256
+set background=dark
+colorscheme solarized
 
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
