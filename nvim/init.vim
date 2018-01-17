@@ -21,7 +21,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-latex/vim-latex'
 call vundle#end()            " required
 filetype plugin indent on    " required
 

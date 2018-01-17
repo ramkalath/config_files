@@ -95,6 +95,7 @@ tmux source-file ~/.tmux.conf
 
 force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
+export TERM=xterm-256color
 
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
