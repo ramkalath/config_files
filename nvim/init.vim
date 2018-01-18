@@ -11,7 +11,6 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
@@ -22,6 +21,7 @@ Plugin 'tikhomirov/vim-glsl'
 "Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ericbn/vim-solarized'
+Plugin 'gilligan/vim-lldb'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -29,8 +29,7 @@ filetype plugin indent on    " required
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
 "set encoding=utf8
-"set ignorecase
-
+set ignorecase
 " ----------------------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
@@ -175,4 +174,3 @@ let g:tex_flavor='latex'
 
 " -----------------------------------------------------------------------------------------
 set virtualedit=onemore 
-:nnoremap <leader>ri :RunInInteractiveShell<space> 

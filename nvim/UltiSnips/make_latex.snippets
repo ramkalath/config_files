@@ -27,7 +27,9 @@ all:
 	pdflatex $(FILENAME).tex
 
 run:
-	bibtex $(FILENAME).aux 
+	pdflatex $(FILENAME).tex
+	bibtex $(FILENAME) 
+	pdflatex $(FILENAME).tex
 	pdflatex $(FILENAME).tex
 
 clean:
