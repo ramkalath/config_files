@@ -18,11 +18,9 @@ Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tikhomirov/vim-glsl'
-"Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ericbn/vim-solarized'
-Plugin 'gilligan/vim-lldb'
-Plugin 'Yggdroot/indentLine'
 Plugin 'matze/vim-tex-fold'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -79,6 +77,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " This sets the color scheme
 set background=dark
 colorscheme solarized
+"colorscheme atom-dark-256
 
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
@@ -106,7 +105,6 @@ set backspace=indent,eol,start
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
-set foldmethod=indent
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-k> -3
@@ -124,7 +122,7 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-set list lcs=tab:\¦\-
+set list lcs=tab:\¦\ 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
