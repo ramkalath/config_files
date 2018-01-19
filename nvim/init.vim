@@ -22,6 +22,7 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ericbn/vim-solarized'
 Plugin 'gilligan/vim-lldb'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -82,9 +83,9 @@ colorscheme solarized
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
 	if &relativenumber
-	   set norelativenumber
+		set norelativenumber
 	else
-	   set relativenumber
+		set relativenumber
 	endif
 endfunction
 
@@ -122,7 +123,7 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-
+set list lcs=tab:\¦\ 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
