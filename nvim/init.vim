@@ -2,6 +2,7 @@
 " set theruntime path to include Vundle and initialize
 set hidden
 set autochdir
+set cursorline
 set nocompatible " This tells vim not to act like it predecessor vi
 syntax enable " enables syntax highlighting
 filetype off
@@ -70,14 +71,14 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='solarized'
+let g:airline_theme='angr'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-set background=dark
-colorscheme solarized
-"colorscheme atom-dark-256
+"set background=dark
+"colorscheme solarized
+colorscheme atom-dark-256
 
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
