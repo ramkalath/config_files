@@ -1,4 +1,4 @@
-" ----------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------
 " set theruntime path to include Vundle and initialize
 set hidden
 set autochdir
@@ -23,15 +23,16 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ericbn/vim-solarized'
 Plugin 'gilligan/vim-lldb'
 Plugin 'Yggdroot/indentLine'
+Plugin 'matze/vim-tex-fold'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" ---------------------------------------------------------------------------------------
+" -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
 "set encoding=utf8
 set ignorecase
-" ----------------------------------------------------------------------------------------
+" -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
 	let template = $HOME . "/config_files/nvim/UltiSnips/cpp.template"
@@ -105,7 +106,7 @@ set backspace=indent,eol,start
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
-set foldmethod=manual
+set foldmethod=indent
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-k> -3
@@ -123,7 +124,7 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-set list lcs=tab:\¦\ 
+set list lcs=tab:\¦\-
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
