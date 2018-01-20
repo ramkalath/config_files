@@ -96,7 +96,7 @@ tmux source-file ~/.tmux.conf
 force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
-
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias tmux="tmux -2"
@@ -115,3 +115,4 @@ alias settime="python2 $HOME/config_files/time_set/time_set.py"
 alias debug="codeblocks *.cbp&!"
 alias debugpy="python -m pudb "
 alias algorithms="~/Dropbox/study/algorithms"
+alias work="/home/ram/Dropbox/study/computervision/augmentedReality/aruco/cpp/aruco_ModernOpenGL"
