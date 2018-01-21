@@ -23,6 +23,8 @@ Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ericbn/vim-solarized'
 Plugin 'matze/vim-tex-fold'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/VimFold4C'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -108,10 +110,10 @@ set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
-:nmap <c-k> -3
 :nmap <c-j> +3
-:vmap <c-k> -3
 :vmap <c-j> +3
+:nmap <c-k> -3
+:vmap <c-k> -3
 :nmap <c-Up> -3
 :nmap <c-Down> +3
 :vmap <c-Up> -3
