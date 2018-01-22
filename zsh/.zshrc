@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ram/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -113,7 +113,7 @@ alias pendrive="cd /run/media/$USER/Pendrive"
 alias settime="python2 $HOME/config_files/time_set/time_set.py"
 alias debug="codeblocks *.cbp&!"
 alias debugpy="python -m pudb "
-export opengl="/home/ram/Dropbox/study/opengl/cpp/glfw/"
-export algorithms="/home/ram/Dropbox/study/algorithms"
-export work_ar="/home/ram/Dropbox/study/computervision/augmentedReality/aruco/cpp/aruco_ModernOpenGL/"
-export work_opengl="/home/ram/Dropbox/study/opengl/cpp/glfw/10_camera_transforms/10_camera_transform_3/"
+export opengl="$HOME/Dropbox/study/opengl/cpp/glfw/"
+export algorithms="$HOME/Dropbox/study/algorithms"
+export work_ar="$HOME/Dropbox/study/computervision/augmentedReality/aruco/cpp/aruco_ModernOpenGL/"
+export work_opengl="$HOME/Dropbox/study/opengl/cpp/glfw/AR_tests/9_perspective_projection_bg_and_fg_spinning_box"

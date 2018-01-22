@@ -8,24 +8,25 @@ syntax enable " enables syntax highlighting
 filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'SirVer/ultisnips'
-Plugin 'bling/vim-airline'
-Plugin 'powerline/fonts'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'gosukiwi/vim-atom-dark'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'ericbn/vim-solarized'
-Plugin 'matze/vim-tex-fold'
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/VimFold4C'
-call vundle#end()            " required
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'SirVer/ultisnips'
+Plug 'bling/vim-airline'
+Plug 'powerline/fonts'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tikhomirov/vim-glsl'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ericbn/vim-solarized'
+Plug 'matze/vim-tex-fold'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/VimFold4C'
+call plug#end()
+
 filetype plugin indent on    " required
 
 " -------------------------------------------------------------------------
@@ -177,3 +178,4 @@ let g:tex_flavor='latex'
 
 " -----------------------------------------------------------------------------------------
 set virtualedit=onemore 
+
