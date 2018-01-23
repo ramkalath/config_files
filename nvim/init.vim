@@ -23,8 +23,6 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ericbn/vim-solarized'
 Plug 'matze/vim-tex-fold'
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/VimFold4C'
 call plug#end()
 
 filetype plugin indent on    " required
