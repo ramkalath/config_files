@@ -32,6 +32,7 @@ filetype plugin indent on    " required
 "set shortmess=A
 "set encoding=utf8
 set ignorecase
+set nobackup
 " -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
