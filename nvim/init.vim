@@ -176,5 +176,5 @@ filetype indent on
 let g:tex_flavor='latex'
 
 " -----------------------------------------------------------------------------------------
-set virtualedit=onemore 
+set virtualedit=onemore
 

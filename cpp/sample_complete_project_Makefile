@@ -1,0 +1,21 @@
+CC = g++
+
+INCLUDE =
+
+LIBS = 
+
+# enter filename without extension
+FILENAME = main
+
+all: $(FILENAME).cpp
+	@$(CC) -g $(INCLUDE) $(FILENAME).cpp -o ../bin/$(FILENAME) $(LIBS)
+
+run:
+	@../bin/$(FILENAME)	
+
+clean:
+	rm ../bin/$(FILENAME) 
+
+project_clean:
+	rm ../debug/*
+
