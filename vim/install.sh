@@ -1,47 +1,57 @@
+# Amme Sharanam!
 # configuring basic vim-------------------------------------------------------------
 # this has both python3 and clipboard support
-pushd /home/$USER/Downloads/ > /dev/null
-echo $PWD
-git clone https://github.com/vim/vim
-pushd vim/ > /dev/null
+
+# lets remove all previous versions of vim
+sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
+
+# lets install dependencies
+sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev python3-dev ruby-full git clang cmake xclip gdb curl
+
+# cloning a copy of vim
+git clone https://github.com/vim/vim $HOME/Downloads/vim
+
+pushd $HOME/Downloads/vim
 ./configure \
-    --enable-perlinterp \
-    --enable-python3interp \
-    --enable-rubyinterp \
-    --enable-cscope \
-    --enable-gui=auto \
-    --enable-gtk2-check \
-    --enable-gnome-check \
-    --with-features=huge \
-    --enable-multibyte \
-    --with-x \
-    --with-compiledby="Senor QA <senor@qa>" \
-    --with-python3-config-dir=/usr/lib/python3.3/config-3.3m-x86_64-linux-gnu
+--enable-multibyte \
+--enable-perlinterp=dynamic \
+--enable-rubyinterp=dynamic \
+--with-ruby-command=/usr/bin/ruby \
+--enable-pythoninterp=dynamic \
+--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+--enable-python3interp \
+--with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
+--enable-luainterp \
+--with-luajit \
+--enable-cscope \
+--enable-gui=auto \
+--with-features=huge \
+--with-x \
+--enable-fontset \
+--enable-largefile \
+--disable-netbeans \
+--enable-fail-if-missing
 make
 sudo make install
 
-# installing vundle----------------------------------------------------------------------
-git clone https://github.com/VundleVim/Vundle.vim.git /home/$USER/.vim/bundle/Vundle.vim
+# installing vundle-------------------------
+pushd $HOME/
+mkdir .vim
+mkdir .vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
-# installing youcompleteme--------------------------------------------------------------
+# installing youcompleteme-----------------
 # make sure that clang is already installed
-git clone https://github.com/Valloric/YouCompleteMe /home/$USER/.vim/bundle/YouCompleteMe/
-pushd /home/$USER/.vim/bundle/YouCompleteMe/ > /dev/null
-echo $PWD
+sudo apt-get install clang
+git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
+pushd $HOME/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 python3 install.py --clang-completer --system-libclang
-git clone https://github.com/rdnetto/YCM-Generator
-
-# Setting up Ultisnips ----------------------------------------------------------------
-cp -rf /home/$USER/config_files/vim/UltiSnips/ /home/$USER/.vim/
 
 # Powerline fonts ---------------------------------------------------------------------
-pushd /home/$USER/Downloads > /dev/null
-echo $PWD
-git clone https://github.com/powerline/fonts.git
-pushd /home/$USER/Downloads/fonts
-echo $PWD
+git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
+pushd $HOME/Downloads/powerline_fonts
 ./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
-cp /home/$USER/config_files/vim/.vimrc /home/$USER/
+ln -s $HOME/config_files/vim/.vimrc $HOME/
