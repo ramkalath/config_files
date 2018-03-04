@@ -86,18 +86,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 plugins=(... fzf-zsh ...)
 
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+# to be used with tmux -----------------------------------------------
+#if command -v tmux>/dev/null; then
+	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
+#tmux source-file ~/.tmux.conf
+# --------------------------------------------------------------------
 
-tmux source-file ~/.tmux.conf
 # bind -r '\C-s'stty -ixon
 
 force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-#alias vim="nvim"
+alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias tmux="tmux -2"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
