@@ -35,23 +35,21 @@ make
 sudo make install
 
 # installing vundle-------------------------
-pushd $HOME/
-mkdir .vim
-mkdir .vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+#pushd $HOME
+#git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # installing youcompleteme-----------------
 # make sure that clang is already installed
-sudo apt-get install clang
-git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
-pushd $HOME/.vim/bundle/YouCompleteMe/
-git submodule update --init --recursive
-python3 install.py --clang-completer --system-libclang
+#sudo apt-get install clang
+#git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
+#pushd $HOME/.vim/bundle/YouCompleteMe/
+#git submodule update --init --recursive
+#python3 install.py --clang-completer --system-libclang
 
 # Powerline fonts ---------------------------------------------------------------------
-git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
-pushd $HOME/Downloads/powerline_fonts
-./install.sh
+#git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
+#pushd $HOME/Downloads/powerline_fonts
+#./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
-ln -s $HOME/config_files/vim/.vimrc $HOME/
+#ln -s $HOME/config_files/vim/.vimrc $HOME/

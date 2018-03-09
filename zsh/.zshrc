@@ -95,6 +95,8 @@ plugins=(... fzf-zsh ...)
 
 # bind -r '\C-s'stty -ixon
 
+set -o vi
+
 force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
