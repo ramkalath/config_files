@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygmalion"
-ZSH_THEME="honukai"
+ZSH_THEME="plain"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,25 +99,20 @@ force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-alias tmux="tmux -2"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-alias paper="cd ~/Dropbox/study/phd/paper_work/25_CSCL/springer_journal_paper/"
-alias cbproject="python ~/config_files/cpp/codeblocks/cbproject.py"
+#alias tmux="tmux -2"
+
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias python="python2"
-alias thesis="cd ~/Dropbox/study/phd/thesis"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-alias pendrive="cd /run/media/$USER/Pendrive"
 alias settime="python2 $HOME/config_files/time_set/time_set.py"
-alias debug="codeblocks *.cbp&!"
-#export debug="nemiver"
+
 alias debugpy="python -m pudb "
-alias update_zshrc="source ~/.zshrc"
-alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
-alias algorithms="cd $HOME/Dropbox/study/algorithms"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
+

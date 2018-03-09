@@ -23,6 +23,7 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ericbn/vim-solarized'
 Plug 'matze/vim-tex-fold'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 filetype plugin indent on    " required
@@ -78,10 +79,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-"set background=dark
+set background=dark
 "colorscheme solarized
-colorscheme atom-dark-256
-
+"colorscheme atom-dark-256
+colorscheme gruvbox
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
