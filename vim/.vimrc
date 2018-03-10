@@ -68,12 +68,12 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='solarized'
+let g:airline_theme='angr'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-colorscheme flattened_dark
+colorscheme atom-dark-256
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
