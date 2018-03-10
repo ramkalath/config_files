@@ -1,5 +1,6 @@
 # nvim installation instructions in arch linux
-
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get -y update
 sudo apt-get -y install neovim git clang cmake xclip gdb curl powerline python-pip
 
 mkdir $HOME/.config/nvim
