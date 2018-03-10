@@ -3,10 +3,10 @@
 # this has both python3 and clipboard support
 
 # lets remove all previous versions of vim
-sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
+sudo apt-get -y remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
 
 # lets install dependencies
-sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev python3-dev ruby-full git clang cmake xclip gdb curl
+sudo apt-get -y install liblua5.1-dev luajit libluajit-5.1 python-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev python3-dev ruby-full git clang cmake xclip gdb curl powerline
 
 # cloning a copy of vim
 git clone https://github.com/vim/vim $HOME/Downloads/vim
@@ -35,21 +35,21 @@ make
 sudo make install
 
 # installing vundle-------------------------
-#pushd $HOME
-#git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+pushd $HOME
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # installing youcompleteme-----------------
 # make sure that clang is already installed
-#sudo apt-get install clang
-#git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
-#pushd $HOME/.vim/bundle/YouCompleteMe/
-#git submodule update --init --recursive
-#python3 install.py --clang-completer --system-libclang
+sudo apt-get -y install clang
+git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
+pushd $HOME/.vim/bundle/YouCompleteMe/
+git submodule update --init --recursive
+python3 install.py --clang-completer --system-libclang
 
 # Powerline fonts ---------------------------------------------------------------------
-#git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
-#pushd $HOME/Downloads/powerline_fonts
-#./install.sh
+git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
+pushd $HOME/Downloads/powerline_fonts
+./install.sh
 
 # copy .vimrc into home folder --------------------------------------------------------
-#ln -s $HOME/config_files/vim/.vimrc $HOME/
+cp $HOME/config_files/vim/.vimrc $HOME

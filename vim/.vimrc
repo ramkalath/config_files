@@ -1,6 +1,11 @@
 " set theruntime path to include Vundle and initialize--------------
 set hidden
 set autochdir
+set cursorline
+set nocompatible
+syntax enable
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -13,15 +18,16 @@ Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'romainl/flattened'
+Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'matze/vim-tex-fold'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open 
-"set shortmess=A
-"set encoding=utf8
 set ignorecase
 set nobackup
+
 " -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()

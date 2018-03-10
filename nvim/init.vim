@@ -21,9 +21,9 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'romainl/flattened'
 Plug 'matze/vim-tex-fold'
 "Plug 'morhetz/gruvbox'
+"Plug 'romainl/flattened'
 call plug#end()
 
 filetype plugin indent on    " required
