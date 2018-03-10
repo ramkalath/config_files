@@ -1,6 +1,6 @@
 # nvim installation instructions in arch linux
 
-sudo apt-get -y install neovim git clang cmake yaourt xclip gdb curl powerline python-pip
+sudo apt-get -y install neovim git clang cmake xclip gdb curl powerline python-pip
 
 mkdir $HOME/.config/nvim
 git clone https://github.com/ramkalath/config_files $HOME/config_files
