@@ -37,7 +37,7 @@ set nobackup
 " -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
-	let template = $HOME . "/config_files/nvim/UltiSnips/cpp.template"
+	let template = "$HOME/config_files/nvim/UltiSnips/cpp.template"
 	let file_name = expand("%:t") " Get file name without path
 	let date = strftime(strftime('%c')) " Get the current year in format YYYY
 	let i = 0
@@ -54,7 +54,7 @@ autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
 " ----------------------------------------------------------------------------------------
 " inserts an automatic header for python files and modifies the time
 function! s:insert_description_py()
-	let template = $HOME . "/config_files/nvim/UltiSnips/python.template"
+	let template = "$HOME/config_files/nvim/UltiSnips/python.template"
 	let file_name = expand("%:t") " Get file name without path
 	let date = strftime(strftime('%c')) " Get the current year in format YYYY
 	let i = 0

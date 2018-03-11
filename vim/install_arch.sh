@@ -1,12 +1,9 @@
 # Amme Sharanam!
 # configuring basic vim-------------------------------------------------------------
 # this has both python3 and clipboard support
-
-# lets remove all previous versions of vim
-sudo apt-get -y remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
-
-# lets install dependencies
-sudo apt-get -y install liblua5.1-dev luajit libluajit-5.1 python-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev python3-dev ruby-full git clang cmake xclip gdb curl powerline
+# dependences installation--------------------------
+sudo pacman -S git clang cmake yaourt xclip gdb curl --noconfirm
+yaourt -S powerline-fonts-git --noconfirm
 
 # cloning a copy of vim
 git clone https://github.com/vim/vim $HOME/Downloads/vim
@@ -40,7 +37,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.v
 
 # installing youcompleteme-----------------
 # make sure that clang is already installed
-sudo apt-get -y install clang
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
 pushd $HOME/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
