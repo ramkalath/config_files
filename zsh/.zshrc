@@ -115,4 +115,4 @@ alias settime="python2 $HOME/config_files/time_set/time_set.py"
 alias debugpy="python -m pudb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
-
+alias paper="~/Dropbox/study/phd/paper_work/"

@@ -19,10 +19,10 @@ Plug 'powerline/fonts'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
-"Plug 'gosukiwi/vim-atom-dark'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
+"Plug 'gosukiwi/vim-atom-dark'
 "Plug 'romainl/flattened'
 call plug#end()
 
