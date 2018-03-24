@@ -3,6 +3,7 @@
 set hidden
 set autochdir
 set cursorline
+
 set nocompatible " This tells vim not to act like it predecessor vi
 syntax enable " enables syntax highlighting
 filetype off
@@ -24,7 +25,8 @@ Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
 "Plug 'gosukiwi/vim-atom-dark'
 Plug 'romainl/flattened'
-Plug 'vim-scripts/Solarized'
+"Plug 'vim-scripts/Solarized'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on    " required
@@ -32,7 +34,7 @@ filetype plugin indent on    " required
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
-"set encoding=utf8
+set encoding=utf8
 set ignorecase
 set nobackup
 " -------------------------------------------------------------------------
@@ -76,7 +78,7 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1 
 let g:airline_theme='angr'
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
@@ -84,9 +86,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set background=dark
 "colorscheme flattened_dark
 "colorscheme atom-dark-256
-"colorscheme gruvbox
-let g:solarized_termcolors=16
-colorscheme solarized
+colorscheme gruvbox
+"let g:solarized_termcolors=16
+"colorscheme solarized
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
