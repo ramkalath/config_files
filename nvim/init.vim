@@ -1,8 +1,10 @@
 " ------------------------------------------------------------------------
 " set theruntime path to include Vundle and initialize
+
 set hidden
 set autochdir
 set cursorline
+set clipboard^=unnamed " This sets the clipboard as the default register. Useful for copy paste from tmux
 
 set nocompatible " This tells vim not to act like it predecessor vi
 syntax enable " enables syntax highlighting
