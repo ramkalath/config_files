@@ -38,6 +38,7 @@ filetype plugin indent on    " required
 set encoding=utf8
 set ignorecase
 set nobackup
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
