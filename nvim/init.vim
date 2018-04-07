@@ -101,7 +101,7 @@ function! ToggleRelativeNumber()
 endfunction
 
 nmap ;r :call ToggleRelativeNumber()<CR>
-set relativenumber
+set norelativenumber
 
 " -----------------------------------------------------------------------------------------
 " youcomplete me configurations
