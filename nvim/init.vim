@@ -27,7 +27,6 @@ Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'vim-scripts/Solarized'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on    " required
