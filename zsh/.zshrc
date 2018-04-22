@@ -113,6 +113,7 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias settime="python2 $HOME/config_files/time_set/time_set.py"
 
 alias debugpy="python -m pudb "
+alias debugcpp="kdevelop --debug gdb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
 alias paper="~/Dropbox/study/phd/paper_work/"
