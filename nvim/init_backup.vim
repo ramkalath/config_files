@@ -75,12 +75,12 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 
 " -----------------------------------------------------------------------------------------
 " This enables the airline extension 
-let g:airline#extensions#tabline#enabled = 1
-set laststatus=2
-let g:airline_powerline_fonts = 1 " this line has a tendency to screw up tmux
-let g:airline_theme='angr'
+"let g:airline#extensions#tabline#enabled = 1
+"set laststatus=2
+"let g:airline_powerline_fonts = 1 " this line has a tendency to screw up tmux
+"let g:airline_theme='angr'
 "let g:airline_theme='solarized'
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
@@ -92,30 +92,30 @@ colorscheme gruvbox
 "colorscheme solarized
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
-function! ToggleRelativeNumber()
-	if &relativenumber
-		set norelativenumber
-	else
-		set relativenumber
-	endif
-endfunction
+"function! ToggleRelativeNumber()
+	"if &relativenumber
+		"set norelativenumber
+	"else
+		"set relativenumber
+	"endif
+"endfunction
 
-nmap ;r :call ToggleRelativeNumber()<CR>
-set norelativenumber
+"nmap ;r :call ToggleRelativeNumber()<CR>
+"set norelativenumber
 
 " -----------------------------------------------------------------------------------------
 " youcomplete me configurations
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_confirm_extra_conf = 0
-"set completeopt-=preview
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set backspace=indent,eol,start
+"let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
+"let g:ycm_auto_trigger = 1
+"let g:ycm_min_num_of_chars_for_completion = 3
+"let g:ycm_confirm_extra_conf = 0
+""set completeopt-=preview
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"set backspace=indent,eol,start
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
-set whichwrap+=<,>,h,l,[,]
+"set whichwrap+=<,>,h,l,[,]
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-j> +3
