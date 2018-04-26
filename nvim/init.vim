@@ -3,7 +3,6 @@
 
 set hidden
 set autochdir
-set cursorline
 set clipboard^=unnamed " This sets the clipboard as the default register. Useful for copy paste from tmux
 
 set nocompatible " This tells vim not to act like it predecessor vi
@@ -33,10 +32,12 @@ filetype plugin indent on    " required
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
+set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set virtualedit=onemore
 " -------------------------------------------------------------------------
 " inserts an automatic header for c, cpp, h and hpp files and modifies the time 
 function! s:insert_description()
@@ -76,6 +77,7 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 " This enables the airline extension 
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
+let g:airline_powerline_fonts = 1
 let g:airline_theme='angr'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -106,7 +108,6 @@ let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_confirm_extra_conf = 0
-"set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
 
@@ -163,7 +164,6 @@ vmap // <leader>c<space>
 :imap <c-l> <Esc>la
 :nmap <c-l> e
 :nmap <c-h> b
-:imap jj <Esc>
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>  
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
@@ -183,4 +183,3 @@ filetype indent on
 let g:tex_flavor='latex'
 
 " -----------------------------------------------------------------------------------------
-set virtualedit=onemore

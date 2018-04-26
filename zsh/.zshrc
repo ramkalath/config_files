@@ -84,26 +84,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-plugins=(... fzf-zsh ...)
-
-# to be used with tmux -----------------------------------------------
-#if command -v tmux>/dev/null; then
-	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-#tmux source-file ~/.tmux.conf
 # --------------------------------------------------------------------
-
-# bind -r '\C-s'stty -ixon
-
 force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+#export VTE_VERSION="100"
 
 alias vim="nvim"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-#alias tmux="tmux -2"
 
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
 alias python="python2"
