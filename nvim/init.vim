@@ -8,7 +8,7 @@ set clipboard^=unnamed " This sets the clipboard as the default register. Useful
 
 set nocompatible " This tells vim not to act like it predecessor vi
 syntax enable " enables syntax highlighting
-filetype off
+"filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call plug#begin()
@@ -18,7 +18,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'bling/vim-airline'
-Plug 'powerline/fonts'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
@@ -77,9 +76,7 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 " This enables the airline extension 
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-let g:airline_powerline_fonts = 1 " this line has a tendency to screw up tmux
 let g:airline_theme='angr'
-"let g:airline_theme='solarized'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " -----------------------------------------------------------------------------------------
@@ -131,8 +128,8 @@ set whichwrap+=<,>,h,l,[,]
 " other editor settings
 set number
 set mouse=a
-"set tabstop=4
-"set shiftwidth=4
+set tabstop=4
+set shiftwidth=4
 set list lcs=tab:\¦\ 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
