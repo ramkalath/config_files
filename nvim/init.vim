@@ -22,9 +22,9 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-tex-fold'
-Plug 'morhetz/gruvbox'
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'vim-scripts/Solarized'
+"Plug 'morhetz/gruvbox'
+"Plug 'vim-scripts/Solarized'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 filetype plugin indent on    " required
@@ -84,11 +84,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"colorscheme flattened_dark
 "colorscheme atom-dark-256
-colorscheme gruvbox
 "let g:solarized_termcolors=16
 "colorscheme solarized
+colorscheme jellybeans
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
@@ -121,9 +120,9 @@ set whichwrap+=<,>,h,l,[,]
 :nmap <c-k> -3
 :vmap <c-k> -3
 :nmap <c-Up> -3
-:nmap <c-Down> +3
+:nmap <c-Down> +3 
 :vmap <c-Up> -3
-:nmap <c-Down> +3
+:nmap <c-Down> +3 
 
 " -----------------------------------------------------------------------------------------
 " other editor settings

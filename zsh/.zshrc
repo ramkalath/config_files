@@ -92,6 +92,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 #export VTE_VERSION="100"
 
 alias vim="nvim"
+alias evince="zathura"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 
@@ -107,3 +108,5 @@ alias debugcpp="kdevelop --debug gdb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
+alias images="/home/ram/workarea/AR_display"
+
