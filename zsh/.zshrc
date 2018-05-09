@@ -109,4 +109,4 @@ alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
 alias images="/home/ram/workarea/AR_display"
-
+alias ardisplaydemo="/home/ram/Dropbox/study/opengl/cpp/glfw/AR_Displays_paper/Springer_journal_Chi_special_issue/src"

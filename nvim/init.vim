@@ -22,7 +22,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-tex-fold'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'vim-scripts/Solarized'
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
@@ -77,7 +77,7 @@ autocmd BufNewFile *.py call <SID>insert_description_py()
 " This enables the airline extension 
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline_theme='angr'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -87,7 +87,8 @@ set background=dark
 "colorscheme atom-dark-256
 "let g:solarized_termcolors=16
 "colorscheme solarized
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme gruvbox
 " -----------------------------------------------------------------------------------------
 " This sets the relative numbering scheme
 function! ToggleRelativeNumber()
