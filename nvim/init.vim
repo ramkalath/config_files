@@ -37,10 +37,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
 
 " -----------------------------------------------------------------------------------------
-set laststatus=2
-set ruler
-set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
-
+set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
