@@ -1,6 +1,5 @@
 " ------------------------------------------------------------------------
 " set theruntime path to include Vundle and initialize
-
 set hidden
 set autochdir
 set clipboard^=unnamed " This sets the clipboard as the default register. Useful for copy paste from tmux
@@ -16,16 +15,12 @@ Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'Valloric/YouCompleteMe'
+Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
-"Plug 'vim-scripts/Solarized'
-Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 filetype plugin indent on    " required
@@ -39,82 +34,21 @@ set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
-" -------------------------------------------------------------------------
-" inserts an automatic header for c, cpp, h and hpp files and modifies the time 
-function! s:insert_description()
-	let template = "$HOME/config_files/nvim/UltiSnips/cpp.template"
-	let file_name = expand("%:t") " Get file name without path
-	let date = strftime(strftime('%c')) " Get the current year in format YYYY
-	let i = 0
-	for line in readfile(template)
-		let line = substitute(line, "<file_name>", file_name, "ge")
-		let line = substitute(line, "<date>", date, "ge")
-		call append(i, line)
-		let i += 1
-	endfor
-	execute "normal! Go\<Esc>k"
-endfunction
-autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
-
-" ----------------------------------------------------------------------------------------
-" inserts an automatic header for python files and modifies the time
-function! s:insert_description_py()
-	let template = "$HOME/config_files/nvim/UltiSnips/python.template"
-	let file_name = expand("%:t") " Get file name without path
-	let date = strftime(strftime('%c')) " Get the current year in format YYYY
-	let i = 0
-	for line in readfile(template)
-		let line = substitute(line, "<file_name>", file_name, "ge")
-		let line = substitute(line, "<date>", date, "ge")
-		let line = substitute(line, "<modified_date>", date, "ge")
-		call append(i, line)
-		let i += 1
-	endfor
-	execute "normal! Go\<Esc>k"
-endfunction
-autocmd BufNewFile *.py call <SID>insert_description_py()
 
 " -----------------------------------------------------------------------------------------
-" This enables the airline extension 
-let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-"let g:airline_powerline_fonts = 1
-let g:airline_theme='angr'
-let g:airline#extensions#tabline#fnamemod = ':t'
+set ruler
+set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"colorscheme atom-dark-256
-"let g:solarized_termcolors=16
-"colorscheme solarized
-"colorscheme jellybeans
 colorscheme gruvbox
-" -----------------------------------------------------------------------------------------
-" This sets the relative numbering scheme
-function! ToggleRelativeNumber()
-	if &relativenumber
-		set norelativenumber
-	else
-		set relativenumber
-	endif
-endfunction
-
-nmap ;r :call ToggleRelativeNumber()<CR>
-set norelativenumber
-
-" -----------------------------------------------------------------------------------------
-" youcomplete me configurations
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set backspace=indent,eol,start
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
+
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-j> +3
@@ -127,12 +61,21 @@ set whichwrap+=<,>,h,l,[,]
 :nmap <c-Down> +3 
 
 " -----------------------------------------------------------------------------------------
+" autocomplete 
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set backspace=indent,eol,start
+" -----------------------------------------------------------------------------------------
 " other editor settings
 set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
 set list lcs=tab:\¦\ 
+
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
