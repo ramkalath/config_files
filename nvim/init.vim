@@ -14,6 +14,7 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'vim-scripts/Conque-GDB'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
