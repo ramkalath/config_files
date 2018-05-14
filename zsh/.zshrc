@@ -96,7 +96,7 @@ alias evince="zathura"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 
-alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
+alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book/writing"
 alias python="python2"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
