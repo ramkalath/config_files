@@ -34,6 +34,7 @@ set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
+:tnoremap <Esc> <C-\><C-n>
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0

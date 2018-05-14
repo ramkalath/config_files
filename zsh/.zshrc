@@ -95,6 +95,8 @@ alias vim="nvim"
 alias evince="zathura"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
+alias pwdc="echo $PWD | xclip"
+alias pwdp="xclip -o"
 
 alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book/writing"
 alias python="python2"
