@@ -13,6 +13,7 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call plug#begin()
 Plug 'VundleVim/Vundle.vim'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/Conque-GDB'
