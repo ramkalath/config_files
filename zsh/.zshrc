@@ -104,6 +104,7 @@ alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias settime="python2 $HOME/config_files/time_set/time_set.py"
+alias code="cd ~/Dropbox/study/computervision/Augmented_Reality_book/code"
 
 alias debugpy="python -m pudb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
