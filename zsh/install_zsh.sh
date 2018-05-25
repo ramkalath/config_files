@@ -16,3 +16,4 @@ sudo ./install --bin
 git clone https://github.com/Treri/fzf-zsh.git ${ZSH}/custom/plugins/fzf-zsh
 
 echo "plugins=(... fzf-zsh ...)" >> $(HOME)/config_files/zsh/.zshrc
+wget https://raw.githubusercontent.com/jimeh/plain.zsh-theme/master/plain.zsh-theme ~/.oh-my-zsh/themes/
