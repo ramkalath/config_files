@@ -9,7 +9,7 @@ syntax enable " enables syntax highlighting
 "filetype off
 filetype plugin indent on    " identify the kind of filetype automatically
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
 Plug 'VundleVim/Vundle.vim'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
