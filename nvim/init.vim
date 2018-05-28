@@ -24,7 +24,6 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " -------------------------------------------------------------------------
@@ -43,8 +42,7 @@ set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"colorscheme gruvbox
-colorscheme jellybeans
+colorscheme gruvbox
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
