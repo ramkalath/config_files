@@ -89,7 +89,7 @@ force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-#export VTE_VERSION="100"
+export VTE_VERSION="100"
 
 alias vim="nvim"
 alias evince="zathura"

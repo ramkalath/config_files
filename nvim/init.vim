@@ -24,6 +24,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " -------------------------------------------------------------------------
@@ -42,7 +43,8 @@ set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme jellybeans
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -74,7 +76,6 @@ set mouse=a
 set tabstop=4
 set shiftwidth=4
 set list lcs=tab:\¦\ 
-
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
