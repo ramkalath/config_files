@@ -89,26 +89,23 @@ force_color_prompt=yes
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-export VTE_VERSION="100"
+#export VTE_VERSION="100"
 
 alias vim="nvim"
 alias evince="zathura"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-alias pwdc="echo $PWD | xclip"
-alias pwdp="xclip -o"
 
-alias book="cd ~/workarea/Augmented_Reality_book/AR_book"
 alias python="python2"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-alias settime="python2 $HOME/config_files/time_set/time_set.py"
-alias code="cd ~/workarea/Augmented_Reality_book/Augmented_Reality_Tutorials"
 
 alias debugpy="python -m pudb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
 alias images="/home/ram/workarea/AR_display"
-alias ardisplaydemo="/home/ram/Dropbox/study/opengl/cpp/glfw/AR_Displays_paper/Springer_journal_Chi_special_issue/src"
+#alias ardisplaydemo="/home/ram/Dropbox/study/opengl/cpp/glfw/AR_Displays_paper/Springer_journal_Chi_special_issue/src"
+alias code="cd ~/workarea/Augmented_Reality_book/writing"
+alias book="cd ~/workarea/Augmented_Reality_book/code"
