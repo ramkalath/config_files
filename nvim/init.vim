@@ -22,9 +22,19 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vheon/vim-cursormode'
 "Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
 call plug#end()
+
+
+let cursormode_color_map = {
+      \   "n":      "#FFFFFF",
+      \   "i":      "#0000FF",
+      \   "v":      "#00FF00",
+      \   "V":      "#FF0000",
+      \   "\<C-V>": "#FFFF00",
+      \ }
 
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
