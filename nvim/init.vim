@@ -22,7 +22,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vheon/vim-cursormode'
 "Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
 call plug#end()
