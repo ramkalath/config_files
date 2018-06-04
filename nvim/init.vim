@@ -22,29 +22,27 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
 call plug#end()
-
-
-let cursormode_color_map = {
-      \   "n":      "#FFFFFF",
-      \   "i":      "#0000FF",
-      \   "v":      "#00FF00",
-      \   "V":      "#FF0000",
-      \   "\<C-V>": "#FFFF00",
-      \ }
 
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
 set cursorline
+set foldmethod=syntax
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
 :tnoremap <Esc> <C-\><C-n>
+
+" mkview to remember all the folds
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0
