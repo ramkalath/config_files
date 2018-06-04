@@ -22,27 +22,21 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jiangmiao/auto-pairs'
+"Plug 'matze/vim-tex-fold'
 Plug 'morhetz/gruvbox'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
 set cursorline
-set foldmethod=syntax
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
 :tnoremap <Esc> <C-\><C-n>
-
-" mkview to remember all the folds
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0
@@ -132,3 +126,7 @@ filetype indent on
 let g:tex_flavor='latex'
 
 " -----------------------------------------------------------------------------------------
+let g:vitality_tmux_can_focus=1
+highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=24
+au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * setlocal cursorline
+au WinLeave,FocusLost,CmdwinLeave * setlocal nocursorline

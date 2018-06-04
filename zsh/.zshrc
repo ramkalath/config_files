@@ -110,3 +110,9 @@ alias images="/home/ram/workarea/AR_display"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/writing/chapters && evince ~/workarea/Augmented_Reality_book/writing/book_v1.pdf&!"
 alias handmadehero="cd ~/workarea/handmadehero"
+
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
+tmux source-file ~/.tmux.conf
