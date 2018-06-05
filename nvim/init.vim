@@ -30,6 +30,13 @@ call plug#end()
 " -------------------------------------------------------------------------
 "" prevent vim from giving a warning it the swp file is open 
 "set shortmess=A
+set foldmethod=syntax
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave ?* mkview
+  autocmd BufWinEnter ?* silent loadview
+augroup END
+
 set cursorline
 set encoding=utf8
 set ignorecase
