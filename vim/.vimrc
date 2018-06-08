@@ -1,105 +1,60 @@
-" set theruntime path to include Vundle and initialize--------------
+" ------------------------------------------------------------------------
+" set theruntime path to include Vundle and initialize
 set hidden
 set autochdir
-set cursorline
-set nocompatible
-syntax enable
-filetype off
+set clipboard^=unnamed " This sets the clipboard as the default register. Useful for copy paste from tmux
+
+set nocompatible " This tells vim not to act like it predecessor vi
+syntax enable " enables syntax highlighting
+"filetype off
+filetype plugin indent on    " identify the kind of filetype automatically
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-scripts/Conque-GDB'
 Plugin 'SirVer/ultisnips'
-Plugin 'bling/vim-airline'
-Plugin 'powerline/fonts'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ap/vim-buftabline'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'matze/vim-tex-fold'
+"Plugin 'matze/vim-tex-fold'
+Plugin 'morhetz/gruvbox'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 call vundle#end()            " required
-filetype plugin indent on    " required
 "---------------------------------------------------------------------
-" prevent vim from giving a warning it the swp file is open 
+"" prevent vim from giving a warning it the swp file is open 
+"set shortmess=A
+set foldmethod=syntax
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave ?* mkview
+  autocmd BufWinEnter ?* silent loadview
+augroup END
+
+set cursorline
+set encoding=utf8
 set ignorecase
 set nobackup
-
-" -------------------------------------------------------------------------
-" inserts an automatic header for c, cpp, h and hpp files and modifies the time 
-function! s:insert_description()
-	let template = "$HOME/config_files/nvim/UltiSnips/cpp.template"
-	let file_name = expand("%:t") " Get file name without path
-	let date = strftime(strftime('%c')) " Get the current year in format YYYY
-	let i = 0
-	for line in readfile(template)
-		let line = substitute(line, "<file_name>", file_name, "ge")
-		let line = substitute(line, "<date>", date, "ge")
-		call append(i, line)
-		let i += 1
-	endfor
-	execute "normal! Go\<Esc>k"
-endfunction
-autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
-
-" ----------------------------------------------------------------------------------------
-" inserts an automatic header for python files and modifies the time
-function! s:insert_description_py()
-	let template = "$HOME/config_files/nvim/UltiSnips/python.template"
-	let file_name = expand("%:t") " Get file name without path
-	let date = strftime(strftime('%c')) " Get the current year in format YYYY
-	let i = 0
-	for line in readfile(template)
-		let line = substitute(line, "<file_name>", file_name, "ge")
-		let line = substitute(line, "<date>", date, "ge")
-		let line = substitute(line, "<modified_date>", date, "ge")
-		call append(i, line)
-		let i += 1
-	endfor
-	execute "normal! Go\<Esc>k"
-endfunction
-autocmd BufNewFile *.py call <SID>insert_description_py()
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set virtualedit=onemore
+:tnoremap <Esc> <C-\><C-n>
 
 " -----------------------------------------------------------------------------------------
-" This enables the airline extension 
-let g:airline#extensions#tabline#enabled = 1
-set laststatus=2
-let g:airline_powerline_fonts = 1 
-let g:airline_theme='angr'
-let g:airline#extensions#tabline#fnamemod = ':t'
-
+set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-colorscheme atom-dark-256
-" -----------------------------------------------------------------------------------------
-" This sets the relative numbering scheme
-function! ToggleRelativeNumber()
-	if &relativenumber
-		set norelativenumber
-	else
-		set relativenumber
-	endif
-endfunction
-
-nmap ;r :call ToggleRelativeNumber()<CR>
-set relativenumber
-
-" -----------------------------------------------------------------------------------------
-" youcomplete me configurations
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_confirm_extra_conf = 0
-"set completeopt-=preview
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set backspace=indent,eol,start
+set background=dark
+colorscheme gruvbox
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
+
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
 :nmap <c-j> +3
@@ -107,10 +62,18 @@ set whichwrap+=<,>,h,l,[,]
 :nmap <c-k> -3
 :vmap <c-k> -3
 :nmap <c-Up> -3
-:nmap <c-Down> +3
+:nmap <c-Down> +3 
 :vmap <c-Up> -3
-:nmap <c-Down> +3
+:nmap <c-Down> +3 
 
+" -----------------------------------------------------------------------------------------
+" autocomplete 
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set backspace=indent,eol,start
 " -----------------------------------------------------------------------------------------
 " other editor settings
 set number
@@ -133,6 +96,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 :nmap <c-p> :bprev<CR>
 :ab Wq :wq
 :ab W :w
+:ab WQ :wq
+:ab Q :q
 :set guitablabel=%t  " show only the file name an not the path 
 :au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 
@@ -148,25 +113,33 @@ vmap // <leader>c<space>
 :imap <c-l> <Esc>la
 :nmap <c-l> e
 :nmap <c-h> b
-:imap jj <Esc>
 :imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>  
 :nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
 :nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
 :nmap <C-Right> e
 
-" -----------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsSnippetDirectories = ['/$HOME/config_files/nvim/UltiSnips', 'UltiSnips']
 
-" -----------------------------------------------------------------------------------------
+" -------------------------------------------------------------------------------
 " latex stuff 
 filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
 
-" -----------------------------------------------------------------------------------------
-set virtualedit=onemore
-
+" -------------------------------------------------------------------------------
+"changes cursor color between insert mode and normal mode
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;green\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+endif

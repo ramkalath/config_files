@@ -85,13 +85,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # --------------------------------------------------------------------
+# open urxvt with the same path in new window
+
+#alias nw="urxvt&!"
+#nwZle() { zle push-line; BUFFER="nw"; zle accept-line; }
+#zle -N nwZle
+## CTRL+n
+
+bindkey '^n' nwZle
 force_color_prompt=yes
+export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 #export VTE_VERSION="100"
 
-alias vim="nvim"
+#alias vim="nvim"
 alias evince="zathura"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
@@ -110,9 +119,3 @@ alias images="/home/ram/workarea/AR_display"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/writing/chapters && evince ~/workarea/Augmented_Reality_book/writing/book_v1.pdf&!"
 alias handmadehero="cd ~/workarea/handmadehero"
-
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
-tmux source-file ~/.tmux.conf

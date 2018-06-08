@@ -53,4 +53,4 @@ pushd $HOME/Downloads/powerline_fonts
 
 # copy .vimrc into home folder --------------------------------------------------------
 cp $HOME/config_files/vim/.vimrc $HOME
-cp -rf $HOME/config_files/nvim/UltiSnips $HOME/.vim
+ln -s $HOME/config_files/nvim/UltiSnips $HOME/.vim
