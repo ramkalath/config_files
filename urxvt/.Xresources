@@ -2,6 +2,10 @@ URxvt.font: xft:monospace:size=10
 URxvt.scrollBar: false
 URxvt.boldFont:
 
+! Fullscreen switch
+URxvt.perl-ext-common:  fullscreen
+URxvt.keysym.F11:       perl:fullscreen:switch
+
 !color scheme gruvbox -----------------------------------------------
 ! hard contrast: *background: #1d2021
 *background: #282828

@@ -113,12 +113,9 @@ vmap // <leader>c<space>
 :imap <c-l> <Esc>la
 :nmap <c-l> e
 :nmap <c-h> b
-:imap <c-c><c-c> <Esc>:update<CR>\|<Esc>:!make<CR>  
-:nmap <c-c><c-c> :update<CR>\|<Esc>:!make<CR>
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>
-:nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
 :nmap <C-Right> e
-
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
+:nmap <c-x><c-x> :update<CR>\|<Esc>:!rxvt -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"
