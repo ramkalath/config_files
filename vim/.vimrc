@@ -6,43 +6,30 @@ set clipboard^=unnamed " This sets the clipboard as the default register. Useful
 
 set nocompatible " This tells vim not to act like it predecessor vi
 syntax enable " enables syntax highlighting
-"filetype off
 filetype plugin indent on    " identify the kind of filetype automatically
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/Conque-GDB'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ap/vim-buftabline'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'jiangmiao/auto-pairs'
-"Plugin 'matze/vim-tex-fold'
 Plugin 'morhetz/gruvbox'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
 call vundle#end()            " required
-"---------------------------------------------------------------------
-"" prevent vim from giving a warning it the swp file is open 
-"set shortmess=A
-set foldmethod=syntax
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave ?* mkview
-  autocmd BufWinEnter ?* silent loadview
-augroup END
 
+"---------------------------------------------------------------------
+" prevent vim from giving a warning it the swp file is open 
+set shortmess=A
+set foldmethod=syntax
 set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set virtualedit=onemore
-:tnoremap <Esc> <C-\><C-n>
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0
@@ -74,13 +61,15 @@ let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
+
 " -----------------------------------------------------------------------------------------
 " other editor settings
 set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-set list lcs=tab:\¦\ 
+set list lcs=tab:\¦\
+
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
@@ -89,6 +78,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
 
 " -----------------------------------------------------------------------------------------
 " navigates to the next buffer
@@ -101,6 +91,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 :set guitablabel=%t  " show only the file name an not the path 
 :au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 
+" start the terminal in the given path by typing :t on the minibuffer
+:ab t :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
 " -----------------------------------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -114,14 +106,15 @@ vmap // <leader>c<space>
 :nmap <c-l> e
 :nmap <c-h> b
 :nmap <C-Right> e
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
-:nmap <c-x><c-x> :update<CR>\|<Esc>:!rxvt -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
+:nmap <c-x><c-x> :update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>
+":imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:"make && make run"<CR>  
+":nmap <c-x><c-x> :update<CR>\|<Esc>:"make && make run"<CR>
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsSnippetDirectories = ['/$HOME/config_files/nvim/UltiSnips', 'UltiSnips']
-
 " -------------------------------------------------------------------------------
 " latex stuff 
 filetype plugin on
@@ -130,7 +123,7 @@ let g:tex_flavor='latex'
 
 " -------------------------------------------------------------------------------
 "changes cursor color between insert mode and normal mode
-if &term =~ "xterm\\|rxvt"
+if &term =~ "xterm\\|urxvt"
   " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;green\x7"
   " use a red cursor otherwise
@@ -138,5 +131,10 @@ if &term =~ "xterm\\|rxvt"
   silent !echo -ne "\033]12;red\007"
   " reset cursor when vim exits
   autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+  " use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 endif
+
+au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
+        \ execute("normal `\"") |
+    \ endif

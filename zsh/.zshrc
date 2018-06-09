@@ -85,16 +85,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # --------------------------------------------------------------------
+force_color_prompt=yes
+export TERM=xterm-256color
+
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
 tmux source-file ~/.tmux.conf
-force_color_prompt=yes
 
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
-export TERM=xterm-256color
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 #export VTE_VERSION="100"
 
