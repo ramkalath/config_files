@@ -94,7 +94,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 :au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 
 " start the terminal in the given path by typing :t on the minibuffer
-:ab t :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
+:ab terminal :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
 " -----------------------------------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
