@@ -1,6 +1,7 @@
 # Amme Sharanam!
 # configuring basic vim-------------------------------------------------------------
 # this has both python3 and clipboard support
+# run this shell script only with a bash shell not zsh or fish or ksh
 
 # lets remove all previous versions of vim
 sudo apt-get -y remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
@@ -46,11 +47,6 @@ pushd $HOME/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 python3 install.py --clang-completer --system-libclang
 
-# Powerline fonts ---------------------------------------------------------------------
-git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts
-pushd $HOME/Downloads/powerline_fonts
-./install.sh
-
 # copy .vimrc into home folder --------------------------------------------------------
-cp $HOME/config_files/vim/.vimrc $HOME
+ln -s $HOME/config_files/vim/.vimrc $HOME
 ln -s $HOME/config_files/nvim/UltiSnips $HOME/.vim
