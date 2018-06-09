@@ -4,9 +4,15 @@ URxvt.font:     xft:bitstream vera sans mono:size=10:antialias=true
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
+URxvt*cursorColor: #FF0000
+
+URxvt.keysym.M-C-1: command:\033]710;suxuseuro\007\033]711;suxuseuro\007
+URxvt.keysym.M-C-2: command:\033]710;9x15bold\007\033]711;9x15bold\007
+
 ! Fullscreen switch
 URxvt.perl-ext-common:  fullscreen
 URxvt.keysym.F11:       perl:fullscreen:switch
+
 
 !color scheme gruvbox -----------------------------------------------
 ! hard contrast: *background: #1d2021

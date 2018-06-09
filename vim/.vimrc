@@ -24,12 +24,13 @@ call vundle#end()            " required
 "---------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open 
 set shortmess=A
-set foldmethod=syntax
+"set foldmethod=syntax
 set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set virtualedit=onemore
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0
@@ -68,7 +69,10 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-set list lcs=tab:\¦\
+
+" setting indent markers-------------------------------------------------------------------
+set listchars=tab:\|\ 
+set list
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
