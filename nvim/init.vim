@@ -17,9 +17,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
-Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
+Plug 'tikhomirov/vim-glsl'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
 " -------------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open 
@@ -37,7 +38,8 @@ set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme gruvbox
+let g:solarized_use16 = 1
+colorscheme solarized8_dark
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
