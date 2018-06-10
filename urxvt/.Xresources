@@ -5,6 +5,8 @@ URxvt.boldFont:
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #FF0000
+URxvt*borderLess: true
+URxvt*internalBorder: 3
 
 URxvt.keysym.M-C-1: command:\033]710;suxuseuro\007\033]711;suxuseuro\007
 URxvt.keysym.M-C-2: command:\033]710;9x15bold\007\033]711;9x15bold\007
@@ -15,7 +17,8 @@ URxvt.keysym.F11:       perl:fullscreen:switch
 
 !color scheme gruvbox -----------------------------------------------
 ! hard contrast: *background: #1d2021
-*background: #282828
+!*background: #282828
+*background: #161719
 ! soft contrast: *background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey
