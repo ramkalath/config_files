@@ -17,13 +17,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
-Plug 'tikhomirov/vim-glsl'
-Plug 'powerline/fonts'
-
 Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-solarized8'
-Plug 'vim-scripts/xoria256.vim'
-Plug 'sickill/vim-sunburst'
+Plug 'Yggdroot/indentLine'
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
 " -------------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open 
@@ -41,9 +37,7 @@ set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"let g:solarized_use16 = 1
-"colorscheme solarized8_dark
-colorscheme xoria256
+colorscheme gruvbox
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -75,6 +69,8 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
+" setting indent markers-------------------------------------------------------------------
+let g:indentLine_char = '|'
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
@@ -143,6 +139,6 @@ let g:tex_flavor='latex'
 
 " remember where the cursor was in the previous session; not if the file is gitcommit
 au BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
-	\ execute("normal `\"") |
-\ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
+        \ execute("normal `\"") |
+    \ endif
