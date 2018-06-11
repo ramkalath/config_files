@@ -1,13 +1,9 @@
-!URxvt.font: xft:monospace:size=10
-!URxvt.boldFont:
-!URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true
-
 URxvt.font: xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #FF0000
-URxvt*borderLess: true
+URxvt*borderLess: false
 URxvt*internalBorder: 3
 
 URxvt.keysym.M-C-1: command:\033]710;suxuseuro\007\033]711;suxuseuro\007

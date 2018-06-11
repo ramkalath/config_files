@@ -18,12 +18,12 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
-Plug 'powerline/fonts'
+"Plug 'powerline/fonts'
 
-Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-solarized8'
+"Plug 'morhetz/gruvbox'
+"Plug 'lifepillar/vim-solarized8'
 Plug 'vim-scripts/xoria256.vim'
-Plug 'sickill/vim-sunburst'
+"Plug 'sickill/vim-sunburst'
 call plug#end()
 " -------------------------------------------------------------------------
 " prevent vim from giving a warning it the swp file is open 
