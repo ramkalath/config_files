@@ -5,18 +5,17 @@ URxvt.boldFont:
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #FF0000
-!URxvt*borderLess: true
+URxvt*borderLess: true
 URxvt*internalBorder: 3
 
 URxvt.keysym.M-C-1: command:\033]710;suxuseuro\007\033]711;suxuseuro\007
 URxvt.keysym.M-C-2: command:\033]710;9x15bold\007\033]711;9x15bold\007
 
 ! Fullscreen switch
-URxvt.perl-ext-common:  fullscreen
-URxvt.keysym.F11:       perl:fullscreen:switch
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
 
 ! Tango theme
-
 URxvt.background: #161719
 URxvt.foreground: #DEDEDE
 
