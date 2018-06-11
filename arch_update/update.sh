@@ -1,1 +1,1 @@
-sudo pacman -Syyu --ignore networkmanager pulseaudio
+sudo pacman -Syyu --ignore networkmanager --ignore pulseaudio
