@@ -2,7 +2,7 @@ URxvt.font: xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
-URxvt*cursorColor: #FF0000
+URxvt*cursorColor: #00FF00
 URxvt*borderLess: false
 URxvt*internalBorder: 3
 
