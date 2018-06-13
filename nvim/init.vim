@@ -18,6 +18,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
+Plug 'takac/vim-hardtime'
 "Plug 'powerline/fonts'
 
 "Plug 'morhetz/gruvbox'
@@ -25,7 +26,9 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'vim-scripts/xoria256.vim'
 "Plug 'sickill/vim-sunburst'
 call plug#end()
+let g:hardtime_default_on = 1
 " -------------------------------------------------------------------------
+:set relativenumber
 " prevent vim from giving a warning it the swp file is open 
 set shortmess=A
 "set foldmethod=syntax

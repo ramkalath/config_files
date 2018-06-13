@@ -6,7 +6,7 @@ URxvt.font: xft:inconsolata:pixelsize=17:antialias=true:hinting=true, xft:dejavu
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
-URxvt*cursorColor: #FF0000
+URxvt*cursorColor: #00FF00
 URxvt*borderLess: true
 URxvt*internalBorder: 3
 
@@ -18,7 +18,7 @@ URxvt.perl-ext-common: fullscreen
 URxvt.keysym.F11: perl:fullscreen:switch
 
 ! Tango theme
-URxvt.background: #161719
+URxvt.background: #1c1c1c
 URxvt.foreground: #DEDEDE
 
 ! black
