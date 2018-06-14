@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # --------------------------------------------------------------------
+xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color
