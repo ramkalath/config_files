@@ -18,7 +18,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
-Plug 'takac/vim-hardtime'
 "Plug 'powerline/fonts'
 
 "Plug 'morhetz/gruvbox'
