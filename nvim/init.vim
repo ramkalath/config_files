@@ -20,7 +20,7 @@ Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
 "Plug 'powerline/fonts'
 
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'lifepillar/vim-solarized8'
 Plug 'vim-scripts/xoria256.vim'
 "Plug 'sickill/vim-sunburst'
@@ -45,8 +45,7 @@ set laststatus=0
 set background=dark
 "let g:solarized_use16 = 1
 "colorscheme solarized8_dark
-colorscheme xoria256
-
+colorscheme gruvbox
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
