@@ -56,10 +56,6 @@ set whichwrap+=<,>,h,l,[,]
 :vmap <c-j> +3
 :nmap <c-k> -3
 :vmap <c-k> -3
-:nmap <c-Up> -3
-:nmap <c-Down> +3 
-:vmap <c-Up> -3
-:nmap <c-Down> +3 
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
@@ -109,8 +105,6 @@ vmap // <leader>c<space>
 :imap vv <Esc>v
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
-:nmap <c-l> e
-:nmap <c-h> b
 :nmap <C-Right> e
 " when using vim use this
 ":imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
@@ -141,6 +135,7 @@ let g:tex_flavor='latex'
   "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 "endif
 
+" -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
