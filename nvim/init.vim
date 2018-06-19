@@ -18,7 +18,9 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'tikhomirov/vim-glsl'
-"Plug 'morhetz/gruvbox'
+"Plug 'powerline/fonts'
+
+Plug 'morhetz/gruvbox'
 "Plug 'lifepillar/vim-solarized8'
 Plug 'vim-scripts/xoria256.vim'
 "Plug 'sickill/vim-sunburst'
@@ -43,8 +45,7 @@ set laststatus=0
 set background=dark
 "let g:solarized_use16 = 1
 "colorscheme solarized8_dark
-colorscheme xoria256
-
+colorscheme gruvbox
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
@@ -55,10 +56,6 @@ set whichwrap+=<,>,h,l,[,]
 :vmap <c-j> +3
 :nmap <c-k> -3
 :vmap <c-k> -3
-:nmap <c-Up> -3
-:nmap <c-Down> +3 
-:vmap <c-Up> -3
-:nmap <c-Down> +3 
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
@@ -97,7 +94,7 @@ let g:NERDTreeDirArrowCollapsible = '>'
 :au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 
 " start the terminal in the given path by typing :t on the minibuffer
-:ab terminal :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
+:ab _terminal_ :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
 " -----------------------------------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -108,8 +105,6 @@ vmap // <leader>c<space>
 :imap vv <Esc>v
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
-:nmap <c-l> e
-:nmap <c-h> b
 :nmap <C-Right> e
 " when using vim use this
 ":imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
@@ -140,6 +135,7 @@ let g:tex_flavor='latex'
   "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 "endif
 
+" -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
