@@ -16,7 +16,6 @@ URxvt.keysym.F11: perl:fullscreen:switch
 ! Tango theme
 URxvt.background: #161719
 URxvt.foreground: #DEDEDE
-
 ! black
 URxvt.color0  : #2E3436
 URxvt.color8  : #555753
@@ -41,3 +40,4 @@ URxvt.color14 : #34E2E2
 ! white
 URxvt.color7  : #D3D7CF
 URxvt.color15 : #EEEEEC
+

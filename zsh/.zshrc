@@ -101,6 +101,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
 alias evince="zathura"
+#alias ls="ls -l"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 
