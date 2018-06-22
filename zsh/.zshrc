@@ -118,4 +118,4 @@ alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
 alias images="/home/ram/workarea/AR_display"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/writing/chapters && evince ~/workarea/Augmented_Reality_book/writing/book_v1.pdf&!"
-
+alias cb_project_create="python ~/.codeblocks/cbproject.py"
