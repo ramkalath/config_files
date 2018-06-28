@@ -1,1 +1,1 @@
-sudo pacman -Syyu --ignore networkmanager --ignore pulseaudio --force
+sudo pacman -Syyu --ignore networkmanager --ignore pulseaudio --overwrite
