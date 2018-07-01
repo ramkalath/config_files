@@ -101,8 +101,7 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
-alias evince="zathura"
-#alias ls="ls -l"
+evince(){zathura "$1"&!}
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
 
@@ -120,4 +119,3 @@ alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/writing/chapters && evince ~/workarea/Augmented_Reality_book/writing/book_v1.pdf&!"
 alias cb_project_create="python ~/.codeblocks/cbproject.py"
 cb(){codeblocks "$1" > /dev/null &!}
-

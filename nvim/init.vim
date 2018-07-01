@@ -141,3 +141,5 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
 	\ execute("normal `\"") |
 \ endif
+
+
