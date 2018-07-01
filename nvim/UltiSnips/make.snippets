@@ -2,6 +2,8 @@ snippet make "this creates a simple makefile for c++" b
 
 CC = g++
 
+CFLAGS = -g
+
 INCLUDE =
 
 LIBS = 
@@ -10,7 +12,7 @@ LIBS =
 FILENAME =
 
 all: $(FILENAME).cpp
-	@$(CC) -g $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)
+	@$(CC) $(CFLAGS) $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)
 
 run:
 	@./$(FILENAME)	
