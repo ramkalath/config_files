@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
+Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
 "Plug 'powerline/fonts'
 
@@ -141,5 +142,3 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
 	\ execute("normal `\"") |
 \ endif
-
-

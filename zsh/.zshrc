@@ -103,13 +103,12 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
 evince(){zathura "$1"&!}
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-
+#alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/examples/.ycm_extra_conf.py"
 alias python="python2"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-
+alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
 alias debugpy="python -m pudb "
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
