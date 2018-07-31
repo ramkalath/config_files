@@ -19,12 +19,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ap/vim-buftabline'
 Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
-"Plug 'powerline/fonts'
-
 Plug 'morhetz/gruvbox'
-"Plug 'lifepillar/vim-solarized8'
-Plug 'vim-scripts/xoria256.vim'
-"Plug 'sickill/vim-sunburst'
+Plug 'HenryNewcomer/vim-theme-papaya'
 call plug#end()
 let g:hardtime_default_on = 1
 " -------------------------------------------------------------------------
@@ -47,6 +43,7 @@ set background=dark
 "let g:solarized_use16 = 1
 "colorscheme solarized8_dark
 colorscheme gruvbox
+
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]
@@ -112,6 +109,7 @@ vmap // <leader>c<space>
 ":nmap <c-x><c-x> :update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>  
 :nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
+
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"

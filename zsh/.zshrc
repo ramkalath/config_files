@@ -103,22 +103,25 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
 evince(){zathura "$1"&!}
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-#alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/examples/.ycm_extra_conf.py"
 alias python="python2"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
+alias hangouts="$HOME/Downloads/yakyak-linux-x64/./yakyak >/dev/null &!"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
 alias debugpy="python -m pudb "
-alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias setup_project="python ~/config_files/cpp/organized_cpp_project.py" 
+alias cb_project_create="python ~/.codeblocks/cbproject.py"
+cb(){codeblocks "$1" > /dev/null &!}
+
+alias kill_sessions_tmux="tmux kill-session -a"
+
+alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
 alias images="/home/ram/workarea/AR_display"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/AR_book/chapters && evince ~/workarea/Augmented_Reality_book/AR_book/book_v1.pdf&!"
-alias cb_project_create="python ~/.codeblocks/cbproject.py"
-alias hangouts="$HOME/Downloads/yakyak-linux-x64/./yakyak >/dev/null &!"
 alias landslide="cd $HOME/Dropbox/study/landslide/fmc_code_for_c5"
 alias ssh_munnar="cd $HOME/Dropbox/study/landslide/ssh_munnar"
-alias kill_sessions_tmux="tmux kill-session -a"
-cb(){codeblocks "$1" > /dev/null &!}
+alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
+
