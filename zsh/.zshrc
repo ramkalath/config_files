@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
+set -o vi
 export TERM=xterm-256color
 
 if command -v tmux>/dev/null; then
@@ -118,7 +119,7 @@ alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
-alias images="/home/ram/workarea/AR_display"
+alias images="$HOME/workarea/book_images"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/AR_book/chapters && evince ~/workarea/Augmented_Reality_book/AR_book/book_v1.pdf&!"
 alias landslide="cd $HOME/Dropbox/study/landslide/fmc_code_for_c5"
