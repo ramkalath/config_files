@@ -106,7 +106,6 @@ evince(){zathura "$1"&!}
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias skype="~/Downloads/skype/usr/bin/skypeforlinux"
-alias hangouts="$HOME/Downloads/yakyak-linux-x64/./yakyak >/dev/null &!"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
