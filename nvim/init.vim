@@ -140,3 +140,9 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
 	\ execute("normal `\"") |
 \ endif
+
+
+" -------------------------------------------------------------------------------
+" highlight a TODO: occurrence with bright red
+:highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
+:match TODO /TODO:/
