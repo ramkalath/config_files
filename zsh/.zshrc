@@ -118,7 +118,7 @@ alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
-alias images="$HOME/workarea/book_images/ch14"
+alias images="$HOME/workarea/book_images/ch15"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/AR_book/chapters && evince ~/workarea/Augmented_Reality_book/AR_book/book_v1.pdf&!"
 alias landslide="cd $HOME/Dropbox/study/landslide/fmc_code_for_c5"
