@@ -11,16 +11,13 @@ filetype plugin indent on    " identify the kind of filetype automatically
 
 set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
-Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
-Plug 'ap/vim-buftabline'
 Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
-Plug 'HenryNewcomer/vim-theme-papaya'
 call plug#end()
 let g:hardtime_default_on = 1
 " -------------------------------------------------------------------------
@@ -40,8 +37,6 @@ set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"let g:solarized_use16 = 1
-"colorscheme solarized8_dark
 colorscheme gruvbox
 
 " -----------------------------------------------------------------------------------------
@@ -70,6 +65,8 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
+" always open new files in a new tab
+:au BufAdd,BufNewFile * nested tab sball
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
@@ -82,8 +79,8 @@ let g:NERDTreeDirArrowCollapsible = '>'
 
 " -----------------------------------------------------------------------------------------
 " navigates to the next buffer
-:nmap <c-n> :bnext<CR>
-:nmap <c-p> :bprev<CR>
+:nmap <c-n> :tabn<CR>
+:nmap <c-p> :tabp<CR>
 :ab Wq :wq
 :ab W :w
 :ab WQ :wq
@@ -146,3 +143,4 @@ au BufReadPost *
 " highlight a TODO: occurrence with bright red
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 :match TODO /TODO:/
+
