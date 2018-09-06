@@ -17,9 +17,9 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
+Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
 call plug#end()
-let g:hardtime_default_on = 1
 " -------------------------------------------------------------------------
 :set relativenumber
 " prevent vim from giving a warning it the swp file is open 
@@ -79,8 +79,8 @@ let g:NERDTreeDirArrowCollapsible = '>'
 
 " -----------------------------------------------------------------------------------------
 " navigates to the next buffer
-:nmap <c-n> :tabn<CR>
-:nmap <c-p> :tabp<CR>
+:nmap <c-n> :bnext<CR>
+:nmap <c-p> :bprev<CR>
 :ab Wq :wq
 :ab W :w
 :ab WQ :wq
