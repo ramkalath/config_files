@@ -65,8 +65,6 @@ set number
 set mouse=a
 set tabstop=4
 set shiftwidth=4
-" always open new files in a new tab
-:au BufAdd,BufNewFile * nested tab sball
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
