@@ -97,6 +97,9 @@ fi
 
 tmux source-file ~/.tmux.conf
 
+# key repeat rate increase
+xset r rate 250 45
+
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
