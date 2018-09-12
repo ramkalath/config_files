@@ -98,8 +98,8 @@ fi
 tmux source-file ~/.tmux.conf
 
 # key repeat rate increase
-xset r rate 250 45
 
+xset r rate 250 45
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
@@ -121,7 +121,7 @@ alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
-alias images="$HOME/workarea/book_images/ch17"
+alias images="$HOME/workarea/book_images/ch18"
 alias code="cd ~/workarea/Augmented_Reality_book/code"
 alias book="cd ~/workarea/Augmented_Reality_book/AR_book/chapters && evince ~/workarea/Augmented_Reality_book/AR_book/book_v1.pdf&!"
 alias landslide="cd $HOME/Dropbox/study/landslide/fmc_code_for_c5"
