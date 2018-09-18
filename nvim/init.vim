@@ -138,7 +138,7 @@ au BufReadPost *
 
 
 " -------------------------------------------------------------------------------
-" highlight a TODO: occurrence with bright red
+" highlight a TODO occurrence with bright red
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
-:match TODO /TODO:/
+:match TODO /TODO/
 
