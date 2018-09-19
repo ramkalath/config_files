@@ -142,3 +142,6 @@ au BufReadPost *
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 :match TODO /TODO/
 
+
+set iskeyword-=_
+
