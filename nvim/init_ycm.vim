@@ -14,13 +14,11 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'rdnetto/YCM-Generator'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-Plug 'Shougo/deoplete.nvim'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 call plug#end()
 " -------------------------------------------------------------------------
 :set relativenumber
@@ -54,44 +52,11 @@ set whichwrap+=<,>,h,l,[,]
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
-let g:deoplete#enable_at_startup = 1
-"let g:deoplete#auto_complete_start_length = 2
-let g:deoplete#enable_smart_case = 1
-if !exists('g:deoplete#omni#input_patterns')
-	let g:deoplete#omni#input_patterns = {}
-
-endif
-" let g:deoplete#disable_auto_complete = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" omnifuncs
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-" tern
-let g:deoplete#sources#ternjs#case_insensitive = 1
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
-
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" tern
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
-"let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-"let g:ycm_auto_trigger = 1
-"let g:ycm_min_num_of_chars_for_completion = 3
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
 
 " -----------------------------------------------------------------------------------------
