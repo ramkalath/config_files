@@ -14,11 +14,11 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator'
 Plug 'tikhomirov/vim-glsl'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang'
 call plug#end()
 " -------------------------------------------------------------------------
 :set relativenumber
@@ -51,12 +51,16 @@ set whichwrap+=<,>,h,l,[,]
 :vmap <c-k> -3
 
 " -----------------------------------------------------------------------------------------
-" autocomplete 
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" deoplete autocomplete 
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <C-Space> <C-x><C-o>
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+let g:deoplete#sources#clang#std#cpp = 'c++11'
+set completeopt=menu,preview,noinsert
 set backspace=indent,eol,start
 
 " -----------------------------------------------------------------------------------------

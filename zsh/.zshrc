@@ -120,7 +120,7 @@ cb(){codeblocks "$1" > /dev/null &!}
 alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
-alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
+#alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
 #alias 3dmodelling="cd $HOME/Dropbox/study/3Dmodelling/"
 alias paper="evince ~/workarea/MMTAP/template.pdf&!"
 #alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
