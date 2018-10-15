@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tikhomirov/vim-glsl'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
@@ -141,7 +141,4 @@ au BufReadPost *
 " highlight a TODO occurrence with bright red
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 :match TODO /TODO/
-
-
-set iskeyword-=_
 
