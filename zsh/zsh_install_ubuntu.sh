@@ -1,4 +1,4 @@
-sudo apt-get install zsh
+sudo apt-get -y install zsh
 pushd $HOME/
 rm -rf $HOME/.oh-my-zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh

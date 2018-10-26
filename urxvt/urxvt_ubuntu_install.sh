@@ -1,6 +1,6 @@
 # on ubuntu
-sudo apt-get install rxvt-unicode-256color
-sudo apt-get install wmctrl
+sudo apt-get -y install rxvt-unicode-256color
+sudo apt-get -y install wmctrl
 
 # to enable fullscreen for all other gui environments other than i3wm
 mkdir -p ~/.urxvt/ext/
