@@ -88,7 +88,11 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
-#set -o vi
+
+set -o vi
+set vi-ins-mode-string \1\e[5 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
 export TERM=xterm-256color
 
 if command -v tmux>/dev/null; then
