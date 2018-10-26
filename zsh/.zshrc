@@ -89,7 +89,21 @@ xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
 
-set -o vi
+# ---------------------------------------------------------
+# terminal vi mode
+#set -o vi
+# sets the --INSERT-- --NORMAL-- keywords at the terminal prompt
+#function zle-line-init zle-keymap-select {
+    #RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    #RPS2=$RPS1
+    #zle reset-prompt
+#}
+#zle-line-init() { zle -K vicmd; }
+#zle -N zle-line-init
+# ---------------------------------------------------------
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 export TERM=xterm-256color
 
