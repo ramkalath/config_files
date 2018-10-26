@@ -19,7 +19,7 @@ python install.py --clang-completer --system-libclang
 ln -s $HOME/config_files/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # dunno powerline fonts require something else
-#git clone https://github.com/powerline/fonts $HOME/Downloads/powerline_fonts
-#pushd $HOME/Downloads/powerline_fonts
+git clone https://github.com/powerline/fonts $HOME/Downloads/powerline_fonts
+pushd $HOME/Downloads/powerline_fonts
 
 #cp -rf $HOME/config_files/nvim/UltiSnips $HOME/.config/nvim/

@@ -88,7 +88,6 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
-#set -o vi
 export TERM=xterm-256color
 
 if command -v tmux>/dev/null; then

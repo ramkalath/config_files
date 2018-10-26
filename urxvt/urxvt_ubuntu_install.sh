@@ -7,5 +7,8 @@ mkdir -p ~/.urxvt/ext/
 cp ~/config_files/urxvt/fullscreen ~/.urxvt/ext/
 
 # to set some changes after configuration modification
+rm ~/.Xresources
+pushd ~/
+ln -s ~/config_files/urxvt/.Xresources_ubuntu $HOME/.Xresources 
 xrdb ~/.Xresources
 
