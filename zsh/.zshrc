@@ -88,23 +88,6 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
-
-# ---------------------------------------------------------
-# terminal vi mode
-#set -o vi
-# sets the --INSERT-- --NORMAL-- keywords at the terminal prompt
-#function zle-line-init zle-keymap-select {
-    #RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    #RPS2=$RPS1
-    #zle reset-prompt
-#}
-#zle-line-init() { zle -K vicmd; }
-#zle -N zle-line-init
-# ---------------------------------------------------------
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 export TERM=xterm-256color
 
 if command -v tmux>/dev/null; then
@@ -138,7 +121,7 @@ alias kill_sessions_tmux="tmux kill-session -a"
 alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
 #alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
 #alias 3dmodelling="cd $HOME/Dropbox/study/3Dmodelling/"
-alias paper="evince ~/workarea/MMTAP/template.pdf&!"
+#alias paper="evince ~/workarea/MMTAP/template.pdf&!"
 #alias paper="~/Dropbox/study/phd/paper_work/29_MMTAP_CHI_special/"
 #alias images="$HOME/workarea/book_images/ch18"
 alias code="cd ~/workarea/game_engine/reference/"

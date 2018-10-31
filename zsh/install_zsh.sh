@@ -1,6 +1,6 @@
 # Amme Sharanam
 
-sudo pacman -S zsh tmux wget fzf --noconfirm
+sudo pacman -S zsh tmux wget --noconfirm
 pushd $HOME/
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 chsh -s 'which zsh'
