@@ -105,6 +105,9 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
 evince(){zathura "$1"&!}
+function cd {
+    builtin cd "$@" && ls -F
+    }
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"

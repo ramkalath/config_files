@@ -142,6 +142,10 @@ au BufReadPost *
 :match TODO /TODO/
 
 " -------------------------------------------------------------------------------
+" spell check
+:set spellfile=~/.config/nvim/spell/en.utf-8.add
+
+" -------------------------------------------------------------------------------
 " vim aliases
 :command Landslide e /home/ram/Dropbox/study/landslide
 :command Tasklist e /home/ram/Dropbox/tasklist/tasklist.txt
