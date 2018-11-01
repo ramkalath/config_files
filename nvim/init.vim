@@ -72,9 +72,8 @@ let g:NERDTreeWinSize=60
 map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '>'
-
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 " -----------------------------------------------------------------------------------------
 " navigates to the next buffer
 :nmap <c-n> :bnext<CR>
@@ -142,3 +141,8 @@ au BufReadPost *
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 :match TODO /TODO/
 
+" -------------------------------------------------------------------------------
+" vim aliases
+:command Landslide e /home/ram/Dropbox/study/landslide
+:command Tasklist e /home/ram/Dropbox/tasklist/tasklist.txt
+:command Thesis e /home/ram/workarea/thesis/chapters
