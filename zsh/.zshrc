@@ -116,6 +116,6 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 #alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
 alias kill_sessions_tmux="tmux kill-session -a"
 
-alias opengl="cd $HOME/Dropbox/study/opengl/cpp/glfw/"
+alias opengl="cd $HOME/Dropbox/study/OpenGL/"
 alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
 alias landslide="cd $HOME/Dropbox/study/landslide"
