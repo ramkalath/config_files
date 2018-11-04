@@ -72,8 +72,8 @@ let g:NERDTreeWinSize=60
 map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
 " -----------------------------------------------------------------------------------------
 " navigates to the next buffer
 :nmap <c-n> :bnext<CR>
