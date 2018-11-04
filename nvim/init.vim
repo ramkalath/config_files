@@ -21,7 +21,7 @@ Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
 call plug#end()
 " -------------------------------------------------------------------------
-:set relativenumber
+set relativenumber
 " prevent vim from giving a warning it the swp file is open 
 set shortmess=A
 "set foldmethod=syntax
@@ -31,6 +31,8 @@ set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
+set laststatus=2
+set statusline+=%F
 
 " -----------------------------------------------------------------------------------------
 set laststatus=0
