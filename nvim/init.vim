@@ -31,10 +31,6 @@ set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore
-set laststatus=2
-set statusline+=%F
-
-" -----------------------------------------------------------------------------------------
 set laststatus=0
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
@@ -89,6 +85,7 @@ let g:NERDTreeDirArrowCollapsible = '~'
 
 " start the terminal in the given path by typing :t on the minibuffer
 :ab _terminal_ :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
+:ab fpath :echo expand('%:p')
 " -----------------------------------------------------------------------------------------
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -152,3 +149,4 @@ au BufReadPost *
 :command Landslide e /home/ram/Dropbox/study/landslide
 :command Tasklist e /home/ram/Dropbox/tasklist/tasklist.txt
 :command Thesis e /home/ram/workarea/thesis/chapters
+
