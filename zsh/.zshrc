@@ -103,11 +103,13 @@ export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
+
 # evince(){zathura "$1"&!}
 # function cd {
     #builtin cd "$@" && ls -F
     #}
 #alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+alias gitcommit='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
