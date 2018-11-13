@@ -103,11 +103,11 @@ export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
-# evince(){zathura "$1"&!}
-# function cd {
-    #builtin cd "$@" && ls -F
-    #}
-#alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+evince(){zathura "$1"&!}
+function cd {
+	builtin cd "$@" && ls -F
+	}
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 function cd {
     builtin cd "$@" && ls -F
     }
