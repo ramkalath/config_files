@@ -150,3 +150,6 @@ au BufReadPost *
 :command Tasklist e /home/ram/Dropbox/tasklist/tasklist.txt
 :command Thesis e /home/ram/workarea/thesis/chapters
 
+" -------------------------------------------------------------------------------
+" quit the terminal upon pressing esc
+":tnoremap <Esc> <C-\><C-n>

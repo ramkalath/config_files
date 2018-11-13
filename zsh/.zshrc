@@ -89,6 +89,7 @@ xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color
+set -o vi
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
@@ -97,18 +98,16 @@ fi
 tmux source-file ~/.tmux.conf
 
 # key repeat rate increase
-
 xset r rate 250 45
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-
 alias vim="nvim"
 evince(){zathura "$1"&!}
-function cd {
-    builtin cd "$@" && ls -F
-    }
-alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+#function cd {
+    #builtin cd "$@" && ls -F
+    #}
+#alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
@@ -119,3 +118,4 @@ alias kill_sessions_tmux="tmux kill-session -a"
 alias opengl="cd $HOME/Dropbox/study/OpenGL/"
 alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
 alias landslide="cd $HOME/Dropbox/study/landslide"
+alias thesisimages="cd $HOME/workarea/ThesisImages"
