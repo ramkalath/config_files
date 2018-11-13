@@ -104,11 +104,10 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
-evince(){zathura "$1"&!}
+# evince(){zathura "$1"&!}
 function cd {
     builtin cd "$@" && ls -F
     }
-alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
@@ -117,5 +116,5 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/OpenGL/"
-alias thesis="cd $HOME/workarea/thesis/chapters && evince $HOME/workarea/thesis/Thesis.pdf"
+alias thesis="cd $HOME/workarea/thesis/chapters && zathura $HOME/workarea/thesis/Thesis.pdf"
 alias landslide="cd $HOME/Dropbox/study/landslide"
