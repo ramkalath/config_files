@@ -1,0 +1,14 @@
+[user]
+	email = ramkalath@gmail.com
+	name = ramkalath
+
+
+
+
+
+;[diff]
+	;tool = meld
+;[difftool "meld"]
+	;path = /usr/bin/meld
+;[difftool]
+	;prompt = false
