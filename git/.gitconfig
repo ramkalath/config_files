@@ -1,7 +1,8 @@
 [user]
 	email = ramkalath@gmail.com
 	name = ramkalath
-
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 
 
 
