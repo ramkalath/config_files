@@ -109,7 +109,8 @@ alias vim="nvim"
     #builtin cd "$@" && ls -F
     #}
 #alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-alias git_commit='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
+alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
+alias gitmerge="git mergetool"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
