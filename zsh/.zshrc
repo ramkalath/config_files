@@ -119,6 +119,6 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias kill_sessions_tmux="tmux kill-session -a"
 
 alias opengl="cd $HOME/Dropbox/study/OpenGL/"
-alias thesis="cd $HOME/workarea/thesis/chapters && zathura $HOME/workarea/thesis/Thesis.pdf"
+alias thesis="cd $HOME/workarea/thesis/chapters && zathura $HOME/workarea/thesis/Thesis.pdf&!"
 alias landslide="cd $HOME/Dropbox/study/landslide"
 alias thesisimages="cd $HOME/workarea/ThesisImages"
