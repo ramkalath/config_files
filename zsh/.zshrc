@@ -114,6 +114,7 @@ evince(){zathura "$1"&!}
 function cd {
     builtin cd "$@" && ls -F
     }
+
 >>>>>>> 70540b7300a6d9ea58eb21988a8aea1433684570
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
