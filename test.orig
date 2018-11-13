@@ -1,0 +1,13 @@
+a
+b
+<<<<<<< HEAD
+
+||||||| merged common ancestors
+c
+d
+e
+f
+=======
+c
+f
+>>>>>>> 6efdc2303230537c6cc76ecfb286f5f8bc24517d
