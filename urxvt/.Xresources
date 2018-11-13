@@ -1,7 +1,7 @@
 !URxvt.font: xft:monospace:size=10
 !URxvt.boldFont:
-URxvt.font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
-!URxvt.font:     xft:bitstream vera sans mono:size=10:antialias=true
+!URxvt.font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
+URxvt.font: xft:bitstream vera sans mono:size=10:antialias=true
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
