@@ -1,4 +1,0 @@
-git config --global credential.helper store
-git push origin master # do this inside a repo
-Username:
-Password:
