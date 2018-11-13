@@ -111,6 +111,13 @@ alias vim="nvim"
 function cd {
     builtin cd "$@" && ls -F
     }
+<<<<<<< HEAD
+||||||| merged common ancestors
+>>>>>>> 70540b7300a6d9ea58eb21988a8aea1433684570
+=======
+
+>>>>>>> 70540b7300a6d9ea58eb21988a8aea1433684570
+>>>>>>> d86f13ebfbad5cd629f897c2504af3fca46dcc09
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
