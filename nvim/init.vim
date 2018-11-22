@@ -97,11 +97,14 @@ vmap // <leader>c<space>
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
 :nmap <C-Right> e
-inoremap " ""<left>
-inoremap ' ''<left>
+"inoremap " ""<left>
+"inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+inoremap () ()<left>
+inoremap [] []<left>
+inoremap {} {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 " when using vim use this
