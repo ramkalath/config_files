@@ -97,6 +97,24 @@ vmap // <leader>c<space>
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
 :nmap <C-Right> e
+
+
+" -----------------------------------------------------------------------------------------
+" matching autopairs
+"inoremap " ""<left>
+"inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap () ()<left>
+inoremap [] []<left>
+inoremap {} {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+
+" ------------------------------------------------------------------------------
+" terminal and make commands
 " when using vim use this
 ":imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>  
 ":nmap <c-x><c-x> :update<CR>\|<Esc>:!rxvt-unicode -bg black --geometry 85x47+683+0 -e sh -c "make && make run; bash"&<CR>\|<CR>
