@@ -172,5 +172,5 @@ au BufReadPost *
 " quit the terminal upon pressing esc
 ":tnoremap <Esc> <C-\><C-n>
 
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
-set title
+"autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+"set title
