@@ -13,7 +13,10 @@ pushd $HOME/.config/nvim/plugged
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.config/nvim/plugged/YouCompleteMe
 pushd $HOME/.config/nvim/plugged/YouCompleteMe
 git submodule update --init --recursive
-python install.py --clang-completer --system-libclang
+
+# 'clang completer' is for the family of c
+# 'cs completer' is for c#
+python install.py --clang-completer --system-libclang --cs-completer
 
 # must create a symlinks from config_files folder
 ln -s $HOME/config_files/nvim/init.vim $HOME/.config/nvim/init.vim
