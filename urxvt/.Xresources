@@ -2,7 +2,9 @@
 !URxvt.boldFont:
 !URxvt.font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
 !URxvt.font: xft:bitstream vera sans mono:size=10:antialias=true
-URxvt.font: xft:Consolas:pixelsize=13
+!URxvt.font: xft:terminus:size=11
+URxvt.font: xft:inconsolata:pixelsize=17:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=17:antialias=true,hinting=true
+!URxvt.letterSpace: -4
 URxvt.boldFont: 
 
 URxvt.scrollBar: false
