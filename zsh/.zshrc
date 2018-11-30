@@ -89,7 +89,6 @@ xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color
-#set -o vi
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
