@@ -9,7 +9,7 @@ cp ~/config_files/urxvt/fullscreen ~/.urxvt/ext/
 
 # to set some changes after configuration modification
 rm ~/.Xresources
-pushd ~/
+cd ~/
 ln -s ~/config_files/urxvt/.Xresources_ubuntu $HOME/.Xresources 
 xrdb ~/.Xresources
 

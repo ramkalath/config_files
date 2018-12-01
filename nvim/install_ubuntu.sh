@@ -9,9 +9,9 @@ git clone https://github.com/ramkalath/config_files $HOME/config_files
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sudo pip install neovim
-pushd $HOME/.config/nvim/plugged
+cd $HOME/.config/nvim/plugged
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.config/nvim/plugged/YouCompleteMe
-pushd $HOME/.config/nvim/plugged/YouCompleteMe
+cd $HOME/.config/nvim/plugged/YouCompleteMe
 git submodule update --init --recursive
 
 # 'clang completer' is for the family of c
@@ -23,6 +23,6 @@ ln -s $HOME/config_files/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # dunno powerline fonts require something else
 git clone https://github.com/powerline/fonts $HOME/Downloads/powerline_fonts
-pushd $HOME/Downloads/powerline_fonts
+cd $HOME/Downloads/powerline_fonts
 
 #cp -rf $HOME/config_files/nvim/UltiSnips $HOME/.config/nvim/
