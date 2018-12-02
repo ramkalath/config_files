@@ -19,7 +19,6 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tikhomirov/vim-glsl'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-
 "Plug 'OmniSharp/omnisharp-vim'  " autocomplete
 call plug#end()
 " -------------------------------------------------------------------------
@@ -39,6 +38,7 @@ set laststatus=0
 set background=dark
 colorscheme gruvbox
 
+"set TERM=rxvt-unicode256color
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,]

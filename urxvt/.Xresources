@@ -3,9 +3,20 @@
 !URxvt.font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
 !URxvt.font: xft:bitstream vera sans mono:size=10:antialias=true
 !URxvt.font: xft:terminus:size=11
-URxvt.font: xft:inconsolata:pixelsize=17:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=17:antialias=true,hinting=true
-!URxvt.letterSpace: -4
-URxvt.boldFont: 
+!URxvt.font: xft:inconsolata:pixelsize=17:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=17:antialias=true,hinting=true
+!URxvt*boldFont:
+
+!URxvt*font: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
+!URxvt*boldFont: xft:Inconsolata\ for\ Powerline:bold:pixelsize=17:antialias=true
+!!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
+!URxvt*italicFont: xft:Inconsolata\ for\ Powerline:italic:pixelsize=17:antialias=true
+!URxvt*boldItalicFont: xft:Inconsolata\ for\ Powerline:bold:italic:pixelsize=17:antialias=true
+
+URxvt*font: xft:Inconsolata:pixelsize=17:antialias=true
+URxvt*boldFont: xft:Inconsolata:bold:pixelsize=17:antialias=true
+!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
+URxvt*italicFont: xft:Inconsolata:italic:pixelsize=17:antialias=true
+URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=17:antialias=true
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
@@ -23,6 +34,7 @@ URxvt.keysym.F11: perl:fullscreen:switch
 !URxvt.tabbed.tab-fg:    15
 !URxvt.tabbed.tab-bg:    8
 !URxvt.tabbed.new-button: false
+
 
 ! hard contrast: *background: #1d2021
 *background: #282828
@@ -52,3 +64,4 @@ URxvt.keysym.F11: perl:fullscreen:switch
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+

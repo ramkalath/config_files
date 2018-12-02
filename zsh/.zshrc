@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
-export TERM=xterm-256color
+export TERM=xterm-256color-italic
 
 if command -v tmux>/dev/null; then
 	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
