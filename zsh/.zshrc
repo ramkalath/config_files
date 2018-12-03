@@ -108,6 +108,8 @@ alias vim="nvim"
     #builtin cd "$@" && ls -F
     #}
 #alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+alias ffplay="ffplay -nodisp"
+alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias gitmerge="git mergetool"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
