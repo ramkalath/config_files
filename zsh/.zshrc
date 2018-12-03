@@ -90,11 +90,11 @@ xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color-italic
 
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+#if command -v tmux>/dev/null; then
+	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
 
-tmux source-file ~/.tmux.conf
+#tmux source-file ~/.tmux.conf
 
 # key repeat rate increase
 xset r rate 250 45
