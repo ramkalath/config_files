@@ -90,6 +90,12 @@ xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color-italic
 
+#------------------------------------------------------------------------------------
+#vim mode
+bindkey -v
+export KEYTIMEOUT=1
+#------------------------------------------------------------------------------------
+
 #if command -v tmux>/dev/null; then
 	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 #fi
