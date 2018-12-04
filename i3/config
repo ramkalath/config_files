@@ -12,8 +12,8 @@
 set $mod Mod1
 
 # disable title bar
-#for_window [class="^.*"] border pixel 5
-#new_window 1pixel
+for_window [class="^.*"] border pixel 2
+new_window 1pixel
 
 # makes the border color red
  #client.focused #555555 #555555 #ffffff #2e9ef4     #CC0000
@@ -167,10 +167,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #exec --no-startup-id xfce4-panel --disable-wm-check
 #exec_always xfce4-panel
+
 bar {
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		position top
 }
+
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 bindsym $mod+shift+x exec i3lock-fancy

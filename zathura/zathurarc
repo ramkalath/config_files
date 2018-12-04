@@ -1,8 +1,11 @@
 # gruvbox
 
 set font                        "monospace 11"
-set default-bg                  "#282828"
-set default-fg                  "#fbf1c7"
+#set default-bg                  "#282828"
+#set default-fg                  "#fbf1c7"
+
+set default-bg                  "#a5abb9"
+set default-fg                  "#2e2e2f"
 
 set statusbar-bg                "#282828"
 set statusbar-fg                "#ebdbb2"
@@ -28,8 +31,11 @@ set completion-fg               "#ebdbb2"
 set notification-bg             "#282828"
 set notification-fg             "#ebdbb2"
 
-set recolor-lightcolor          "#282828"
-set recolor-darkcolor           "#fbf1c7"
+set recolor-lightcolor          "#a5abb9"
+set recolor-darkcolor           "#2e2e2f"
+
+#set recolor-lightcolor          "#282828"
+#set recolor-darkcolor           "#fbf1c7"
 set recolor                     "false"
 
 # Setting recolor-keep true will keep any color your pdf has.
