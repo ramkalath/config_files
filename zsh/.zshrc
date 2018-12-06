@@ -110,6 +110,7 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
+alias term="urxvt&!"
 alias mypath='foo(){ pwd > /tmp/whereami" }; foo '
 alias ffplay="ffplay -nodisp"
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
