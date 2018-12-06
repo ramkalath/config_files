@@ -18,7 +18,7 @@ git submodule update --init --recursive
 # 'cs completer' is for c#
 python install.py --clang-completer --system-libclang --cs-completer
 
-# must create a symlinks from config_files folder
+# must create a symlinks from config_files folder (TODO: test this)
 ln -s $HOME/config_files/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # dunno powerline fonts require something else
