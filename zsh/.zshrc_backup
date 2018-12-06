@@ -106,24 +106,24 @@ tmux source-file ~/.tmux.conf
 alias kill_sessions_tmux="tmux kill-session -a"
 #------------------------------------------------------------------------------------
 
-#xset r rate 250 45
-#export LD_LIBRARY_PATH="/usr/local/lib/"
-#export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+xset r rate 250 45
+export LD_LIBRARY_PATH="/usr/local/lib/"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
-#alias zathura="$HOME/config_files/zathura/zathura-tabbed/zathura-tabbed"
-#alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
-#alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
-#alias gitmerge="git mergetool"
-#alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-#alias python="python2"
-#alias popcorn='~/Downloads/popcorn/Popcorn-Time'
-#alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-##alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
-#alias cs_ac='cp -rf ~/config_files/csharp/* .'
+alias zathura="$HOME/config_files/zathura/zathura-tabbed/zathura-tabbed"
+alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
+alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
+alias gitmerge="git mergetool"
+alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
+alias python="python2"
+alias popcorn='~/Downloads/popcorn/Popcorn-Time'
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
+#alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
+alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
-#alias opengl="cd $HOME/Dropbox/study/OpenGL/"
-#alias thesis="cd $HOME/workarea/thesis/"
-#alias landslide="cd $HOME/Dropbox/study/landslide"
-#alias thesisimages="cd $HOME/workarea/ThesisImages"
-#alias paper="cd $HOME/workarea/MMTAP/MMTAP_paper"
+alias opengl="cd $HOME/Dropbox/study/OpenGL/"
+alias thesis="cd $HOME/workarea/thesis/"
+alias landslide="cd $HOME/Dropbox/study/landslide"
+alias thesisimages="cd $HOME/workarea/ThesisImages"
+alias paper="cd $HOME/workarea/MMTAP/MMTAP_paper"
