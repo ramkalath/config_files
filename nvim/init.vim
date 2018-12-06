@@ -17,8 +17,8 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tikhomirov/vim-glsl'
-Plug 'ap/vim-buftabline'
-Plug 'morhetz/gruvbox'
+"Plug 'ap/vim-buftabline'
+"Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 "Plug 'OmniSharp/omnisharp-vim'  " autocomplete
 call plug#end()
@@ -38,6 +38,7 @@ set laststatus=0
 " This sets the color scheme
 set background=dark
 colorscheme solarized
+"colorscheme gruvbox
 
 "set TERM=rxvt-unicode256color
 " -----------------------------------------------------------------------------------------
