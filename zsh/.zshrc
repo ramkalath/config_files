@@ -98,11 +98,11 @@ export KEYTIMEOUT=1
 
 #------------------------------------------------------------------------------------
 # to use tmux
-#if command -v tmux>/dev/null; then
-	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-#tmux source-file ~/.tmux.conf
-#alias kill_sessions_tmux="tmux kill-session -a"
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+tmux source-file ~/.tmux.conf
+alias kill_sessions_tmux="tmux kill-session -a"
 #------------------------------------------------------------------------------------
 
 xset r rate 250 45
@@ -110,9 +110,7 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
-alias term="urxvt&!"
-alias mypath='foo(){ pwd > /tmp/whereami" }; foo '
-alias ffplay="ffplay -nodisp"
+alias zathura="$HOME/config_files/zathura/zathura-tabbed.sh"
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias gitmerge="git mergetool"
@@ -124,7 +122,7 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
 alias opengl="cd $HOME/Dropbox/study/OpenGL/"
-alias thesis="cd $HOME/workarea/thesis/chapters && zathura $HOME/workarea/thesis/Thesis.pdf&!"
+alias thesis="cd $HOME/workarea/thesis/"
 alias landslide="cd $HOME/Dropbox/study/landslide"
 alias thesisimages="cd $HOME/workarea/ThesisImages"
 alias paper="cd $HOME/workarea/MMTAP/MMTAP_paper"
