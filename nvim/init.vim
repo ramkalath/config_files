@@ -17,6 +17,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tikhomirov/vim-glsl'
+Plug 'maxbrunsfeld/vim-yankstack'
 "Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
