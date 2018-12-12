@@ -2,49 +2,51 @@
 " set theruntime path to include Vundle and initialize
 set hidden
 set autochdir
-set clipboard^=unnamed " This sets the clipboard as the default register. Useful for copy paste from tmux
+set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
 
-set nocompatible " This tells vim not to act like it predecessor vi
-syntax enable " enables syntax highlighting
+set nocompatible "This tells vim not to act like it predecessor vi
+syntax enable "enables syntax highlighting
 "filetype off
-filetype plugin indent on    " identify the kind of filetype automatically
+filetype plugin indent on "identify the kind of filetype automatically
 
 set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips' "(TODO: see if this can be replaced)
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
 Plug 'tikhomirov/vim-glsl'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 "Plug 'OmniSharp/omnisharp-vim'  " autocomplete
 call plug#end()
 " -------------------------------------------------------------------------
 set relativenumber
-" prevent vim from giving a warning it the swp file is open 
-set shortmess=A
+set shortmess=A "prevent vim from giving a warning it the swp file is open 
 "set foldmethod=syntax
 set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set virtualedit=onemore
+set virtualedit=onemore "cursor goes one more position than the usual
 set laststatus=0
+set number "(TODO: check what this does)
+set mouse=a "(TODO: check what this does)
+set tabstop=4
+set shiftwidth=4
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-"colorscheme solarized
 colorscheme gruvbox
 
 "set TERM=rxvt-unicode256color
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
-set whichwrap+=<,>,h,l,[,]
+set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -55,7 +57,7 @@ set whichwrap+=<,>,h,l,[,]
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py' "(TODO: do we need rdnetto's plugin when we have this)
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_confirm_extra_conf = 0
@@ -66,13 +68,6 @@ set backspace=indent,eol,start
 " let g:OmniSharp_server_use_mono = 1
 
 " -----------------------------------------------------------------------------------------
-" other editor settings
-set number
-set mouse=a
-set tabstop=4
-set shiftwidth=4
-
-" -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
 let g:NERDTreeWinSize=60 
 map <C-f> :NERDTreeToggle<CR>
@@ -81,6 +76,7 @@ let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 " -----------------------------------------------------------------------------------------
+
 " navigates to the next buffer
 :nmap <c-n> :bnext<CR>
 :nmap <c-p> :bprev<CR>
@@ -165,7 +161,7 @@ au BufReadPost *
 
 
 " -------------------------------------------------------------------------------
-" highlight a TODO occurrence with bright red
+" highlight a TODO occurrence in bright red
 :highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 :match TODO /TODO/
 
