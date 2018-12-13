@@ -28,7 +28,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips' "(TODO: see if this can be replaced)
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
 Plug 'tikhomirov/vim-glsl'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ap/vim-buftabline'
@@ -55,12 +55,12 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
-"let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py' "(TODO: do we need rdnetto's plugin when we have this)
-"let g:ycm_auto_trigger = 1
-"let g:ycm_min_num_of_chars_for_completion = 3
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-"set backspace=indent,eol,start
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py' "(TODO: do we need rdnetto's plugin when we have this)
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set backspace=indent,eol,start
 " autocompelte using omnisharp
 " let g:OmniSharp_server_use_mono = 1
 
