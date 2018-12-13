@@ -141,7 +141,3 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
   "autocmd VimLeave * silent !echo -ne "\033]112\007"
   "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 "endif
-
-
-"snippets trial
-nnoremap ,tkt :-1read $HOME/workarea/text.txt<CR>3jwf>a
