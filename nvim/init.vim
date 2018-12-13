@@ -1,5 +1,6 @@
 " ------------------------------------------------------------------------
 " editor settings
+set shell=zsh\ -i
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
