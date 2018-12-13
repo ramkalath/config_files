@@ -36,9 +36,7 @@ import ycm_core
 flags = [
     '-x',
     'c++',
-    '-I/usr/local/include/GLFW',
     '-Wall',
-    '-std=c++11',
 ]
 
 

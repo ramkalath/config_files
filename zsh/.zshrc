@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 xset b off
 xrdb ~/.Xresources
 force_color_prompt=yes
-export TERM=xterm-256color-italic
+export TERM=xterm-256color
 
 #------------------------------------------------------------------------------------
 #vim mode
@@ -114,18 +114,16 @@ alias vim="nvim"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 
-alias zathura="$HOME/config_files/zathura/zathura-tabbed/zathura-tabbed"
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias gitmerge="git mergetool"
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
+alias tasklist="tmux rename-window tasklist & vim ~/Dropbox/tasklist/tasklist.txt"
 alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-#alias ac="python ~/.config/nvim/plugged/YCM-Generator/config_gen.py ."
 alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
-alias opengl="cd $HOME/Dropbox/study/OpenGL/"
-alias thesis="cd $HOME/workarea/thesis/"
+alias opengl="cd $HOME/Dropbox/study/OpenGL/; tmux rename-window opengl"
+alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/ "
 alias thesisimages="cd $HOME/workarea/ThesisImages"
 alias paper="cd $HOME/workarea/MMTAP/MMTAP_paper"
