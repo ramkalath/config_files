@@ -27,7 +27,7 @@ set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips' "(TODO: see if this can be replaced)
+Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
 Plug 'tikhomirov/vim-glsl'
@@ -56,7 +56,7 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py' "(TODO: do we need rdnetto's plugin when we have this)
+let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_confirm_extra_conf = 0
