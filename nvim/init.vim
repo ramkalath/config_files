@@ -63,7 +63,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
 " autocompelte using omnisharp
-" let g:OmniSharp_server_use_mono = 1
+ "let g:OmniSharp_server_use_mono = 1
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
