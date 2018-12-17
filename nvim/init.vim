@@ -19,7 +19,6 @@ set laststatus=0
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
-"set foldmethod=syntax
 filetype plugin indent on "identify the kind of filetype automatically
 
 " ------------------------------------------------------------------------
