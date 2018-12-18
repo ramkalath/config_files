@@ -16,7 +16,7 @@ git submodule update --init --recursive
 
 # 'clang completer' is for the family of c
 # 'cs completer' is for c#
-python install.py --clang-completer --system-libclang --cs-completer
+python3 install.py --clang-completer --system-libclang --cs-completer
 
 # must create a symlinks from config_files folder
 ln -s $HOME/config_files/nvim/UltiSnips $HOME/.config/nvim/UltiSnips

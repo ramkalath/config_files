@@ -128,3 +128,4 @@ alias debug='./debug.sh > /dev/null 2>&1'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/ "
 alias thesisimages="cd $HOME/workarea/ThesisImages"
+alias opengl="cd $HOME/Dropbox/study/OpenGL"
