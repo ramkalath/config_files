@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygmalion"
-ZSH_THEME="honukai"
+ZSH_THEME="plain"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -122,6 +122,8 @@ alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
+alias build='./build.sh'
+alias debug='./debug.sh > /dev/null 2>&1'
 #alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/ "
