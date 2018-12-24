@@ -61,6 +61,7 @@ let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
+"let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] } " gives autocomplete without the need to press C-Space
 " autocompelte using omnisharp
  "let g:OmniSharp_server_use_mono = 1
 
