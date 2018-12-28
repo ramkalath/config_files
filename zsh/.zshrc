@@ -128,5 +128,5 @@ alias debug='./debug.sh > /dev/null 2>&1'
 #alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/ "
-alias thesisimages="cd $HOME/workarea/ThesisImages"
+alias thesisimages="cd $HOME/Dropbox/study/ThesisImages"
 alias opengl="cd $HOME/Dropbox/study/OpenGL"
