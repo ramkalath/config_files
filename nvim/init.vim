@@ -97,7 +97,7 @@ let g:NERDTreeDirArrowCollapsible = '~'
 :imap <c-l> <Esc>la
 
 " start the terminal in the given path by typing :t on the minibuffer
-:ab _terminal_ :!urxvt -bg black --geometry 85x47+683+0&\|<CR> 
+:ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
 :ab fpath :echo expand('%:p')
 
 " press // for comment using nerd commenter
