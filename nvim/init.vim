@@ -38,7 +38,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 "Plug 'OmniSharp/omnisharp-vim'  " autocomplete
 call plug#end()
 
@@ -46,6 +46,7 @@ call plug#end()
 " This sets the color scheme
 set background=dark
 colorscheme gruvbox
+"colorscheme solarized
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed

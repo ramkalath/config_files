@@ -1,16 +1,17 @@
-#define size 15
-URxvt*font: xft:Inconsolata:pixelsize=size:antialias=true
-URxvt*boldFont: xft:Inconsolata:bold:pixelsize=size:antialias=true
-!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
-URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
-URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
+#define size 13
+!URxvt*font: xft:Inconsolata:pixelsize=size:antialias=true
+!URxvt*boldFont: xft:Inconsolata:bold:pixelsize=size:antialias=true
+!!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
+!URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
+!URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
+URxvt.font:xft:Monospace:pixelsize=size
+URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
 URxvt*borderLess: true
-URxvt*internalBorder:0 
-URxvt*externalBorder: 0px
-
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
@@ -107,3 +108,4 @@ URxvt.keysym.F11: perl:fullscreen:switch
 !!! white dark/light
 !*color7:                S_base2
 !*color15: S_base3
+
