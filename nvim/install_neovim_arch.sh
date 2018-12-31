@@ -14,9 +14,11 @@ git clone https://github.com/Valloric/YouCompleteMe $HOME/.config/nvim/plugged/Y
 pushd $HOME/.config/nvim/plugged/YouCompleteMe
 git submodule update --init --recursive
 
-# 'clang completer' is for the family of c
-# 'cs completer' is for c#
-python3 install.py --clang-completer --system-libclang --cs-completer
+# 'clang completer' is for the family of c. We can add more flags such as --cs-completer for c# etc,.
+python3 install.py --clang-completer # this will download its own version of clang
+
+# if the above gives an error then try using --system-libclang
+# python3 install.py --clang-completer --system-libclang
 
 # must create a symlinks from config_files folder
 ln -s $HOME/config_files/nvim/UltiSnips $HOME/.config/nvim/UltiSnips

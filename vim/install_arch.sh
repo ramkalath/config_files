@@ -40,7 +40,12 @@ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.v
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
 pushd $HOME/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
-python3 install.py --clang-completer --system-libclang
+
+# 'clang completer' is for the family of c. We can add more flags such as --cs-completer for c# etc,.
+python3 install.py --clang-completer # this will download its own version of clang
+
+# if the above gives an error then try using --system-libclang
+# python3 install.py --clang-completer --system-libclang
 
 # Powerline fonts ---------------------------------------------------------------------
 git clone https://github.com/powerline/fonts.git $HOME/Downloads/powerline_fonts

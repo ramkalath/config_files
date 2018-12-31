@@ -45,8 +45,12 @@ sudo apt-get -y install clang
 git clone https://github.com/Valloric/YouCompleteMe $HOME/.vim/bundle/YouCompleteMe/
 pushd $HOME/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
-python3 install.py --clang-completer --system-libclang
 
+# 'clang completer' is for the family of c. We can add more flags such as --cs-completer for c# etc,.
+python3 install.py --clang-completer # this will download its own version of clang
+
+# if the above gives an error then try using --system-libclang
+# python3 install.py --clang-completer --system-libclang
 # copy .vimrc into home folder --------------------------------------------------------
 ln -s $HOME/config_files/vim/.vimrc $HOME
 ln -s $HOME/config_files/nvim/UltiSnips $HOME/.vim
