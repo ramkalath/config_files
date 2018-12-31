@@ -3,6 +3,8 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
 " ------------------------------------------------------------------------
 " editor settings
 set shell=zsh\ -i
@@ -142,10 +144,10 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 "if &term =~ "xterm\\|urxvt"
   "" use an orange cursor in insert mode
   "let &t_SI = "\<Esc>]12;green\x7"
-  "" use a red cursor otherwise
+  " use a red cursor otherwise
   "let &t_EI = "\<Esc>]12;red\x7"
   "silent !echo -ne "\033]12;red\007"
-  "" reset cursor when vim exits
+  " reset cursor when vim exits
   "autocmd VimLeave * silent !echo -ne "\033]112\007"
   "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 "endif
