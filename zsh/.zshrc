@@ -113,7 +113,6 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
-
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
 alias zathura='foo(){zathura "$1"&!}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
