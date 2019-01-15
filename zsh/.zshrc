@@ -123,8 +123,7 @@ alias python="python2"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
-alias build='./build.sh'
-alias debug='./debug.sh > /dev/null 2>&1'
+alias null='/dev/null 2>&1'
 #alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/ "
