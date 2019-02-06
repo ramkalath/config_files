@@ -1,3 +1,4 @@
+#!/bin/bash
 # remember to hit prefix+I to fetch the other plugins and install. tpm is simply a plugin manager for tmux
 
 sudo apt-get install tmux
