@@ -7,7 +7,6 @@ set guioptions-=L  "remove left-hand scroll bar
 "highlight iCursor guifg=white guibg=steelblue
 " ------------------------------------------------------------------------
 " editor settings
-set shell=zsh\ -i
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
@@ -40,7 +39,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 "Plug 'OmniSharp/omnisharp-vim'  " autocomplete
 call plug#end()
 
