@@ -126,6 +126,6 @@ alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
 #alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
-alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/chapters; zathura $HOME/workarea/thesis/Thesis.pdf &!"
+alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/chapters; git pull origin master; zathura $HOME/workarea/thesis/Thesis.pdf &!"
 alias thesisimages="cd $HOME/Dropbox/study/ThesisImages"
 alias opengl="cd $HOME/Dropbox/study/OpenGL"
