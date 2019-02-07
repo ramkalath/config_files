@@ -34,20 +34,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
 Plug 'tikhomirov/vim-glsl'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'OmniSharp/omnisharp-vim'  " autocomplete
+"Plug 'ap/vim-buftabline'
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'} "(TODO: check if this is necessary still)
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
 colorscheme gruvbox
-"colorscheme solarized
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -131,12 +127,6 @@ au BufReadPost *
 " -------------------------------------------------------------------------------
 " spell check
 set spellfile=~/.config/nvim/spell/en.utf-8.add
-
-" -------------------------------------------------------------------------------
-" vim aliases
-:command Landslide e /home/ram/Dropbox/study/landslide
-:command Tasklist e /home/ram/Dropbox/tasklist/tasklist.txt
-:command Thesis e /home/ram/workarea/thesis/chapters
 
 " -------------------------------------------------------------------------------
 "changes cursor color between insert mode and normal mode - use this only when using vim and not nvim
