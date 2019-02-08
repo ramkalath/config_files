@@ -1,5 +1,14 @@
 set window-icon /usr/share/icons/elementary-xfce/apps/128/xpdf.png
 
+map [normal] <C-k> navigate previous
+map [normal] <C-j> navigate next
+
+map [fullscreen] <C-k> navigate previous
+map [fullscreen] <C-j> navigate next
+
+map [fullscreen] j scroll down
+map [fullscreen] k scroll up
+
 # zathurarc-dark
 set notification-error-bg       "#586e75" # base01  # seem not work
 set notification-error-fg       "#dc322f" # red

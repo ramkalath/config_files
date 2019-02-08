@@ -96,6 +96,7 @@ let g:NERDTreeDirArrowCollapsible = '~'
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
 :ab e tabedit
+set showtabline=2
 
 " start the terminal in the given path by typing :t on the minibuffer
 :ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
