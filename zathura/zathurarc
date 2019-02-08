@@ -1,3 +1,5 @@
+set window-icon /usr/share/icons/elementary-xfce/apps/128/xpdf.png
+
 # zathurarc-dark
 set notification-error-bg       "#586e75" # base01  # seem not work
 set notification-error-fg       "#dc322f" # red
