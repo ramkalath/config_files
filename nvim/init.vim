@@ -79,8 +79,10 @@ let g:NERDTreeDirArrowCollapsible = '~'
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-:nmap <c-n> :bnext<CR>
-:nmap <c-p> :bprev<CR>
+":nmap <c-n> :bnext<CR>
+":nmap <c-p> :bprev<CR>
+:nmap <c-n> :tabnext<CR>
+:nmap <c-p> :tabprevious<CR>
 :ab Wq :wq
 :ab W :w
 :ab WQ :wq
@@ -93,6 +95,7 @@ let g:NERDTreeDirArrowCollapsible = '~'
 :imap vv <Esc>v
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
+:ab e tabedit
 
 " start the terminal in the given path by typing :t on the minibuffer
 :ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 

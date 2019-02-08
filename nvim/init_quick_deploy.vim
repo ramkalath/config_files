@@ -34,8 +34,8 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-:nmap <c-n> :bnext<CR>
-:nmap <c-p> :bprev<CR>
+:nmap <c-n> :tabnext<CR>
+:nmap <c-p> :tabprevious<CR>
 :ab Wq :wq
 :ab W :w
 :ab WQ :wq
@@ -48,6 +48,7 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 :imap vv <Esc>v
 :nmap vv <Esc>v
 :imap <c-l> <Esc>la
+:ab e tabedit
 
 " terminal and make commands
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>  
