@@ -16,6 +16,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 URxvt*urlLauncher: /usr/bin/firefox
+URxvt.iconFile: /usr/share/icons/Humanity/apps/128/gnome-terminal.svg
 
 ! Fullscreen switch
 URxvt.perl-ext-common: fullscreen
