@@ -18,6 +18,8 @@ set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
+:set listchars=tab:\|\ 
+:set list
 
 colorscheme industry
 
