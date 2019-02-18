@@ -111,8 +111,10 @@ vmap // <leader>c<space>
 
 " terminal and make commands
 :tnoremap <Esc> <C-\><C-n>
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>  
-:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
+:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
+:ab make :update<CR>\|<Esc>:split term://make && make run<CR>Gi
+:ab shell :tabe term://.//bash
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
