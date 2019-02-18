@@ -54,10 +54,9 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " terminal and make commands
 :tnoremap <Esc> <C-\><C-n>
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>  
-:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
+:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
 :ab shell :tabe term://.//bash
-
 " -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
 au BufReadPost *

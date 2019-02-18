@@ -113,7 +113,6 @@ vmap // <leader>c<space>
 :tnoremap <Esc> <C-\><C-n>
 :imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
 :nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
-:ab make :update<CR>\|<Esc>:split term://make && make run<CR>Gi
 :ab shell :tabe term://.//bash
 
 " ------------------------------------------------------------------------------
