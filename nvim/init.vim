@@ -7,6 +7,7 @@ set guioptions-=L  "remove left-hand scroll bar
 "highlight iCursor guifg=white guibg=steelblue
 " ------------------------------------------------------------------------
 " editor settings
+set termguicolors
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
@@ -28,6 +29,7 @@ set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
 set listchars=tab:\|\ 
 set list
+set splitbelow
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
@@ -108,8 +110,9 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 
 " terminal and make commands
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>  
-:nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
+:tnoremap <Esc> <C-\><C-n>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>  
+:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 

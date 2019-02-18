@@ -53,8 +53,9 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 :ab e tabedit
 
 " terminal and make commands
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:!make && make run<CR>  
-:nmap <c-x><c-x> :update<CR>\|<Esc>:!make && make run<CR>
+:tnoremap <Esc> <C-\><C-n>
+:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>  
+:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>
 
 " -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
