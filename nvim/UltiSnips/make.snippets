@@ -25,14 +25,12 @@ snippet make_pointer "this is a simple makefile to point at the makefile generat
 PROJECT_NAME = assimp_0
 
 all:
-	@cd ../build && \
-	cmake .. && \
-	make && \
-	cd ../src
+	@cd ../build && make
 	@echo "\033[92m ------------- Compilation Successful ------------------- \033[0m" 
 
 run:
 	@../bin/$(PROJECT_NAME)
+	@echo "\033[92m ------------- Execution Successful ------------------- \033[0m"
 
 debug:
 	cd ../build && \
