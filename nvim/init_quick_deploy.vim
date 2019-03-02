@@ -12,7 +12,6 @@ set encoding=utf8
 set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set virtualedit=onemore "cursor goes one more position than the usual
 set laststatus=0
 set mouse=a "sane selection without line numbers
 set tabstop=4
@@ -21,7 +20,7 @@ filetype plugin indent on "identify the kind of filetype automatically
 :set listchars=tab:\|\ 
 :set list
 
-colorscheme industry
+colorscheme morning
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
