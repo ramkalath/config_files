@@ -80,7 +80,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
-
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
 "nmap <c-n> :bnext<CR>
