@@ -67,7 +67,7 @@ let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
-let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl'] }
+let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!GL'] }
 "let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] } " gives autocomplete without the need to press C-Space
 " autocompelte using omnisharp
  "let g:OmniSharp_server_use_mono = 1
