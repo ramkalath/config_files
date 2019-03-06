@@ -46,16 +46,18 @@ call plug#end()
 " This sets the color scheme
 set background=dark
 colorscheme gruvbox
+let g:gruvbox_italic='1'
+let g:gruvbox_italicize_comments='1'
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
-:nmap <c-j> +3
-:vmap <c-j> +3
-:nmap <c-k> -3
-:vmap <c-k> -3
+nmap <c-j> +3
+vmap <c-j> +3
+nmap <c-k> -3
+vmap <c-k> -3
 
 " -----------------------------------------------------------------------------------------
 " autocomplete 
@@ -65,6 +67,7 @@ let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
+let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl'] }
 "let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] } " gives autocomplete without the need to press C-Space
 " autocompelte using omnisharp
  "let g:OmniSharp_server_use_mono = 1
@@ -80,38 +83,38 @@ let g:NERDTreeDirArrowCollapsible = '~'
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-":nmap <c-n> :bnext<CR>
-":nmap <c-p> :bprev<CR>
-:nmap <c-n> :tabnext<CR>
-:nmap <c-p> :tabprevious<CR>
-:ab Wq :wq
-:ab W :w
-:ab WQ :wq
-:ab Q :q
-:ab Ww :w
-:ab wW :w
-:ab WW :w
-:set guitablabel=%t  " show only the file name an not the path 
-:au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
-:imap vv <Esc>v
-:nmap vv <Esc>v
-:imap <c-l> <Esc>la
-:ab e tabedit
+"nmap <c-n> :bnext<CR>
+"nmap <c-p> :bprev<CR>
+nmap <c-n> :tabnext<CR>
+nmap <c-p> :tabprevious<CR>
+ab Wq :wq
+ab W :w
+ab WQ :wq
+ab Q :q
+ab Ww :w
+ab wW :w
+ab WW :w
+set guitablabel=%t  " show only the file name an not the path 
+au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
+imap vv <Esc>v
+nmap vv <Esc>v
+imap <c-l> <Esc>la
+ab e tabedit
 set showtabline=2
 
 " start the terminal in the given path by typing :t on the minibuffer
-:ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
-:ab fpath :echo expand('%:p')
+ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
+ab fpath :echo expand('%:p')
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
 vmap // <leader>c<space>
 
 " terminal and make commands
-:tnoremap <Esc> <C-\><C-n>
-:imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
-:nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
-:ab shell :tabe term://.//bash
+tnoremap <Esc> <C-\><C-n>
+imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
+nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
+ab shell :tabe term://.//bash
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
@@ -128,8 +131,8 @@ au BufReadPost *
 
 " -------------------------------------------------------------------------------
 " highlight a TODO occurrence in bright red
-:highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
-:match TODO /TODO/
+highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
+match TODO /TODO/
 
 " -------------------------------------------------------------------------------
 " spell check
