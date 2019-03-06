@@ -111,6 +111,7 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
 alias vim="nvim"
+alias gvim="nvim-qt"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
@@ -124,9 +125,8 @@ alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
-#alias cs_ac='cp -rf ~/config_files/csharp/* .'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/chapters; git pull origin master; zathura $HOME/workarea/thesis/Thesis.pdf &!"
 alias thesisimages="cd $HOME/Dropbox/study/ThesisImages"
 alias opengl="cd $HOME/Dropbox/study/OpenGL"
-alias work="cd $HOME/Dropbox/study/OpenGL/depth_testing/"
+alias work="cd $HOME/Dropbox/study/OpenGL/stencil_testing/"
