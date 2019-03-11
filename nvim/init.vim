@@ -34,14 +34,11 @@ set splitbelow
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
 call plug#begin()
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
-Plug 'morhetz/gruvbox'
 Plug 'sickill/vim-sunburst'
-Plug 'wesgibbs/vim-irblack'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
