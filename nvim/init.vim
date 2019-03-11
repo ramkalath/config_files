@@ -40,14 +40,17 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
+Plug 'sickill/vim-sunburst'
+Plug 'wesgibbs/vim-irblack'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_italic='1'
-let g:gruvbox_italicize_comments='1'
+colorscheme Sunburst
+"colorscheme gruvbox
+"let g:gruvbox_italic='1'
+"let g:gruvbox_italicize_comments='1'
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
@@ -149,3 +152,6 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
   "autocmd VimLeave * silent !echo -ne "\033]112\007"
   "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
 "endif
+
+" clang completion for glew
+let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
