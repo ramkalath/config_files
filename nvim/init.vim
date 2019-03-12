@@ -38,16 +38,15 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
-Plug 'sickill/vim-sunburst'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme Sunburst
-"colorscheme gruvbox
-"let g:gruvbox_italic='1'
-"let g:gruvbox_italicize_comments='1'
+colorscheme gruvbox
+let g:gruvbox_italic='1'
+let g:gruvbox_italicize_comments='1'
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
