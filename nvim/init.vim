@@ -151,4 +151,5 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 "endif
 
 " clang completion for glew
+
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
