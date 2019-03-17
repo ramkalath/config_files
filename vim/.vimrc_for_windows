@@ -1,115 +1,77 @@
-" ------------------------------------------------------------------------
-" editor settings
-set guioptions-=m  "menu bar
-set guioptions-=T  "toolbar
-set guioptions=  "scrollbar
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin('$HOME/.vim/bundle/')
+Plugin 'scrooloose/nerdtree'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'morhetz/gruvbox'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'tikhomirov/vim-glsl'
+call vundle#end()
 
-"------------------------------------------------------------------------
-set guifont=Monospace\ 11 "set font size
-set hidden "unsaved buffer wont close when opening a new buffer/file
-set autochdir "keep up with the directory path when changing files
+set background=dark
+colorscheme gruvbox
+" set theruntime path to include Vundle and initialize
+syntax enable " enables syntax highlighting
+filetype plugin indent on    " identify the kind of filetype automatically
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
-set nocompatible "This tells vim not to act like it predecessor vi
-syntax enable "enables syntax highlighting
-set number " displays line number
+set hidden
+set autochdir
+set nocompatible " This tells vim not to act like it predecessor vi
+set belloff=all
+set laststatus=2
+set guifont:consolas:h12
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set splitright " ensures the splits always happen on the right
 set relativenumber
-set shortmess=A "prevent vim from giving a warning it the swp file is open 
-set encoding=utf8
+set backspace=indent,eol,start " enables backspace on windows
+set shortmess=A
+set cursorline
+set encoding=utf-8
 set ignorecase
 set nobackup
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set mouse=a "sane selection without line numbers
+set whichwrap+=<,>,h,l,[,] " TODO: no idea what this is.
+set number
+set mouse=a
 set tabstop=4
 set shiftwidth=4
-filetype plugin indent on "identify the kind of filetype automatically
-"set listchars=tab:\|\  
-set listchars=
-set list
-set splitbelow
-set splitright
-set cursorline
-set laststatus=2
-
-"cursor color
-au InsertLeave * hi Cursor guibg=green 
-au InsertEnter * hi Cursor guibg=green
-
-" -----------------------------------------------------------------------------------------
-" toggling between splits
-nnoremap <m-l> <c-w><c-l>
-nnoremap <m-h> <c-w><c-h>
-nnoremap <m-j> <c-w><c-j>
-nnoremap <m-k> <c-w><c-k>
-
-" -----------------------------------------------------------------------------------------
-" scrolling up and down multiple lines atonce
+au GUIEnter * simalt ~x " makes the window open up in fullscreen
+set guitablabel=%t  " show only the file name an not the path 
+au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 nmap <c-j> +3
 vmap <c-j> +3
 nmap <c-k> -3
 vmap <c-k> -3
-
-" -----------------------------------------------------------------------------------------
-" wrapping lines when arrows are pressed
-set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
-
-" -------------------------------------------------------------------------------
-" terminal and make commands
-tnoremap <Esc> <C-\><C-n>
-ab shell :vert term<CR>
-" -------------------------------------------------------------------------------
-" remember where the cursor was in the previous session; not if the file is gitcommit
-au BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
-	\ execute("normal `\"") |
-\ endif
-
-" -------------------------------------------------------------------------------
-" highlight a TODO occurrence in bright red
-highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
-match TODO /TODO/
-
-" -----------------------------------------------------------------------------------------
-" keyboard shortcuts 
+nmap <c-Up> -3
+nmap <c-Down> +3 
+vmap <c-Up> -3
+nmap <c-Down> +3 
 nmap <c-n> :bnext<CR>
-nmap <c-p> :bprevious<CR>
+nmap <c-p> :bprev<CR>
 ab Wq :wq
 ab W :w
 ab WQ :wq
 ab Q :q
-ab Ww :w
-ab wW :w
-ab WW :w
-set guitablabel=%t  " show only the file name an not the path 
-au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
+imap vv <Esc>v
+nmap vv <Esc>v
 imap <c-l> <Esc>la
-ab fpath :echo expand('%:p')
+nmap <c-l> e
+nmap <c-h> b
+nmap <C-Right> e
+ab shell :vert term
+tnoremap <Esc> <C-\><C-n>
+highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
+match TODO /TODO/
+highlight Cursor guifg=green guibg=black
+highlight iCursor guifg=black guibg=green
 
 " -----------------------------------------------------------------------------------------
-" plugins
-set rtp+=~/.vim/autoload/plug.vim
-call plug#begin()
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
-Plug 'tikhomirov/vim-glsl'
-Plug 'keith/parsec.vim'
-Plug 'altercation/vim-colors-solarized'
-call plug#end()
-
-colorscheme solarized
-
-" -----------------------------------------------------------------------------------------
-" youcompleteme autocomplete 
-let g:ycm_global_ycm_extra_conf = '$HOME/config_files/nvim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set backspace=indent,eol,start
-"let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] } " gives autocomplete without the need to press C-Space
-" autocompelte using omnisharp
- "let g:OmniSharp_server_use_mono = 1
+" Nerd commenter
+nmap // <leader>c<space>
+vmap // <leader>c<space>
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
@@ -117,20 +79,11 @@ let g:NERDTreeWinSize=60
 map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
 let g:UltiSnipsExpandTrigger = "<nop>"
 inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
 let g:UltiSnipsSnippetDirectories = ['/$HOME/.config/nvim/UltiSnips', 'UltiSnips']
-
-" -------------------------------------------------------------------------------
-" press // for comment using nerd commenter
-nmap // <leader>c<space>
-vmap // <leader>c<space>
-
-" -------------------------------------------------------------------------------
-" spell check
-set spellfile=~/.config/nvim/spell/en.utf-8.add
