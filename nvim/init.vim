@@ -29,7 +29,7 @@ set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
 set listchars=tab:\|\ 
 set list
-set splitbelow
+"set splitbelow
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
@@ -111,8 +111,8 @@ vmap // <leader>c<space>
 
 " terminal and make commands
 tnoremap <Esc> <C-\><C-n>
-imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi
-nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi
+imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
+nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
 ab shell :tabe term://.//bash
 
 " ------------------------------------------------------------------------------
