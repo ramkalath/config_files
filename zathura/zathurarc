@@ -1,4 +1,5 @@
 set window-icon /usr/share/icons/elementary-xfce/apps/128/xpdf.png
+set selection-clipboard clipboard
 
 map [normal] <C-k> navigate previous
 map [normal] <C-j> navigate next
