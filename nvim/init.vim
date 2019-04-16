@@ -29,7 +29,6 @@ set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
 set listchars=tab:\|\ 
 set list
-"set splitbelow
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
