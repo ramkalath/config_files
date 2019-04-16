@@ -130,3 +130,7 @@ alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/chapters; git 
 alias thesisimages="cd $HOME/Dropbox/study/ThesisImages"
 alias opengl="cd $HOME/Dropbox/study/OpenGL"
 alias work="cd $HOME/Dropbox/study/OpenGL/stencil_testing/"
+
+
+# waspmote related
+waspmote(){$HOME/workarea/landslide_munnar/ide/waspmote $1 > /dev/null &!}
