@@ -30,12 +30,12 @@ set listchars=tab:\|\
 set list
 
 " ------------------------------------------------------------------------
-set rtp+=~/.config/nvim/autoload/plug.vim
-call plug#begin()
-Plug 'scrooloose/nerdcommenter'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'morhetz/gruvbox'
-call plug#end()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'morhetz/gruvbox'
+call vundle#end()            " required
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme

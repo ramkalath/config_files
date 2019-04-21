@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo apt-get install vim vim-athena xclip
+sudo apt-get install vim vim-athena xclip curl git
 mkdir ~/.vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 wget https://raw.githubusercontent.com/ramkalath/config_files/master/nvim/init_quick_deploy.vim
 mv init_quick_deploy.vim .vimrc
