@@ -3,8 +3,6 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-"highlight Cursor guifg=white guibg=black
-"highlight iCursor guifg=white guibg=steelblue
 " ------------------------------------------------------------------------
 " editor settings
 set hidden "unsaved buffer wont close when opening a new buffer/file
