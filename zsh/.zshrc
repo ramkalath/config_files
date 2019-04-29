@@ -96,22 +96,12 @@ export TERM=xterm-256color
 #export KEYTIMEOUT=1
 #------------------------------------------------------------------------------------
 bindkey '^[[Z' reverse-menu-complete
-
-#------------------------------------------------------------------------------------
-# to use tmux
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-tmux source-file ~/.tmux.conf
-alias kill_sessions_tmux="tmux kill-session -a"
 #------------------------------------------------------------------------------------
 
 xset r rate 250 45
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
-alias vim="nvim"
-alias gvim="nvim-qt"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
