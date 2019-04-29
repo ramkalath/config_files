@@ -160,7 +160,7 @@ bindsym $mod+shift+x exec i3lock-fancy
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
-bindsym $mod+F3 EXEc pactl set-sink-volume 0 +10%
+bindsym $mod+F3 exec pactl set-sink-volume 0 +10%
 bindsym $mod+F2 exec pactl set-sink-volume 0 -10%
 bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
