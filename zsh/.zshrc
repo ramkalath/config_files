@@ -91,6 +91,14 @@ force_color_prompt=yes
 export TERM=xterm-256color
 
 #------------------------------------------------------------------------------------
+# to use tmux
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+tmux source-file ~/.tmux.conf
+alias kill_sessions_tmux="tmux kill-session -a"
+
+#------------------------------------------------------------------------------------
 #vim mode
 #bindkey -v
 #export KEYTIMEOUT=1
