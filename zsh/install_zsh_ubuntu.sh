@@ -14,5 +14,3 @@ chsh -s /bin/zsh
 
 # run this command again if this does not take effect
 # chsh -s /bin/zsh
-
-some nonsense here
