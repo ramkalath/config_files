@@ -36,6 +36,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
