@@ -1,0 +1,9 @@
+snippet make_md "this creates a simple makefile for markdown to compile text" b 
+# enter a filename without the extension
+FILENAME = 
+
+all:
+	pandoc $(FILENAME).md -o ${FILENAME}.pdf
+
+endsnippet
+
