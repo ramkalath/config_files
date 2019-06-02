@@ -132,4 +132,4 @@ alias null='/dev/null 2>&1'
 
 alias thesis="tmux rename-window thesis; cd $HOME/workarea/thesis/chapters; git pull origin master; zathura $HOME/workarea/thesis/Thesis.pdf &!"
 alias thesisimages="cd $HOME/Dropbox/study/ThesisImages"
-alias opengl="cd $HOME/workarea/advanced_opengl/"
+alias opengl="cd $HOME/workarea/opengl/advanced_opengl/"
