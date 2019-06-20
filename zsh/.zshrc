@@ -130,8 +130,4 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
 
-<<<<<<< HEAD
 alias opengl="zathura $HOME/workarea/opengl/offline\ learnopengl.pdf && cd $HOME/workarea/opengl/advanced_opengl/31_instancing/"
-=======
-alias opengl="zathura $HOME/workarea/opengl/offline\ learnopengl.pdf && cd $HOME/workarea/opengl/advanced_opengl/30_Geometry_Shader/"
->>>>>>> 5e02c98fb623217b4073ea9234a56f15a6f23da2
