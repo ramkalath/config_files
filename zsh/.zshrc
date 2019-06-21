@@ -131,3 +131,4 @@ alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
 
 alias opengl="zathura $HOME/workarea/opengl/offline\ learnopengl.pdf && cd $HOME/workarea/opengl/advanced_opengl/30_Geometry_Shader/"
+alias waspmote="$HOME/workarea/landslide/landslide_munnar/ide/waspmote"
