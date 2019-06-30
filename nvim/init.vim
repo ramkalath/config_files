@@ -35,9 +35,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------

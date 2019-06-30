@@ -114,7 +114,6 @@ bindkey '^[[Z' reverse-menu-complete
 xset r rate 250 45
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-
 alias vim="nvim"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
@@ -129,6 +128,5 @@ alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
-
 alias opengl_book="zathura $HOME/workarea/opengl/offline\ learnopengl.pdf &!"
-alias opengl="cd $HOME/workarea/opengl/advanced_opengl/31_instancing/"
+alias opengl="cd $HOME/workarea/opengl/advanced_opengl/32_anti_aliasing/"
