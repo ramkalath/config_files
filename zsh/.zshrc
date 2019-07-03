@@ -117,16 +117,11 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
-alias video2gif='foo(){ffmpeg -i "$1" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif}; foo '
 alias zathura='foo(){zathura "$1"&!}; foo '
 alias feh='foo(){feh "$1" .}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
-alias gitmerge="git mergetool"
-alias tasklist="tmux rename-window tasklist & vim ~/Dropbox/tasklist/tasklist.txt"
-alias python="python2"
+alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
-alias opengl_book="zathura $HOME/workarea/opengl/offline\ learnopengl.pdf &!"
-alias opengl="cd $HOME/workarea/opengl/advanced_opengl/32_anti_aliasing/"
