@@ -13,7 +13,7 @@ syntax enable "enables syntax highlighting
 set number " displays line number
 set relativenumber
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
-set cursorline
+"set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
@@ -35,14 +35,15 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
+Plug 'igrmk/kull-vim'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_italic='1'
-let g:gruvbox_italicize_comments='1'
+colorscheme kull
+"let g:gruvbox_italic='1'
+"let g:gruvbox_italicize_comments='1'
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
