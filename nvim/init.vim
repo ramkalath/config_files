@@ -35,15 +35,15 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
-Plug 'igrmk/kull-vim'
+"Plug 'igrmk/kull-vim'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
 set background=dark
-colorscheme kull
-"let g:gruvbox_italic='1'
-"let g:gruvbox_italicize_comments='1'
+colorscheme gruvbox
+let g:gruvbox_italic='1'
+let g:gruvbox_italicize_comments='1'
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
