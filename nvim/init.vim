@@ -107,8 +107,8 @@ vmap // <leader>c<space>
 
 " terminal and make commands
 tnoremap <Esc> <C-\><C-n>
-imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
-nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
+imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
+nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
 ab shell :tabe term://.//bash
 
 " ------------------------------------------------------------------------------
