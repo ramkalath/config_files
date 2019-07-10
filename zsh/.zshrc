@@ -126,3 +126,5 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
 alias ml='cd ~/Dropbox/study/machine_learning'
+
+alias opengl='~/workarea/opengl/'
