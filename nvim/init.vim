@@ -35,7 +35,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
-"Plug 'igrmk/kull-vim'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
