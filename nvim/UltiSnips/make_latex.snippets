@@ -21,18 +21,19 @@ endsnippet
 
 snippet make_latex2 "this creates a simple makefile for latex to compile text with bibtex" b 
 # enter a filename without the extension
-FILENAME = 
+FILENAME=
 
 all:
 	pdflatex $(FILENAME).tex
+	bibtex $(FILENAME).aux
+	pdflatex $(FILENAME).tex
+	pdflatex $(FILENAME).tex
 
 run:
-	pdflatex $(FILENAME).tex
-	bibtex $(FILENAME) 
+	bibtex $(FILENAME)
 	pdflatex $(FILENAME).tex
 	pdflatex $(FILENAME).tex
 
 clean:
-	rm $(FILENAME).log $(FILENAME).aux
-
+	rm $(FILENAME).log $(FILENAME).aux *.lof *.blg *.toc *.out *.lot
 endsnippet
