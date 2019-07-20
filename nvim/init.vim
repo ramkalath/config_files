@@ -127,6 +127,8 @@ au BufReadPost *
 " highlight a TODO occurrence in bright red
 highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
 match TODO /TODO/
+ab TODO TODO(ram):
+ab _todo TODO(ram):
 
 " -------------------------------------------------------------------------------
 " spell check
