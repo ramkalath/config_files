@@ -33,8 +33,8 @@ call plug#begin()
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
-Plug 'tikhomirov/vim-glsl'
 Plug 'morhetz/gruvbox'
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
