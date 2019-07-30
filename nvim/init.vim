@@ -77,8 +77,6 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-"nmap <c-n> :bnext<CR>
-"nmap <c-p> :bprev<CR>
 nmap <c-n> :tabnext<CR>
 nmap <c-p> :tabprevious<CR>
 ab Wq :wq
