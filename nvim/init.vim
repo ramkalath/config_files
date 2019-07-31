@@ -13,7 +13,7 @@ syntax enable "enables syntax highlighting
 set number " displays line number
 set relativenumber
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
-"set cursorline
+set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
