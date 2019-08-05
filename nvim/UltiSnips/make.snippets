@@ -25,7 +25,7 @@ snippet make_pointer_cmake "this is a simple makefile to point at the makefile g
 PROJECT_NAME = assimp_0
 
 all:
-	@cd ../build && make
+	@cd ../build && cmake .. && make
 	@echo "\033[92m ------------- Compilation Successful ------------------- \033[0m" 
 
 run:
