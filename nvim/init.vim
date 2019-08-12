@@ -69,12 +69,12 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 
 " -----------------------------------------------------------------------------------------
 " Nerd Tree file manager
-let g:NERDTreeWinSize=60 
-map <C-f> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
+"let g:NERDTreeWinSize=60 
+"map <C-f> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
+"let g:NERDTreeDirArrowExpandable = '+'
+"let g:NERDTreeDirArrowCollapsible = '~'
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
 nmap <c-n> :tabnext<CR>
@@ -146,5 +146,5 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 "endif
 
 " clang completion for glew
-
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
+
