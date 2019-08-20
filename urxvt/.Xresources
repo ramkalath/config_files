@@ -5,6 +5,7 @@
 !URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
 !URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
 URxvt.font:xft:Monospace:pixelsize=size
+URxvt*italicFont: xft:Monospace:italic:pixelsize=size:antialias=true
 URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
 
 URxvt.scrollBar: false
