@@ -15,7 +15,7 @@ syntax enable "enables syntax highlighting
 set number " displays line number
 set relativenumber
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
-set cursorline
+"set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
@@ -28,6 +28,7 @@ set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
 set listchars=tab:\|\ 
 set list
+set nowrap
 
 " ------------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -37,7 +38,7 @@ call vundle#end()            " required
 
 " -----------------------------------------------------------------------------------------
 " This sets the color scheme
-set background=dark
+"set background=dark
 "colorscheme gruvbox
 "let g:gruvbox_italic='1'
 "let g:gruvbox_italicize_comments='1'
