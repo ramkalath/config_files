@@ -29,6 +29,8 @@ filetype plugin indent on "identify the kind of filetype automatically
 set listchars=tab:\|\ 
 set list
 set nowrap
+set cursorline
+hi cursorline cterm=NONE ctermbg=darkblue ctermfg=white
 
 " ------------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
