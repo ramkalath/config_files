@@ -33,8 +33,6 @@ set list
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 
 " -----------------------------------------------------------------------------------------
@@ -84,10 +82,8 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 
 " terminal and make commands
-tnoremap <Esc> <C-\><C-n>
 imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
 nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
-ab shell :tabe term://.//bash
 
 " -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
