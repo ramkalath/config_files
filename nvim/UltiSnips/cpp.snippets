@@ -42,9 +42,10 @@ snippet blue_text "prints text in blue" b
 std::cout << "\033[0;96m <enter text here> \033[0m\n" << std::endl;	//red bold, change the first 1 to 0 for printing without bold
 endsnippet
 
-snippet glew "for ycm autocompletion of glew methods" b
+snippet glew_headers "for ycm autocompletion of glew methods" b
 // Use this for ycm autocompletion
 #ifdef USE_GLEW
+	#define GLEW_STATIC
     #include <GL/glew.h>
 #else
     #define GL_GLEXT_PROTOTYPES
