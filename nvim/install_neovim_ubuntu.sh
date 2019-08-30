@@ -20,7 +20,7 @@ git submodule update --init --recursive
 python3 install.py --clang-completer # this will download its own version of clang
 # if the above gives an error then try using --system-libclang
 # python3 install.py --clang-completer --system-libclang
-python3 install.py --clang-completer --omnisharp-completer
+# python3 install.py --clang-completer --omnisharp-completer
 
 # must create a symlinks from config_files folder (TODO: test this)--------------------------------------------------------------------------------------
 ln -s $HOME/config_files/nvim/init.vim $HOME/.config/nvim/init.vim
