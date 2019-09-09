@@ -112,6 +112,16 @@ bindkey '^[[Z' reverse-menu-complete
 #------------------------------------------------------------------------------------
 
 xset r rate 250 45
+
+# records the location of the current directory
+function cd() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && pwd > /tmp/whereami
+}
+
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"
@@ -126,5 +136,4 @@ alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
 alias null='/dev/null 2>&1'
-
 alias opengl='~/workarea/opengl/advanced_opengl/'
