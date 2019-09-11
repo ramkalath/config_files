@@ -80,24 +80,24 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 " keyboard shortcuts 
 nmap <c-n> :tabnext<CR>
 nmap <c-p> :tabprevious<CR>
-ab Wq :wq
-ab W :w
-ab WQ :wq
-ab Q :q
-ab Ww :w
-ab wW :w
-ab WW :w
+cnoreabbrev Wq :wq
+cnoreabbrev W :w
+cnoreabbrev WQ :wq
+cnoreabbrev Q :q
+cnoreabbrev Ww :w
+cnoreabbrev wW :w
+cnoreabbrev WW :w
 set guitablabel=%t  " show only the file name an not the path 
 au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-ab e tabedit
+cnoreabbrev e tabedit
 set showtabline=2
 
 " start the terminal in the given path by typing :t on the minibuffer
-ab _terminal_ :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
-ab fpath :echo expand('%:p')
+cnoreabbrev term :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
+cnoreabbrev fpath :echo expand('%:p')
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
