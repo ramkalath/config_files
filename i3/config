@@ -160,10 +160,29 @@ bindsym $mod+shift+x exec i3lock-fancy
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
-bindsym $mod+F3 exec pactl set-sink-volume 0 +10%
-bindsym $mod+F2 exec pactl set-sink-volume 0 -10%
-bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Sreen brightness controls (TODO: not working fix this)
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+gaps inner 2
+gaps outer 2
+
+for_window [class="^.*"] border pixel 3
+
+set $bg-color 	         #383C4A
+set $bd-color		     #FF0000
+#set $bd-color		     #84927D
+set $inactive-bg-color   #383C4A
+set $inactive-bd-color	 #383C4A
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+#				            border			background		text	 	 	     indicator	child border 
+client.focused          	$bd-color		$bg-color		$text-color   		 $bd-color	$bd-color  
+client.unfocused        	$bg-color		$bg-color 		$inactive-text-color $bg-color	$bg-color
+client.focused_inactive		$bg-color		$bg-color	 	$inactive-text-color $bg-color	$bg-color
+client.urgent           	$bg-color   	$bg-color		$text-color		     $bg-color	$bg-color
+client.background  					        $bg-color
