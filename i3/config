@@ -168,10 +168,11 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-gaps inner 2
-gaps outer 2
+#gaps inner 2
+#gaps outer 2
 
-for_window [class="^.*"] border pixel 3
+#for_window [class="^.*"] border pixel 3
+new_window 1pixel
 
 set $bg-color 	         #383C4A
 set $bd-color		     #FF0000
