@@ -54,6 +54,12 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# removes the window selection cycling
+focus_wrapping no
+
+# focus dont follow mouse
+focus_follows_mouse no
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
