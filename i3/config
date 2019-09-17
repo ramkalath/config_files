@@ -55,7 +55,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # removes the window selection cycling
-focus_wrapping no
+#focus_wrapping no
 
 # focus dont follow mouse
 focus_follows_mouse no
@@ -158,7 +158,7 @@ bar {
 	position top
 }
 
-exec_always feh --bg-scale "/home/ram/Pictures/wallpaper.jpg"
+exec_always feh --bg-scale "$HOME/config_files/i3/wallpaper.jpg"
 bindsym $mod+d exec rofi -show run -theme glue_pro_blue
 bindsym $mod+shift+x exec i3lock-fancy
 
