@@ -10,8 +10,8 @@ set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
 set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
-set number " displays line number
-set relativenumber
+"set number " displays line number
+"set relativenumber
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
 set cursorline
 set encoding=utf8
@@ -19,13 +19,13 @@ set ignorecase
 set nobackup
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=0
+set laststatus=2
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
-set listchars=tab:\|\ 
-set list
+"set listchars=tab:\|\ 
+"set list
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
@@ -47,6 +47,7 @@ highlight Normal ctermbg=None
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
+set nowrap
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
