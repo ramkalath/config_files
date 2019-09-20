@@ -5,27 +5,24 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 " ------------------------------------------------------------------------
 " editor settings
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
 set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
-"set number " displays line number
-"set relativenumber
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
 set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=2
+set laststatus=2 " enable status line
+set statusline=%<%F\ %h%m%r%y%=%-14.(%l,%c%V%)\ %P
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
-"set listchars=tab:\|\ 
-"set list
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
@@ -96,6 +93,7 @@ imap <c-l> <Esc>la
 cnoreabbrev e tabedit
 
 " -----------------------------------------------------------------------------------------
+" tabline stuff
 function! MyTabLine()
         let s = ''
         for i in range(tabpagenr('$'))
@@ -144,10 +142,6 @@ set showtabline=2
 autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ------------------------------------------------------------------------------------------------------
-
-" start the terminal in the given path by typing :t on the minibuffer
-cnoreabbrev terminal :!urxvt +bl -bg black --geometry 85x47+683+0&\|<CR> 
-cnoreabbrev fpath :echo expand('%:p')
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
