@@ -160,8 +160,8 @@ bar {
 
 exec_always feh --bg-scale "$HOME/config_files/i3/wallpaper.jpg"
 exec --no-startup-id /usr/bin/dropbox start -i
-exec --no-startup-id /usr/bin/dropbox start -i
 exec --no-startup-id redshift -O 4500
+exec --no-startup-id sh $HOME/Templates/dropbox.sh
 
 bindsym $mod+d exec rofi -show run -theme glue_pro_blue
 bindsym $mod+shift+x exec i3lock-fancy
