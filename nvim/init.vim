@@ -5,7 +5,7 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 " ------------------------------------------------------------------------
 " editor settings
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=cro
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
@@ -175,19 +175,6 @@ ab _todo TODO(ram):
 " -------------------------------------------------------------------------------
 " spell check
 set spellfile=~/.config/nvim/spell/en.utf-8.add
-
-" -------------------------------------------------------------------------------
-"changes cursor color between insert mode and normal mode - use this only when using vim and not nvim
-"if &term =~ "xterm\\|urxvt"
-  "" use an orange cursor in insert mode
-  "let &t_SI = "\<Esc>]12;green\x7"
-   "use a red cursor otherwise
-  "let &t_EI = "\<Esc>]12;red\x7"
-  "silent !echo -ne "\033]12;red\007"
-   "reset cursor when vim exits
-  "autocmd VimLeave * silent !echo -ne "\033]112\007"
-  "" use \003]12;gray\007 for gnome-terminal and urxvt up to version 9.21
-"endif
 
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
