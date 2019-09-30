@@ -12,7 +12,7 @@ set clipboard^=unnamed "This sets the clipboard as the default register. Useful 
 set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
 set shortmess=A "prevent vim from giving a warning it the swp file is open 
-"set cursorline
+set cursorline
 set encoding=utf8
 set ignorecase
 set nobackup
@@ -43,7 +43,7 @@ let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
 silent colorscheme gruvbox
-"highlight Normal ctermbg=None guibg=None
+highlight Normal ctermbg=None guibg=None
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
