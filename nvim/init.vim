@@ -17,7 +17,7 @@ set encoding=utf8
 set ignorecase
 set nobackup
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=2 " enable status line
+set laststatus=0 " enable status line
 set statusline=%<%F\ %h%m%r%y%=%-14.(%l,%c%V%)\ %P
 set mouse=a "sane selection without line numbers
 set tabstop=4
@@ -41,7 +41,7 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
-highlight Normal ctermbg=None
+highlight Normal ctermbg=None guibg=None
 
 hi StatusLine ctermbg=white ctermfg=darkgrey
 " -----------------------------------------------------------------------------------------
