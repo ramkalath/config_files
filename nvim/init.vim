@@ -41,9 +41,10 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
-highlight Normal ctermbg=None guibg=None
+let g:gruvbox_contrast_dark='hard'
+silent colorscheme gruvbox
+"highlight Normal ctermbg=None guibg=None
 
-hi StatusLine ctermbg=white ctermfg=darkgrey
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
