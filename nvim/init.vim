@@ -96,6 +96,8 @@ nmap vv <Esc>v
 imap <c-l> <Esc>la
 let fpath = "tabnew ".expand("%:p:h")."/"
 cnoreabbrev e tabedit
+
+" TODO(ram): fix cnoreabbrev to expand to "tabedit file-path"
 "cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == "e" ? fpath : "tabnew"
 "cnoreabbrev <silent> dir1 C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
 "cnoreabbrev <silent> edit C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
