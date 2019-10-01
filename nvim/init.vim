@@ -94,7 +94,11 @@ au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
+let fpath = "tabnew ".expand("%:p:h")."/"
 cnoreabbrev e tabedit
+"cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == "e" ? fpath : "tabnew"
+"cnoreabbrev <silent> dir1 C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
+"cnoreabbrev <silent> edit C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
 
 " -----------------------------------------------------------------------------------------
 " tabline stuff
