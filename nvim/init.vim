@@ -182,6 +182,8 @@ match TODO /TODO/
 ab TODO TODO(ram):
 ab _todo TODO(ram):
 
+highlight DONE cterm=italic ctermfg=LightGreen guifg=#00ff00
+match DONE /DONE/
 " -------------------------------------------------------------------------------
 " spell check
 set spellfile=~/.config/nvim/spell/en.utf-8.add
