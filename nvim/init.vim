@@ -5,7 +5,6 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 " ------------------------------------------------------------------------
 " editor settings
-autocmd FileType * setlocal formatoptions-=cro
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
@@ -49,6 +48,10 @@ highlight Normal ctermbg=None guibg=None
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 set nowrap
+
+" -----------------------------------------------------------------------------------------
+" this disables auto insertion of comments on a new line. Do no put this before enabling the plugins
+autocmd FileType * setlocal formatoptions-=cro
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -190,4 +193,3 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
-
