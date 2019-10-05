@@ -74,6 +74,12 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 "let g:OmniSharp_server_use_mono = 1
 
 " -----------------------------------------------------------------------------------------
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_banner = 0
+cnoreabbrev exp :Vexplore
 " Nerd Tree file manager
 "let g:NERDTreeWinSize=60 
 "map <C-f> :NERDTreeToggle<CR>
@@ -97,14 +103,14 @@ au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-let fpath = "tabnew ".expand("%:p:h")."/"
+let fpath = "tabedit ".expand("%:p:h")."/"
 cnoreabbrev e tabedit
 
 " TODO(ram): fix cnoreabbrev to expand to "tabedit file-path"
 "cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == "e" ? fpath : "tabnew"
 "cnoreabbrev <silent> dir1 C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
 "cnoreabbrev <silent> edit C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
-
+nmap cap g~iwea
 " -----------------------------------------------------------------------------------------
 " tabline stuff
 function! MyTabLine()
@@ -193,3 +199,5 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
+
+cnoremap cap g~iwea
