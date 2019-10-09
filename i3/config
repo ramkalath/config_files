@@ -177,6 +177,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # Sreen brightness controls (TODO: not working fix this)
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym Print exec xfce4-screenshooter
 
 #gaps inner 2
 #gaps outer 2
