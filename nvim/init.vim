@@ -47,11 +47,13 @@ highlight Normal ctermbg=None guibg=None
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
-set nowrap
+"set nowrap
 
 " -----------------------------------------------------------------------------------------
 " this disables auto insertion of comments on a new line. Do no put this before enabling the plugins
-autocmd FileType * setlocal formatoptions-=cro
+"autocmd FileType * setlocal formatoptions-=cro
+"autocmd FileType * setlocal formatoptions+=t
+autocmd FileType * setlocal formatoptions=
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -160,7 +162,7 @@ set tabline=%!MyTabLine()
 set showtabline=2
 autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
-" ------------------------------------------------------------------------------------------------------
+" ----------------------------------------------------------------------------------------------------------------
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -201,3 +203,4 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
 cnoremap cap g~iwea
+
