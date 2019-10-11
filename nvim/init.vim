@@ -3,6 +3,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+
 " ------------------------------------------------------------------------
 " editor settings
 set hidden "unsaved buffer wont close when opening a new buffer/file
@@ -10,7 +11,7 @@ set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
 set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
-set shortmess=A "prevent vim from giving a warning it the swp file is open 
+set shortmess=a "prevent vim from giving a warning it the swp file is open 
 set cursorline
 set encoding=utf8
 set ignorecase
@@ -22,7 +23,6 @@ set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
-
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
