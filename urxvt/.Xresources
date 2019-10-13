@@ -1,11 +1,11 @@
-#define size 13
-!URxvt*font: xft:Inconsolata:pixelsize=size:antialias=true
-!URxvt*boldFont: xft:Inconsolata:bold:pixelsize=size:antialias=true
-!!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
-!URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
-!URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
-URxvt.font:xft:Monospace:pixelsize=size
-URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
+#define size 16
+URxvt*font: xft:Inconsolata:pixelsize=size:antialias=true
+URxvt*boldFont: xft:Inconsolata:bold:pixelsize=size:antialias=true
+!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
+URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
+URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
+!URxvt.font:xft:Monospace:pixelsize=size
+!URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
 URxvt*borderLess: false
