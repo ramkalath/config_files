@@ -8,7 +8,7 @@ if __name__ == "__main__":
     filename = cwd + str(datetime.datetime.now()).split(" ")[0] + ".tex"
     os.system("touch " + filename)
     file_object = open(filename, 'w')
-    file_object.write("\documentclass[10pt]{article} \n \usepackage[letterpaper, portrait, margin=0.5in]{geometry} \n \n\\begin{document} \n\\title{} \n\\author{} \n\date{\\today} \n\maketitle \n\end{document} \n ")
+    file_object.write("\documentclass[10pt]{article} \n\usepackage[letterpaper, portrait, margin=0.5in]{geometry} \n \n\\begin{document} \n\\title{} \n\\author{} \n\date{\\today} \n\maketitle \n\end{document} \n ")
 
     # create a Makefile
     filename = cwd + "Makefile"
