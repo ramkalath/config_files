@@ -1,6 +1,7 @@
 snippet latex_document "this is a latex document snippet" b
 \documentclass[10pt]{article}
 \usepackage[letterpaper, portrait, margin=0.5in]{geometry}
+\usepackage[colorlinks = true, linkcolor = cyan, urlcolor  = cyan, citecolor = blue, anchorcolor = blue]{hyperref}
 
 \begin{document}
 \title{}
@@ -49,6 +50,8 @@ endsnippet
 
 snippet code_header "this is to add a code header" b
 
+\usepackage{listings}
+\usepackage{xcolor}
 \definecolor{light-gray}{gray}{0.85} %the shade of grey that stack exchange uses
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -94,5 +97,19 @@ snippet terminal_code_insert "this is to insert terminal commands" b
 \end{lstlisting}
 \end{mdframed} 
 
+endsnippet
+#----------------------------------------------------------------------
+
+snippet itemize "itemize in latex" b
+\begin{itemize}
+	\item
+\end{itemize}
+endsnippet
+#----------------------------------------------------------------------
+
+snippet enumerate "enumerate in latex" b
+\begin{enumerate}
+	\item
+\end{enumerate}
 endsnippet
 #----------------------------------------------------------------------
