@@ -132,7 +132,12 @@ bindkey '^b' recordpath
 
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-alias vim="nvim"
+#alias vim="nvim"
+alias vim_bare="vim"
+alias vim="gvim --servername VIM"
+alias gvim="gvim --servername VIM"
+alias gvimadd='foo(){gvim --remote "$1" &!}; foo '
+alias vimadd='foo(){gvim --remote "$1" &!}; foo '
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 alias zathura='foo(){zathura "$1"&!}; foo '
@@ -148,3 +153,5 @@ alias null='/dev/null 2>&1'
 alias opengl='~/workarea/opengl/advanced_opengl/ && cd .'
 alias waspmote='~/workarea/landslide/landslide_munnar/misc/waspmote_ide/./waspmote'
 alias notes="cd ~/Dropbox/study/2019/"
+alias hangouts="~/Downloads/yakyak-linux-x64/./yakyak &!"
+alias tree="tree -hF"

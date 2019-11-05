@@ -17,11 +17,15 @@ set encoding=utf8
 set ignorecase
 set nobackup
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=0 " enable status line
+set laststatus=2 " enable status line
 set statusline=%<%F\ %h%m%r%y%=%-14.(%l,%c%V%)\ %P
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
+set splitright
+set splitbelow
+set wildmode=full
+
 filetype plugin indent on "identify the kind of filetype automatically
 
 " ------------------------------------------------------------------------
@@ -32,6 +36,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -42,7 +47,7 @@ let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
 silent colorscheme gruvbox
-highlight Normal ctermbg=None guibg=None
+"highlight Normal ctermbg=None guibg=None
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -76,23 +81,20 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 "let g:OmniSharp_server_use_mono = 1
 
 " -----------------------------------------------------------------------------------------
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 3
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_banner = 0
-cnoreabbrev exp :Vexplore
+" Nerd Tree
 " Nerd Tree file manager
-"let g:NERDTreeWinSize=60 
-"map <C-f> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '~'
+let g:NERDTreeWinSize=60 
+map <C-f> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-nmap <c-n> :tabnext<CR>
-nmap <c-p> :tabprevious<CR>
+nmap <c-n> :bnext<CR>
+nmap <c-p> :bprevious<CR>
+cnoreabbrev q :bd
 cnoreabbrev Wq :wq
 cnoreabbrev W :w
 cnoreabbrev WQ :wq
@@ -100,68 +102,15 @@ cnoreabbrev Q :q
 cnoreabbrev Ww :w
 cnoreabbrev wW :w
 cnoreabbrev WW :w
+cnoremap ls ls<cr>:b
 set guitablabel=%t  " show only the file name an not the path 
+highlight StatusLine cterm=bold guifg=orange guibg=black
 au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-let fpath = "tabedit ".expand("%:p:h")."/"
-cnoreabbrev e tabedit
-
-" TODO(ram): fix cnoreabbrev to expand to "tabedit file-path"
-"cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == "e" ? fpath : "tabnew"
-"cnoreabbrev <silent> dir1 C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
-"cnoreabbrev <silent> edit C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
 nmap cap g~iwea
-" -----------------------------------------------------------------------------------------
-" tabline stuff
-function! MyTabLine()
-        let s = ''
-        for i in range(tabpagenr('$'))
-                " select the highlighting
-                if i + 1 == tabpagenr()
-                        let s .= '%#TabLineSel#'
-                else
-                        let s .= '%#TabLine#'
-                endif
 
-                " set the tab page number (for mouse clicks)
-                let s .= '%' . (i + 1) . 'T'
-
-                " the label is made by MyTabLabel()
-                let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-        endfor
-
-        " after the last tab fill with TabLineFill and reset tab page nr
-        let s .= '%#TabLineFill#%T'
-
-        " right-align the label to close the current tab page
-        if tabpagenr('$') > 1
-                let s .= '%=%#TabLine#%999X X'
-        endif
-        "echomsg 's:' . s
-        return s
-endfunction
-
-function! MyTabLabel(n)
-        let buflist = tabpagebuflist(a:n)
-        let winnr = tabpagewinnr(a:n)
-        let numtabs = tabpagenr('$')
-        " account for space padding between tabs, and the "close" button
-        let maxlen = ( &columns - ( numtabs * 2 ) - 4 ) / numtabs
-        let tablabel = bufname(buflist[winnr - 1])
-        while strlen( tablabel ) < 4
-                let tablabel = tablabel . " "
-        endwhile
-        let tablabel = fnamemodify( tablabel, ':t' )
-        let tablabel = strpart( tablabel, 0,  maxlen )
-        return tablabel
-endfunction
-
-set tabline=%!MyTabLine()
-set showtabline=2
-autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
-autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
 
 " press // for comment using nerd commenter
@@ -169,11 +118,14 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 
 " terminal and make commands
+
+hi Terminal ctermbg=black ctermfg=yellow guibg=black guifg=gold
 tnoremap <Esc> <C-\><C-n>
-imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-cnoreabbrev hshell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
-cnoreabbrev vshell :update<CR>\|<Esc>:vsp term://bash<CR><Esc><C-w><C-r>
+imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:term make && make run<CR>
+"nmap <c-x><c-x> :update<CR>\|<Esc>:term make && make run<CR>
+nmap <c-x><c-x> <Esc>:term make && make run<CR>
+cnoreabbrev hshell <Esc>:term<CR>
+cnoreabbrev vshell <Esc>:vert term<CR>
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
@@ -205,4 +157,13 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
 cnoremap cap g~iwea
+
+" -------------------------------------------------------------------------------
+" cursor color
+highlight Cursor guifg=cyan guibg=black
+highlight iCursor guifg=black guibg=green
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
 
