@@ -126,6 +126,7 @@ imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:term make && make run<CR>
 nmap <c-x><c-x> <Esc>:term make && make run<CR>
 cnoreabbrev hshell <Esc>:term<CR>
 cnoreabbrev vshell <Esc>:vert term<CR>
+cnoreabbrev cshell <Esc>:term ++curwin<CR>
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
@@ -167,3 +168,4 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
+autocmd FileType cpp set nowrap
