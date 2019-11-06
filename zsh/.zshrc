@@ -132,12 +132,7 @@ bindkey '^b' recordpath
 
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-#alias vim="nvim"
-alias vim_bare="vim"
-alias vim="gvim --servername VIM"
-alias gvim="gvim --servername VIM"
-alias gvimadd='foo(){gvim --remote "$1" &!}; foo '
-alias vimadd='foo(){gvim --remote "$1" &!}; foo '
+alias vim="nvim"
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 alias zathura='foo(){zathura "$1"&!}; foo '
