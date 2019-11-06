@@ -130,6 +130,7 @@ function recordpath() {
 zle -N recordpath
 bindkey '^b' recordpath
 
+VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias vim="nvim"

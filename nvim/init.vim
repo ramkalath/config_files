@@ -54,6 +54,7 @@ set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
 "autocmd FileType * setlocal formatoptions-=cro
 "autocmd FileType * setlocal formatoptions+=t
 autocmd FileType * setlocal formatoptions=
+autocmd FileType cpp set nowrap
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -76,20 +77,6 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 "let g:OmniSharp_server_use_mono = 1
 
 " -----------------------------------------------------------------------------------------
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 3
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_banner = 0
-cnoreabbrev exp :Vexplore
-" Nerd Tree file manager
-"let g:NERDTreeWinSize=60 
-"map <C-f> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let NERDTreeQuitOnOpen=1 " closes upon opening a file in nerdtree
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '~'
-" -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
 nmap <c-n> :tabnext<CR>
 nmap <c-p> :tabprevious<CR>
@@ -107,12 +94,9 @@ nmap vv <Esc>v
 imap <c-l> <Esc>la
 let fpath = "tabedit ".expand("%:p:h")."/"
 cnoreabbrev e tabedit
-
-" TODO(ram): fix cnoreabbrev to expand to "tabedit file-path"
-"cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == "e" ? fpath : "tabnew"
-"cnoreabbrev <silent> dir1 C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
-"cnoreabbrev <silent> edit C:/dirA/dira/dir1/<c-r>=Eatchar('\m\s\<bar>/')<cr>
 nmap cap g~iwea
+cnoremap cap g~iwea
+
 " -----------------------------------------------------------------------------------------
 " tabline stuff
 function! MyTabLine()
@@ -204,4 +188,3 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
-cnoremap cap g~iwea
