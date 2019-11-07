@@ -139,7 +139,7 @@ alias disable_touchpad="xinput disable 14"
 alias zathura='foo(){zathura "$1"&!}; foo '
 alias feh='foo(){feh "$1" .}; foo '
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
-alias gitoriginhead='foo(){ git fetch origin; git reset --hard master}; foo '
+alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
@@ -151,3 +151,5 @@ alias waspmote='~/workarea/landslide/landslide_munnar/misc/waspmote_ide/./waspmo
 alias notes="cd ~/Dropbox/study/2019/"
 alias hangouts="~/Downloads/yakyak-linux-x64/./yakyak &!"
 alias tree="tree -hF"
+alias git_show='foo(){ python ~/config_files/system_files/gitshow.py "$1"}; foo '
+alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
