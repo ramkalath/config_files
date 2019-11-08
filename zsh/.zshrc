@@ -133,23 +133,26 @@ bindkey '^b' recordpath
 VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+# softwares
 alias vim="nvim"
-alias enable_touchpad="xinput enable 14"
-alias disable_touchpad="xinput disable 14"
 alias zathura='foo(){zathura "$1"&!}; foo '
 alias feh='foo(){feh "$1" .}; foo '
-alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
-alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-alias cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
-alias setup_notes='python ~/config_files/latex/setup_notes.py'
-alias null='/dev/null 2>&1'
-alias opengl='~/workarea/opengl/advanced_opengl/ && cd .'
-alias waspmote='~/workarea/landslide/landslide_munnar/misc/waspmote_ide/./waspmote'
-alias notes="cd ~/Dropbox/study/2019/"
-alias hangouts="~/Downloads/yakyak-linux-x64/./yakyak &!"
-alias tree="tree -hF"
+# git related
+alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
+alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
 alias git_show='foo(){ python ~/config_files/system_files/gitshow.py "$1"}; foo '
 alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# tasks
+alias create_cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
+alias create_notes='python ~/config_files/latex/setup_notes.py'
+# commands
+alias tree="tree -hF"
+alias null='/dev/null 2>&1'
+alias enable_touchpad="xinput enable 14"
+alias disable_touchpad="xinput disable 14"
+# file(or)directory pointers
+alias opengl='~/workarea/opengl/advanced_opengl/35_shadows/src && cd .'
+alias notes="cd ~/Dropbox/study/2019/"
+alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
