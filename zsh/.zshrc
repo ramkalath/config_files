@@ -145,8 +145,8 @@ alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
 alias git_show='foo(){ python ~/config_files/system_files/gitshow.py "$1"}; foo '
 alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # tasks
-alias create_cpp_project='python ~/config_files/cpp/organized_cpp_project.py'
-alias create_notes='python ~/config_files/latex/setup_notes.py'
+alias create_cpp_project='python2 ~/config_files/cpp/organized_cpp_project.py'
+alias create_notes='python2 ~/config_files/latex/setup_notes.py'
 # commands
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
