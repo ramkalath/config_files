@@ -27,7 +27,7 @@ if __name__ == "__main__":
     os.system("touch " + cwd + "/src/Makefile")
     filename = cwd + "/src/Makefile"
     file_object = open(filename, 'w')
-    file_object.write("PROJECT_NAME = " + project_name + "\n\nall:\n\t@cd ../build && \\\n\tcmake .. && \\\n\tmake && \\\n\tcd ../src\n\t@echo \"\\033[92m ------------- Compilation Successful ------------------- \\033[0m\"\n\nrun:\n\t@../bin/$(PROJECT_NAME)\n\ndebug:\n\tcd ../build && \\\n\tcmake -G \"CodeBlocks - Unix Makefiles\" .. && \\\n\tcodeblocks ${PROJECT_NAME}.cbp &! > /dev/null\n\nclean:\n\trm -rf ../build/*\n\trm ../bin/*")
+    file_object.write("PROJECT_NAME = " + project_name + "\n\nall:\n\t@cd ../build && \\\n\tcmake .. && \\\n\tmake && \\\n\tcd ../src\n\t@echo -e \"\\033[92m ------------- Compilation Successful ------------------- \\033[0m\"\n\nrun:\n\t@../bin/$(PROJECT_NAME)\n\ndebug:\n\tcd ../build && \\\n\tcmake -G \"CodeBlocks - Unix Makefiles\" .. && \\\n\tcodeblocks ${PROJECT_NAME}.cbp &! > /dev/null\n\nclean:\n\trm -rf ../build/*\n\trm ../bin/*")
 
     # create main.cpp ----------------------------------------------------------------------
     os.system("touch " + cwd + "src/main.cpp")
