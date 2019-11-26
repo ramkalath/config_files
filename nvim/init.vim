@@ -156,7 +156,7 @@ vmap // <leader>c<space>
 tnoremap <Esc> <C-\><C-n>
 imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
 nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-cnoreabbrev hshell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
+cnoreabbrev shell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
 cnoreabbrev vshell :update<CR>\|<Esc>:vsp term://bash<CR><Esc><C-w><C-r>
 
 " ------------------------------------------------------------------------------
