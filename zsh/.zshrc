@@ -142,7 +142,7 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 # git related
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
-alias git_show='foo(){ python ~/config_files/system_files/gitshow.py "$1"}; foo '
+alias git_show='foo(){ python2 ~/config_files/system_files/gitshow.py "$1"}; foo '
 alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # tasks
 alias create_cpp_project='python2 ~/config_files/cpp/organized_cpp_project.py'
