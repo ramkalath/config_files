@@ -1,5 +1,5 @@
-favorites=transmission-gtk.desktop,blender.desktop,rxvt-unicode.desktop,gimp.desktop,org.kde.gwenview.desktop,nvidia-settings.desktop,chromium-browser.desktop,exo-terminal-emulator.desktop,spotify_spotify.desktop,Thunar.desktop,vokoscreen.desktop
-recent=exo-terminal-emulator.desktop,chromium-browser.desktop,skypeforlinux.desktop,artha.desktop,vokoscreen.desktop,gimp.desktop,spotify_spotify.desktop,keepass2.desktop,firefox.desktop,nvim.desktop
+favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop
+recent=xfce-ui-settings.desktop,dropbox.desktop,exo-web-browser.desktop,xfce-display-settings.desktop,exo-file-manager.desktop,pidgin.desktop,skype_skypeforlinux.desktop,xfce-keyboard-settings.desktop,rxvt-unicode.desktop,xfce-settings-manager.desktop
 button-title=Applications Menu
 button-icon=xubuntu-logo-menu
 button-single-row=false
