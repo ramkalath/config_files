@@ -42,7 +42,7 @@ let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
 silent colorscheme gruvbox
-highlight Normal ctermbg=None guibg=None
+"highlight Normal ctermbg=None guibg=None
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
@@ -78,8 +78,8 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-nmap <c-n> :tabnext<CR>
-nmap <c-p> :tabprevious<CR>
+nmap <c-n> :bnext<CR>
+nmap <c-p> :bprevious<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev W :w
 cnoreabbrev WQ :wq
@@ -93,56 +93,56 @@ imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
 ab fpath :echo expand('%:p')
-cnoreabbrev e tabedit
+"cnoreabbrev e tabedit
 nmap cap g~iwea
 cnoremap cap g~iwea
 
 " -----------------------------------------------------------------------------------------
 " tabline stuff
-function! MyTabLine()
-        let s = ''
-        for i in range(tabpagenr('$'))
-                " select the highlighting
-                if i + 1 == tabpagenr()
-                        let s .= '%#TabLineSel#'
-                else
-                        let s .= '%#TabLine#'
-                endif
+"function! MyTabLine()
+        "let s = ''
+        "for i in range(tabpagenr('$'))
+                "" select the highlighting
+                "if i + 1 == tabpagenr()
+                        "let s .= '%#TabLineSel#'
+                "else
+                        "let s .= '%#TabLine#'
+                "endif
 
-                " set the tab page number (for mouse clicks)
-                let s .= '%' . (i + 1) . 'T'
+                "" set the tab page number (for mouse clicks)
+                "let s .= '%' . (i + 1) . 'T'
 
-                " the label is made by MyTabLabel()
-                let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-        endfor
+                "" the label is made by MyTabLabel()
+                "let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+        "endfor
 
-        " after the last tab fill with TabLineFill and reset tab page nr
-        let s .= '%#TabLineFill#%T'
+        "" after the last tab fill with TabLineFill and reset tab page nr
+        "let s .= '%#TabLineFill#%T'
 
-        " right-align the label to close the current tab page
-        if tabpagenr('$') > 1
-                let s .= '%=%#TabLine#%999X X'
-        endif
-        "echomsg 's:' . s
-        return s
-endfunction
+        "" right-align the label to close the current tab page
+        "if tabpagenr('$') > 1
+                "let s .= '%=%#TabLine#%999X X'
+        "endif
+        ""echomsg 's:' . s
+        "return s
+"endfunction
 
-function! MyTabLabel(n)
-        let buflist = tabpagebuflist(a:n)
-        let winnr = tabpagewinnr(a:n)
-        let numtabs = tabpagenr('$')
-        " account for space padding between tabs, and the "close" button
-        let maxlen = ( &columns - ( numtabs * 2 ) - 4 ) / numtabs
-        let tablabel = bufname(buflist[winnr - 1])
-        while strlen( tablabel ) < 4
-                let tablabel = tablabel . " "
-        endwhile
-        let tablabel = fnamemodify( tablabel, ':t' )
-        let tablabel = strpart( tablabel, 0,  maxlen )
-        return tablabel
-endfunction
+"function! MyTabLabel(n)
+        "let buflist = tabpagebuflist(a:n)
+        "let winnr = tabpagewinnr(a:n)
+        "let numtabs = tabpagenr('$')
+        "" account for space padding between tabs, and the "close" button
+        "let maxlen = ( &columns - ( numtabs * 2 ) - 4 ) / numtabs
+        "let tablabel = bufname(buflist[winnr - 1])
+        "while strlen( tablabel ) < 4
+                "let tablabel = tablabel . " "
+        "endwhile
+        "let tablabel = fnamemodify( tablabel, ':t' )
+        "let tablabel = strpart( tablabel, 0,  maxlen )
+        "return tablabel
+"endfunction
 
-set tabline=%!MyTabLine()
+"set tabline=%!MyTabLine()
 set showtabline=2
 autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline

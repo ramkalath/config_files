@@ -8,7 +8,7 @@ URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
 !URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
-URxvt*borderLess: true
+URxvt*borderLess: false
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 URxvt.iso14755: false
