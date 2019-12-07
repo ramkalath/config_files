@@ -78,8 +78,8 @@ let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!G
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-nmap <c-n> :bnext<CR>
-nmap <c-p> :bprevious<CR>
+nmap <c-n> :tabnext<CR>
+nmap <c-p> :tabprevious<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev W :w
 cnoreabbrev WQ :wq
@@ -93,7 +93,7 @@ imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
 ab fpath :echo expand('%:p')
-"cnoreabbrev e tabedit
+cnoreabbrev e tabedit
 nmap cap g~iwea
 cnoremap cap g~iwea
 
