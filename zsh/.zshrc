@@ -153,6 +153,6 @@ alias null='/dev/null 2>&1'
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 # file(or)directory pointers
-alias opengl='~/workarea/opengl/advanced_opengl/35_shadows/src && cd .'
+alias opengl='cd ~/workarea/graphics_work/OpenGL/'
 alias notes="cd ~/Dropbox/study/2019/"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
