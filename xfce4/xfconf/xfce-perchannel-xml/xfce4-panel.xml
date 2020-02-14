@@ -10,16 +10,13 @@
         <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
-        <value type="int" value="7"/>
-        <value type="int" value="14"/>
+        <value type="int" value="6"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
-        <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
-        <value type="int" value="12"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="80"/>
@@ -54,16 +51,17 @@
         <value type="string" value="dropbox"/>
         <value type="string" value="skypeforlinux"/>
       </property>
+      <property name="names-ordered" type="array">
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="blueman-tray"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
     </property>
     <property name="plugin-5" type="string" value="notification-plugin"/>
-    <property name="plugin-6" type="string" value="indicator">
-      <property name="blacklist" type="array">
-        <value type="string" value="libappmenu.so"/>
-      </property>
-      <property name="known-indicators" type="array">
-        <value type="string" value="com.canonical.indicator.messages"/>
-      </property>
-    </property>
     <property name="plugin-8" type="string" value="power-manager-plugin"/>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
@@ -80,8 +78,10 @@
       <property name="digital-format" type="string" value="%d %b, %H:%M"/>
     </property>
     <property name="plugin-7" type="string" value="cpugraph"/>
-    <property name="plugin-12" type="string" value="showdesktop"/>
     <property name="plugin-14" type="string" value="netload"/>
+    <property name="plugin-6" type="string" value="pager">
+      <property name="rows" type="uint" value="2"/>
+    </property>
   </property>
   <property name="configver" type="int" value="2"/>
 </channel>

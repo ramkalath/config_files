@@ -1,5 +1,5 @@
 [Configuration]
-FontName=DejaVu Sans Mono 9
+FontName=YaHei Consolas Hybrid 9
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -30,4 +30,6 @@ ColorCursorUseDefault=FALSE
 ColorCursorForeground=#000000000000
 ColorCursor=#8a8ae2e23434
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
 
