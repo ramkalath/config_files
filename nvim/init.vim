@@ -33,7 +33,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 Plug 'preservim/nerdtree'
-Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
