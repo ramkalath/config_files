@@ -133,6 +133,8 @@ bindkey '^b' recordpath
 VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export PATH="$PATH:$HOME/Downloads/flutter/bin"
+export PATH="$PATH:$HOME/Downloads/flutter/bin/cache/dart-sdk/bin"
 # softwares
 alias vim="nvim"
 alias zathura='foo(){zathura "$1"&!}; foo '
@@ -153,7 +155,12 @@ alias null='/dev/null 2>&1'
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
 # file(or)directory pointers
-alias opengl='cd ~/workarea/graphics_work/OpenGL/'
+alias opengl='cd ~/workarea/graphics_work/advanced_opengl/'
 alias notes="cd ~/Dropbox/study/2019/"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3cbf29708e3cb59b94939b588d5addb6392d3c57

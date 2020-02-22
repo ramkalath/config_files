@@ -33,6 +33,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 Plug 'preservim/nerdtree'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -157,4 +158,3 @@ let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
 " aliases
 command Tasklist tabedit /home/ram/Dropbox/tasklist/tasklist.txt
-
