@@ -159,3 +159,5 @@ alias opengl='cd ~/workarea/graphics_work/advanced_opengl/'
 alias notes="cd ~/Dropbox/study/2019/"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
 
+
+
