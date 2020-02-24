@@ -158,9 +158,3 @@ alias disable_touchpad="xinput disable 14"
 alias opengl='cd ~/workarea/graphics_work/advanced_opengl/'
 alias notes="cd ~/Dropbox/study/2019/"
 alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3cbf29708e3cb59b94939b588d5addb6392d3c57
