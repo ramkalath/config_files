@@ -154,9 +154,5 @@ alias tree="tree -hF"
 alias null='/dev/null 2>&1'
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
-# file(or)directory pointers
-alias opengl='cd ~/workarea/graphics_work/advanced_opengl/'
-alias notes="cd ~/Dropbox/study/2019/"
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-alias shri="cd ~/Dropbox/study/shri/aruco_board_modular"
 
+. ~/.zsh_aliases
