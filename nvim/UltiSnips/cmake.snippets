@@ -23,4 +23,13 @@ target_include_directories(${project_name} PUBLIC ./include
 #target_link_libraries(${project_name} glfw3 GLEW GL GLU SOIL dl Xinerama Xrandr Xi Xcursor X11 Xxf86vm pthread) # this is and example
 target_link_libraries(${project_name} ) # (TODO: add the required libraries here)
 
+# this is for youcompleteme
+SET( CMAKE_EXPORT_COMPILE_COMMANDS ON )
+IF( EXISTS "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json" )
+  EXECUTE_PROCESS( COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json
+    ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
+  )
+ENDIF()
+
 endsnippet

@@ -149,6 +149,7 @@ alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre
 # tasks
 alias create_cpp_project='python2 ~/config_files/cpp/organized_cpp_project.py'
 alias create_notes='python2 ~/config_files/latex/setup_notes.py'
+alias clean_cpp_project='python2 ~/config_files/cpp/remove_builds_bins.py'
 # commands
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
