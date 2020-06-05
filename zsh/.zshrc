@@ -97,11 +97,11 @@ export TERM=xterm-256color
 
 #------------------------------------------------------------------------------------
 # to use tmux
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-tmux source-file ~/config_files/tmux/.tmux.conf
-alias kill_sessions_tmux="tmux kill-session -a"
+#if command -v tmux>/dev/null; then
+	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
+#tmux source-file ~/config_files/tmux/.tmux.conf
+#alias kill_sessions_tmux="tmux kill-session -a"
 
 #------------------------------------------------------------------------------------
 #vim mode
@@ -141,6 +141,7 @@ alias zathura='foo(){zathura "$1"&!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
+alias python="python3"
 # git related
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '

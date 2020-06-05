@@ -32,6 +32,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
