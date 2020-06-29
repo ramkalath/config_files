@@ -43,7 +43,7 @@ let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
 silent colorscheme gruvbox
-"highlight Normal ctermbg=None guibg=None
+highlight Normal ctermbg=None guibg=None
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
