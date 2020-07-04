@@ -44,7 +44,9 @@ run:
 	echo -e "\033[92m ------------- Execution Successful ------------------- \033[0m"
 
 debug:
-	ddd ../bin/${PROJECT_NAME}
+	cd ../build && \
+	cmake -G "CodeLite - Unix Makefiles" .. && \
+	codelite ${PROJECT_NAME}.workspace &! > /dev/null
 
 clean:
 	rm -rf ../build/*
