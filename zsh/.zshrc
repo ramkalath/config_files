@@ -142,6 +142,7 @@ alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias python="python3"
+alias idle='python -m idlelib.idle'
 # git related
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
