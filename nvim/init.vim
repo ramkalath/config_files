@@ -33,6 +33,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 Plug 'altercation/vim-colors-solarized'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
