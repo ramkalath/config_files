@@ -32,8 +32,8 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
-Plug 'altercation/vim-colors-solarized'
 Plug 'udalov/kotlin-vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -104,6 +104,11 @@ set showtabline=2
 autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
+" nerdtree stuff
+map <C-f> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
