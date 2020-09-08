@@ -97,11 +97,11 @@ export TERM=xterm-256color
 
 #------------------------------------------------------------------------------------
 # to use tmux
-#if command -v tmux>/dev/null; then
-	#[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-#tmux source-file ~/config_files/tmux/.tmux.conf
-#alias kill_sessions_tmux="tmux kill-session -a"
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+tmux source-file ~/config_files/tmux/.tmux.conf
+alias kill_sessions_tmux="tmux kill-session -a"
 
 #------------------------------------------------------------------------------------
 #vim mode
@@ -112,7 +112,7 @@ bindkey '^[[Z' reverse-menu-complete
 #------------------------------------------------------------------------------------
 
 xset r rate 250 45
-xrdb ~/.Xresources
+#xrdb ~/.Xresources
 
 # records the location of the current directory
 function cd() {
