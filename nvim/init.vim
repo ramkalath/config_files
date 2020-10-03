@@ -32,8 +32,8 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
-Plug 'udalov/kotlin-vim'
 Plug 'preservim/nerdtree'
+Plug 'brgmnn/vim-opencl'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
