@@ -90,8 +90,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # --------------------------------------------------------------------
-xset b off
-xrdb ~/.Xresources
 force_color_prompt=yes
 export TERM=xterm-256color
 
@@ -111,8 +109,6 @@ export TERM=xterm-256color
 bindkey '^[[Z' reverse-menu-complete
 #------------------------------------------------------------------------------------
 
-xset r rate 250 45
-#xrdb ~/.Xresources
 
 # records the location of the current directory
 function cd() {
