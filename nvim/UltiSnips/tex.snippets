@@ -50,12 +50,14 @@ endsnippet
 
 snippet code_header "this is to add a code header" b
 
+\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{listings}
-\usepackage{xcolor}
-\definecolor{light-gray}{gray}{0.85} %the shade of grey that stack exchange uses
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backgroundgray}{rgb}{0.157,0.173,0.204} % background
+\definecolor{black}{rgb}{0,0,0} % border around code
+\definecolor{textgray}{rgb}{0.7,0.7,0.7} % basic text
+\definecolor{commentgray}{rgb}{0.4,0.4,0.4} % basic text
+\definecolor{stringgreen}{rgb}{0,0.6,0} % string
+\definecolor{keywordorange}{rgb}{0.8,0.5,0} % keywords
 
 \lstset{frame=tb,
   language=c++,
@@ -63,12 +65,12 @@ snippet code_header "this is to add a code header" b
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\small\ttfamily},
+  basicstyle={\color{textgray}\large\ttfamily},
   numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
+  numberstyle=\tiny\color{textgray},
+  commentstyle=\color{commentgray},
+  stringstyle=\color{stringgreen},
+  keywordstyle=\color{keywordorange},
   escapeinside={<@}{@>},
   breaklines=true,
   breakatwhitespace=true,
@@ -80,7 +82,7 @@ endsnippet
 
 snippet code_insert "this is to insert a code" b
 
-\begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=15,innerbottommargin=15, outerlinewidth=1, linecolor=light-gray]
+\begin{mdframed}[roundcorner=10pt, backgroundcolor=backgroundgray, outerlinewidth=2]
 \begin{lstlisting}
 	
 \end{lstlisting}
