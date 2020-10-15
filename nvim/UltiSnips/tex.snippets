@@ -49,15 +49,15 @@ endsnippet
 #----------------------------------------------------------------------
 
 snippet code_header "this is to add a code header" b
-
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{listings}
-\definecolor{backgroundgray}{rgb}{0.157,0.173,0.204} % background
+\definecolor{backgroundgray}{rgb}{0.9, 0.9, 0.9} % background
 \definecolor{black}{rgb}{0,0,0} % border around code
 \definecolor{textgray}{rgb}{0.7,0.7,0.7} % basic text
 \definecolor{commentgray}{rgb}{0.4,0.4,0.4} % basic text
 \definecolor{stringgreen}{rgb}{0,0.6,0} % string
-\definecolor{keywordorange}{rgb}{0.8,0.5,0} % keywords
+\definecolor{keywordorange}{rgb}{0.9,0.5,0} % keywords
+\definecolor{mypurple}{rgb}{0.3,0.2,0.9} % keywords
 
 \lstset{frame=tb,
   language=c++,
@@ -65,29 +65,31 @@ snippet code_header "this is to add a code header" b
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\color{textgray}\large\ttfamily},
+  basicstyle={\large\ttfamily},
   numbers=none,
   numberstyle=\tiny\color{textgray},
-  commentstyle=\color{commentgray},
+  commentstyle=\itshape\color{commentgray},
+  morecomment=[l][\color{mypurple}]{\#},
   stringstyle=\color{stringgreen},
   keywordstyle=\color{keywordorange},
+  frame=single,	                   % adds a frame around the code
   escapeinside={<@}{@>},
+  keepspaces=true,
   breaklines=true,
   breakatwhitespace=true,
   tabsize=3
 }
-
 endsnippet
 #----------------------------------------------------------------------
 
 snippet code_insert "this is to insert a code" b
-
 \begin{mdframed}[roundcorner=10pt, backgroundcolor=backgroundgray, outerlinewidth=2]
-\begin{lstlisting}
+%\begin{minipage}[c]{0.95\textwidth}
+\begin{lstlisting}[frame=none]
 	
 \end{lstlisting}
+%\end{minipage}
 \end{mdframed} 
-
 endsnippet
 #----------------------------------------------------------------------
 
