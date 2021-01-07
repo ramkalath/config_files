@@ -1,11 +1,14 @@
 #define size 15
-URxvt*font: xft:Inconsolata:pixelsize=size:antialias=true
-URxvt*boldFont: xft:Inconsolata:bold:pixelsize=size:antialias=true
-!URxvt*imFont: xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true
-URxvt*italicFont: xft:Inconsolata:italic:pixelsize=size:antialias=true
-URxvt*boldItalicFont: xft:Inconsolata:bold:italic:pixelsize=size:antialias=true
-!URxvt.font:xft:Monospace:pixelsize=size
-!URxvt.boldfont:xft:Monospace-Bold:pixelsize=size
+!#define myfont UbuntuMono
+#define myfont Inconsolata
+
+URxvt*font: xft:myfont:pixelsize=size:antialias=true
+URxvt*boldFont: xft:myfont:bold:pixelsize=size:antialias=true:style=Bold
+URxvt*imFont: xft:myfont:pixelsize=17:antialias=true
+URxvt*italicFont: xft:myfont:italic:pixelsize=size:antialias=true:style=Oblique
+URxvt*boldItalicFont: xft:myfont:bold:italic:pixelsize=size:antialias=true:style=Bold Oblique
+
+
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
 URxvt*borderLess: true
@@ -30,10 +33,10 @@ URxvt.keysym.F11: perl:fullscreen:switch
 
 ! gruvbox theme ----------------------------------------------------
 *hard contrast: *background: #1d2021
-!*background: #282828
-*background: #000000
+*background: #282828
+!*background: #000000
 !*background: #171819
-! soft contrast: *background: #32302f
+ !soft contrast: *background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey
 *color0:  #282828

@@ -23,6 +23,8 @@ set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
+set shortmess=a
+set cmdheight=2
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
@@ -42,14 +44,15 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
-let g:gruvbox_contrast_dark='hard'
-silent colorscheme gruvbox
-highlight Normal ctermbg=None guibg=None
+let g:gruvbox_contrast_dark='soft'
+"silent colorscheme gruvbox
+"highlight Normal ctermbg=None guibg=None
+highlight Comment cterm=italic
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
-"set nowrap
+" set nowrap
 
 " -----------------------------------------------------------------------------------------
 " this disables auto insertion of comments on a new line. Do no put this before enabling the plugins
