@@ -154,6 +154,6 @@ alias tree="tree -hF"
 alias null='/dev/null 2>&1'
 alias enable_touchpad="xinput enable 14"
 alias disable_touchpad="xinput disable 14"
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
+alias tasklist="vim ~/Dropbox/tasklist/tasklist.md"
 alias transparentbg='foo(){convert "$1" -transparent white "$1" .}; foo '
 . ~/.zsh_aliases
