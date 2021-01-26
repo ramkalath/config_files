@@ -47,7 +47,7 @@ let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='soft'
 "set ctermfg
 "silent colorscheme gruvbox
-"highlight Normal ctermbg=None guibg=None
+highlight Normal ctermbg=None guibg=None
 highlight Comment cterm=italic
 
 " -----------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 set window-icon /usr/share/icons/elementary-xfce/apps/128/xpdf.png
-set selection-clipboard clipboard
+set selection-clipboard clipboard # copies selection to clipboard
 
 map [normal] <C-k> navigate previous
 map [normal] <C-j> navigate next
@@ -11,12 +11,12 @@ map [fullscreen] j scroll down
 map [fullscreen] k scroll up
 
 # zathurarc-dark
-set notification-error-bg       "#586e75" # base01  # seem not work
+set notification-error-bg       "#ffffff" # base01  # seem not work
 set notification-error-fg       "#dc322f" # red
 set notification-warning-bg     "#586e75" # base01
 set notification-warning-fg     "#dc322f" # red
-set notification-bg             "#586e75" # base01
-set notification-fg             "#b58900" # yellow
+set notification-bg             "#000000" # base01
+set notification-fg             "#ffffff" # yellow
 
 set completion-group-bg         "#002b36" # base03
 set completion-group-fg         "#839496" # base0
@@ -34,20 +34,22 @@ set index-active-fg             "#eee8d5" # base2
 set inputbar-bg                 "#586e75" # base01
 set inputbar-fg                 "#eee8d5" # base2
 
-set statusbar-bg                "#073642" # base02
+set statusbar-bg                "#000000" # base02
 set statusbar-fg                "#93a1a1" # base1
 
-set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
-set highlight-active-color      "#268bd2" # blue
+# set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
+# set highlight-active-color      "#268bd2" # blue
 
-set default-bg                  "#073642" # base02
-set default-fg                  "#93a1a1" # base1
 # set render-loading              true
-# set render-loading-fg           "#073642" # base02
-# set render-loading-bg           "#073642" # base02
 
+# -------------------- the below part basically controls the main doc color -----------------------------
 # Recolor book content's color
-set recolor                     false
-set recolor-lightcolor          "#073642" # base02
-set recolor-darkcolor           "#93a1a1" # base1
-# set recolor-keephue             true      # keep original color
+set recolor                     true
+#set recolor-lightcolor          "#111111" # base02
+#set recolor-darkcolor           "#eeeeee" # base1
+set recolor-lightcolor          "#adadad" # base02
+set recolor-darkcolor           "#000000" # base1
+set recolor-keephue             true      # keep original color
+set recolor-reverse-video       true     # keeps the images the same color
+
+# map H feedkeys ":open sh -c \"cat ~/.local/share/zathura/history | grep -Po '\[\K[^\]]*' | dmenu | xargs zathura\""

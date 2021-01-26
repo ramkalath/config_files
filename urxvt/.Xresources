@@ -33,8 +33,8 @@ URxvt.keysym.F11: perl:fullscreen:switch
 
 ! gruvbox theme ----------------------------------------------------
 *hard contrast: *background: #1d2021
-*background: #282828
-!*background: #000000
+!*background: #282828
+*background: #000000
 !*background: #171819
 !soft contrast: *background: #32302f
 *foreground: #ebdbb2
