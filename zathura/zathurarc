@@ -52,4 +52,4 @@ set recolor-darkcolor           "#000000" # base1
 set recolor-keephue             true      # keep original color
 set recolor-reverse-video       true     # keeps the images the same color
 
-# map H feedkeys ":open sh -c \"cat ~/.local/share/zathura/history | grep -Po '\[\K[^\]]*' | dmenu | xargs zathura\""
+map o feedkeys ":exec sh -c \"killall zathura & cat ~/.config/zathura/zathura_history.txt | dmenu | xargs zathura\""

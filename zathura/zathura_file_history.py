@@ -9,7 +9,7 @@ data = f.readlines() # grab all the data into a list
 myfile = sys.argv[1]
 if(os.path.exists(myfile)):
     if(myfile.split("/")[-1][-4:] == ".pdf"):
-        myfile = os.path.realpath(myfile)+"\n"
+        myfile = "\""+os.path.realpath(myfile)+"\""+"\n"
         if(myfile not in data): # check the length of the stack and delete the lowest and add one
             if(len(data)>5): # delete the last line
                 os.system("sed \'$d\' "+zathura_history+" > backup.txt")
