@@ -140,12 +140,16 @@ au BufReadPost *
 \ endif
 
 " -------------------------------------------------------------------------------
+
 " highlight a TODO occurrence in bright red
 highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
-match TODO /TODO/
+syn keyword cTodo contained TODO FIXME 
 ab TODO TODO(ram):
 ab _todo TODO(ram):
+ab _fixme FIXME(ram):
 
+
+" highlight a DONE occurrence in bright green
 highlight DONE cterm=italic ctermfg=LightGreen guifg=#00ff00
 match DONE /DONE/
 " -------------------------------------------------------------------------------
