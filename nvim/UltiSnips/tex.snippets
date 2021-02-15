@@ -47,10 +47,57 @@ snippet	figure_many "this is to add many figures atonce" b
 
 endsnippet
 #----------------------------------------------------------------------
-
-snippet code_header "this is to add a code header" b
+snippet code_header_dark_theme "this is to add a code header" b
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{listings}
+\usepackage{courier}
+\definecolor{backgroundgray}{RGB}{40, 40, 40}
+\definecolor{black}{rgb}{1,1,1} % border around code
+\definecolor{white}{rgb}{1,1,1} % border around code
+\definecolor{textgray}{rgb}{0.98,0.98,0.98} % basic text
+\definecolor{commentgray}{rgb}{0.5,0.5,0.5} % basic text
+\definecolor{stringgreen}{rgb}{0.596,0.592,0.102} % string
+\definecolor{myred}{rgb}{0.9,0.2,0.2} % string
+\definecolor{keywordorange}{rgb}{0.9,0.5,0} % keywords
+\definecolor{mypurple}{rgb}{1.0,0.2,0.2} % headers
+
+\lstset{frame=tb,
+  language=c++,
+  basicstyle={\small\ttfamily},
+  breakatwhitespace=false,       
+  breaklines=true,               
+  commentstyle=\color{dkgreen},   
+  deletekeywords={...},          
+  escapeinside={\%*}{*)},                  
+  frame=single,                  
+  morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit}, 
+  identifierstyle=\color{white},
+  stringstyle=\color{stringgreen},
+  numberstyle=\tiny\color{textgray},
+  directivestyle=\color{myred},
+  tabsize=4,                     
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  commentstyle=\itshape\color{commentgray},
+  emph={int,char,double,float,unsigned},
+  emphstyle={\color{orange}},
+  keywordstyle=\color{keywordorange},
+  frame=single,	                   % adds a frame around the code
+  escapeinside={<@}{@>},
+  keepspaces=true,
+  breaklines=true,
+  breakatwhitespace=true,
+}
+
+endsnippet
+#----------------------------------------------------------------------
+snippet code_header_light_theme "this is to add a code header" b
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+\usepackage{courier}
 \definecolor{backgroundgray}{rgb}{0.9, 0.9, 0.9} % background
 \definecolor{black}{rgb}{0,0,0} % border around code
 \definecolor{textgray}{rgb}{0.7,0.7,0.7} % basic text
@@ -65,7 +112,7 @@ snippet code_header "this is to add a code header" b
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\large\ttfamily},
+  basicstyle={\small\ttfamily},
   numbers=none,
   numberstyle=\tiny\color{textgray},
   commentstyle=\itshape\color{commentgray},
