@@ -1,3 +1,6 @@
+" define gvim positions
+winpos 0 0
+set lines=50 columns=1000
 " for gvim remove these
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -18,7 +21,10 @@ set encoding=utf8
 set ignorecase
 set nobackup
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=0
+set laststatus=2
+set ruler
+
+set laststatus=2
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
@@ -26,12 +32,34 @@ filetype plugin indent on "identify the kind of filetype automatically
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set nolist
 set wrap
+
+" colorschemes and fonts and appearence related stuff
 set nocursorline
 colorscheme desert
-set t_md= "disable bold fonts
-
-"if your forget to sudo you can simply w!!
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit! 
+if has("gui_running")
+	colorscheme torte
+	highlight Normal guifg=grey guibg=#001b22
+	highlight Comment cterm=italic gui=italic
+	highlight Visual guibg=#073541 guifg=#aaaaaa gui=None
+endif
+set guifont=Inconsolata\ 10
+if has('win32')
+	set guifont=Consolas:h10
+	set noerrorbells visualbell t_vb=
+	autocmd GUIEnter * set visualbell t_vb=
+endif
+highlight StatusLineNC guibg=#111111 guifg=#444444
+highlight StatusLine guibg=#222222 guifg=grey
+set lines=70 columns=170 " window size when it opens up
+set statusline=
+set statusline+=%{&modified?'[+]':''}
+set statusline+=%F
+set statusline+=%=        " Switch to the right side
+set statusline+=%l    " Current line
+set statusline+=/    " Separator
+set statusline+=%L   " Total lines
+highlight Pmenu ctermbg=black guibg=#333333 guifg=white
+highlight PmenuSel ctermbg=black guibg=#aaaaaa guifg=black
 
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
@@ -43,8 +71,8 @@ nmap <c-k> -3
 vmap <c-k> -3
 
 " keyboard shortcuts 
-nmap <c-n> :tabnext<CR>
-nmap <c-p> :tabprevious<CR>
+nmap <c-n> :bnext<CR>
+nmap <c-p> :bprevious<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev w :w
 cnoreabbrev W :w
@@ -53,35 +81,31 @@ cnoreabbrev Q :q
 cnoreabbrev Ww :w
 cnoreabbrev wW :w
 cnoreabbrev WW :w
-set guitablabel=%t  " show only the file name an not the path 
+" set guitablabel=%t  " show only the file name an not the path 
 au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-cnoreabbrev e tabedit
-set showtabline=2
+" cnoreabbrev e tabedit
+" set showtabline=0
 set noesckeys
+cnoremap <expr> ls<CR> (getcmdtype() == ':' && getcmdpos() == 1) ? "ls\<CR>:b" : "ls"
+cnoreabbrev vsp :vert sb 
 
 " change cursor shape when entering insert mode
-if &term =~ "xterm\\|rxvt"
-  let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
-  let &t_EI = "\<Esc>]12;red\x7" " red in other modes
-  silent !echo -ne "\033]12;red\007"
-  autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
-endif
+" if &term =~ "xterm\\|rxvt"
+"   let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
+"   let &t_EI = "\<Esc>]12;red\x7" " red in other modes
+"   silent !echo -ne "\033]12;red\007"
+"   autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
+" endif
 
 " directory path can be obtained by typing fpath
-cnoreabbrev fpath :echo expand('%:p')<CR>
-
-" comments ctrl-c to comment and shift-c to uncomment
-autocmd BufNewFile,BufRead *.sh,*.py,Makefile,makefile,CMakeLists.txt map <c-c> :s/^/# /<CR> | map <s-c> :s/# //<CR>
-autocmd BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs map <c-c> :s/^/\/\/ /<CR> | map <s-c> :s/\/\/\ //<CR>
-autocmd BufNewFile,BufRead *.vimrc map <c-c> :s/^/" /<CR> | map <s-c> :s/" //<CR>
-autocmd BufNewFile,BufRead *.tex map <c-c> :s/^/% /<CR> | map <s-c> :s/% //<CR>
+" cnoreabbrev fpath :echo expand('%:p')<CR>
 
 " terminal and make commands
-imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
-nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
+" imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
+" nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
 
 " remember where the cursor was in the previous session; not if the file is gitcommit
 au BufReadPost *
@@ -90,8 +114,10 @@ au BufReadPost *
 \ endif
 
 " highlight a TODO occurrence in red and DONE in green
-highlight TODO cterm=italic ctermfg=red ctermbg=black
+highlight TODO cterm=italic ctermfg=black ctermbg=red
 highlight DONE cterm=italic ctermfg=green ctermbg=black
+highlight TODO cterm=italic guifg=black guibg=red
+highlight DONE cterm=italic guifg=green guibg=black
 match TODO /TODO/
 match DONE /DONE/
 
@@ -100,23 +126,29 @@ iab _todo TODO(ram):
 iab _done DONE(ram):
 iab <expr> _date strftime("%d-%b-%Y")
 
+" comments ctrl-c to comment and shift-c to uncomment
+autocmd BufNewFile,BufRead,BufEnter *.sh,*.py,Makefile,makefile,CMakeLists.txt map <c-c> :s/^/# /<CR> | map <s-c> :s/# //<CR>
+autocmd BufNewFile,BufRead,BufEnter *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs map <c-c> :s/^/\/\/ /<CR> | map <s-c> :s/\/\/\ //<CR>
+autocmd BufNewFile,BufRead,BufEnter *.vimrc map <c-c> :s/^/" /<CR> | map <s-c> :s/" //<CR>
+autocmd BufNewFile,BufRead,BufEnter *.tex map <c-c> :s/^/% /<CR> | map <s-c> :s/% //<CR>
+" 
 " c, cpp and associated files abbreviations ---------------------
-autocmd BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs iab <buffer> _cheader /*****************************************************************************<CR>Author : Ram<CR>Date :<CR>Email : ramkalath@gmail.com<CR>Breif Description :<CR>Detailed Description :<CR>*****************************************************************************/
+autocmd BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs iab <expr> _cheader strftime("/*<CR>Author: Ramkumar Narayanan<CR>Date: %d-%b-%Y<CR>Email: ramkalath@gmail.com<CR>Program Description:<CR>*/")
 autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _ctemplate #include <iostream><CR><CR>int main()<CR>{<CR><CR>return 0;<CR>}
 autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _redline std::cout << "\033[0;91m <enter text here> \033[0m\n" << std::endl;	//red bold, change the first 1 to 0 for printing without bold
 autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _greenline std::cout << "\033[0;92m <enter text here> \033[0m\n" << std::endl;	//red bold, change the first 1 to 0 for printing without bold
 autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _blueline std::cout << "\033[0;96m <enter text here> \033[0m\n" << std::endl;	//red bold, change the first 1 to 0 for printing without bold
 
 " make file abbreviations --------------------------------------
-autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _maketemplate CC = g++<CR><CR>CFLAGS = -g<CR><CR>INCLUDE =<CR><CR>LIBS = <CR><CR># (TODO: enter filename without extension)<CR>FILENAME =<CR><CR>all: $(FILENAME).cpp<CR> @$(CC) $(CFLAGS) $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)<CR><CR>run:<CR> @./$(FILENAME)<CR><CR>clean:<CR> rm ./$(FILENAME) 
-autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _maketemplateforcmake # (TODO: enter project name here)<CR>PROJECT_NAME = assimp_0<CR><CR>all:<CR> echo "#define USE_GLEW" > use_glew.h<CR>@cd ../build && cmake .. && make<CR>rm use_glew.h && touch use_glew.h<CR>@echo -e "\033[92m ------------- Compilation Successful ------------------- \033[0m"<CR><CR>run:<CR> @../bin/$(PROJECT_NAME)<CR>@echo -e "\033[92m ------------- Execution Successful ------------------- \033[0m"<CR><CR>clean:<CR> rm -rf ../build/*<CR>rm ../bin/*
-autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _templateforlatex # enter a filename without the extension<CR>FILENAME=<CR><CR>all:<CR> pdflatex $(FILENAME).tex<CR>bibtex $(FILENAME).aux<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>run:<CR> bibtex $(FILENAME)<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>clean:<CR> rm $(FILENAME).log $(FILENAME).aux *.lof *.blg *.toc *.out *.lot
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _make CC = g++<CR><CR>CFLAGS = -g<CR><CR>INCLUDE =<CR><CR>LIBS = <CR><CR># (TODO: enter filename without extension)<CR>FILENAME =<CR><CR>all: $(FILENAME).cpp<CR> @$(CC) $(CFLAGS) $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)<CR><CR>run:<CR> @./$(FILENAME)<CR><CR>clean:<CR> rm ./$(FILENAME) 
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _cmake # (TODO: enter project name here)<CR>PROJECT_NAME = assimp_0<CR><CR>all:<CR> echo "#define USE_GLEW" > use_glew.h<CR>@cd ../build && cmake .. && make<CR>rm use_glew.h && touch use_glew.h<CR>@echo -e "\033[92m ------------- Compilation Successful ------------------- \033[0m"<CR><CR>run:<CR> @../bin/$(PROJECT_NAME)<CR>@echo -e "\033[92m ------------- Execution Successful ------------------- \033[0m"<CR><CR>clean:<CR> rm -rf ../build/*<CR>rm ../bin/*
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _makelatex # enter a filename without the extension<CR>FILENAME=<CR><CR>all:<CR> pdflatex $(FILENAME).tex<CR>bibtex $(FILENAME).aux<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>run:<CR> bibtex $(FILENAME)<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>clean:<CR> rm $(FILENAME).log $(FILENAME).aux *.lof *.blg *.toc *.out *.lot
 
 " python files abbreviations -----------------------------------
-autocmd BufNewFile,BufRead *.py iab <buffer> _pyheader # *************************************************************<CR># Author : Ram<CR># Date :<CR># Email : ramkalath@gmail.com<CR># Breif Description :<CR># Detailed Description :<CR># ************************************************************
+autocmd BufNewFile,BufRead *.py iab <expr> _pyheader strftime("# Author: Ramkumar Narayanan<CR># Date: %d-%b-%Y<CR># Email: ramkalath@gmail.com<CR># Program Description:<CR>")
 
 " latex snippets ----------------------------------------------
-autocmd BufNewFile,BufRead *.tex iab <buffer> _template \documentclass[10pt]{article}<CR>\usepackage[letterpaper, portrait, margin=0.5in]{geometry}<CR>\usepackage[colorlinks = true, linkcolor = cyan, urlcolor  = cyan, citecolor = blue, anchorcolor = blue]{hyperref}<CR><CR>\begin{document}<CR>\title{}<CR>\author{}<CR>\date{\today}<CR>\maketitle<CR>\end{document}
+autocmd BufNewFile,BufRead *.tex iab <buffer> _latextemplate \documentclass[10pt]{article}<CR>\usepackage[letterpaper, portrait, margin=0.5in]{geometry}<CR>\usepackage[colorlinks = true, linkcolor = cyan, urlcolor  = cyan, citecolor = blue, anchorcolor = blue]{hyperref}<CR><CR>\begin{document}<CR>\title{}<CR>\author{}<CR>\date{\today}<CR>\maketitle<CR>\end{document}
 autocmd BufNewFile,BufRead *.tex iab <buffer> _figureheader \usepackage{graphicx}<CR>\usepackage{subfig}<CR>
 autocmd BufNewFile,BufRead *.tex iab <buffer> _onefigure \begin{figure}[H]<CR>\centering<CR>\includegraphics[scale=1]{}<CR>\caption{}<CR>\label{}<CR>\end{figure}
 autocmd BufNewFile,BufRead *.tex iab <buffer> _manyfigures \begin{figure}[H]<CR>\centering<CR>\subfloat[]{\includegraphics[scale=1]{}\label{}}<CR>\subfloat[]{\includegraphics[scale=1]{}\label{}}<CR>\\<CR>\subfloat[]{\includegraphics[scale=1]{}\label{}}<CR>\subfloat[]{\includegraphics[scale=1]{}\label{}}<CR>\caption{}<CR>\label{}<CR>\end{figure}
@@ -130,5 +162,28 @@ autocmd BufNewFile,BufRead *.tex iab <buffer> _hyperlinkheader \usepackage{hyper
 " cmake snippets ----------------------------------------------
 autocmd BufNewFile,BufRead CMakeLists.txt iab <buffer> _cmaketemplate cmake_minimum_required(VERSION 3.4)<CR><CR># set the project name properly for this<CR>set(project_name " ") # (TODO: add project name)<CR><CR># setting project name<CR>project(${project_name})<CR><CR># here add all the cpp files involved in the project<CR>add_executable(${project_name} ) # (TODO: enter the cpp files after the project name one after the other with the path)<CR><CR>set(CMAKE_BUILD_TYPE Debug)<CR>set(CMAKE_VERBOSE_MAKEFILE ON)<CR>set(EXECUTABLE_OUTPUT_PATH ../bin)<CR><CR># add all the include files<CR>target_include_directories(${project_name} PUBLIC ./include<CR> PUBLIC /usr/include <CR>PUBLIC /usr/local/include) # you can keep adding more if you want<CR><CR># here add all the libraries that you included<CR>#target_link_libraries(${project_name} glfw3 GLEW GL GLU SOIL dl Xinerama Xrandr Xi Xcursor X11 Xxf86vm pthread) # this is and example<CR>target_link_libraries(${project_name} ) # (TODO: add the required libraries here) 
 
+" cpp files snippet triggers
+autocmd BufNewFile,BufRead *.c,*.cpp inoremap <F5> <C-R>=CTriggers()<CR>
+func! CTriggers()
+    call complete(col('.'), ['_cheader', '_ctemplate', '_redline', '_greenline', '_blueline'])
+    return ''
+endfunc
+
+" python files snippet triggers
+autocmd BufNewFile,BufRead *.py inoremap <F5> <C-R>=PyTriggers()<CR>
+func! PyTriggers()
+    call complete(col('.'), ['_pytemplate', '_pyheader'])
+    return ''
+endfunc
+
+" latex files snippet triggers
+autocmd BufNewFile,BufRead *.tex inoremap <F5> <C-R>=LatexTriggers()<CR>
+func! LatexTriggers()
+    call complete(col('.'), ['_latextemplate', '_figureheader', '_onefigure', '_manyfigures', '_codeheader', '_code', 
+				\ '_terminalcode', '_itemize', '_enumerate', '_hyperlinkheader'])
+    return ''
+endfunc
+
 " set the same kind of syntax highlighting for glsl files as c
 autocmd BufNewFile,BufRead *.vs,*.fs,*.frag,*.vert set filetype=c
+

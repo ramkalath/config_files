@@ -133,7 +133,8 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export PATH="$PATH:$HOME/Downloads/flutter/bin"
 export PATH="$PATH:$HOME/Downloads/flutter/bin/cache/dart-sdk/bin"
 # softwares
-alias vim="nvim"
+alias gvim='foo(){gvim --remote "$1" > /dev/null 2>&1  &!}; foo '
+alias vim=gvim
 alias zathura='foo(){python3 ~/config_files/zathura/zathura_file_history.py "$1";zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'

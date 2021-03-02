@@ -1,4 +1,4 @@
-#define size 15
+#define size 13
 #define myfont UbuntuMono
 !#define myfont Inconsolata
 
@@ -11,7 +11,7 @@ URxvt*boldItalicFont: xft:myfont:bold:italic:pixelsize=size:antialias=true:style
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
-URxvt*borderLess: true
+URxvt*borderLess: false
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 URxvt.iso14755: false
