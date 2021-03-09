@@ -33,9 +33,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
-Plug 'tikhomirov/vim-glsl'
-"Plug 'preservim/nerdtree'
 Plug 'brgmnn/vim-opencl'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -112,8 +111,10 @@ autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " nerdtree stuff
 map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
+"let g:NERDTreeDirArrowExpandable = '+'
+"let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -147,7 +148,6 @@ syn keyword cTodo contained TODO FIXME
 ab TODO TODO(ram):
 ab _todo TODO(ram):
 ab _fixme FIXME(ram):
-
 
 " highlight a DONE occurrence in bright green
 highlight DONE cterm=italic ctermfg=LightGreen guifg=#00ff00
