@@ -1,18 +1,8 @@
-" define gvim positions
-winpos 0 0
-set lines=50 columns=1000
-" for gvim remove these
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-
 " editor settings
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set backspace=indent,eol,start "backspace in insert mode does not work without this
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
-set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
 " set number " displays line number
 " set relativenumber
@@ -21,10 +11,8 @@ set encoding=utf8
 set ignorecase
 set nobackup
 set virtualedit=onemore "cursor goes one more position than the usual
-set laststatus=2
+set laststatus=0
 set ruler
-
-set laststatus=2
 set mouse=a "sane selection without line numbers
 set tabstop=4
 set shiftwidth=4
@@ -35,12 +23,19 @@ set wrap
 
 " colorschemes and fonts and appearence related stuff
 set nocursorline
-colorscheme desert
+colorscheme peachpuff
 if has("gui_running")
+	winpos 0 0
+	set lines=50 columns=1000
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+	set guioptions-=L  "remove left-hand scroll bar
 	colorscheme torte
 	highlight Normal guifg=grey guibg=#001b22
 	highlight Comment cterm=italic gui=italic
-	highlight Visual guibg=#073541 guifg=#aaaaaa gui=None
+	" TODO(ram): change this
+	highlight Visual guibg=#aaaaaa guifg=#000000 gui=None 
 endif
 set guifont=Inconsolata\ 10
 if has('win32')
@@ -58,8 +53,8 @@ set statusline+=%=        " Switch to the right side
 set statusline+=%l    " Current line
 set statusline+=/    " Separator
 set statusline+=%L   " Total lines
-highlight Pmenu ctermbg=black guibg=#333333 guifg=white
-highlight PmenuSel ctermbg=black guibg=#aaaaaa guifg=black
+highlight Pmenu ctermbg=grey ctermfg=darkgrey guibg=#333333 guifg=white
+highlight PmenuSel ctermbg=darkgrey ctermfg=black guibg=#000000 guifg=black
 
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
@@ -71,8 +66,8 @@ nmap <c-k> -3
 vmap <c-k> -3
 
 " keyboard shortcuts 
-nmap <c-n> :bnext<CR>
-nmap <c-p> :bprevious<CR>
+nmap <c-n> :tabnext<CR>
+nmap <c-p> :tabprevious<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev w :w
 cnoreabbrev W :w
@@ -86,19 +81,21 @@ au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-" cnoreabbrev e tabedit
+cnoreabbrev e tabedit
 " set showtabline=0
-set noesckeys
+" set noesckeys
+set nocompatible "This tells vim not to act like it predecessor vi
+
 cnoremap <expr> ls<CR> (getcmdtype() == ':' && getcmdpos() == 1) ? "ls\<CR>:b" : "ls"
-cnoreabbrev vsp :vert sb 
+cnoreabbrev vsp :vert sb
 
 " change cursor shape when entering insert mode
-" if &term =~ "xterm\\|rxvt"
-"   let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
-"   let &t_EI = "\<Esc>]12;red\x7" " red in other modes
-"   silent !echo -ne "\033]12;red\007"
-"   autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
-" endif
+if &term =~ "xterm\\|rxvt"
+  let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
+  let &t_EI = "\<Esc>]12;red\x7" " red in other modes
+  silent !echo -ne "\033]12;red\007"
+  autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
+endif
 
 " directory path can be obtained by typing fpath
 " cnoreabbrev fpath :echo expand('%:p')<CR>
@@ -186,4 +183,5 @@ endfunc
 
 " set the same kind of syntax highlighting for glsl files as c
 autocmd BufNewFile,BufRead *.vs,*.fs,*.frag,*.vert set filetype=c
+
 

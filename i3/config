@@ -31,6 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $HOME/config_files/i3/i3_shell.sh
+# bindsym $mod+Return exec $HOME/Downloads/st/st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,6 +163,7 @@ exec_always feh --bg-scale "$HOME/config_files/i3/wallpaper.jpg"
 exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id redshift -O 4500
 #exec --no-startup-id sh $HOME/Templates/dropbox.sh
+exec --no-startup-id xrandr --output eDP-1 off
 
 bindsym $mod+d exec rofi -show run -theme glue_pro_blue
 bindsym $mod+Shift+x exec i3lock-fancy
