@@ -98,7 +98,7 @@ export TERM=xterm-256color
 # if command -v tmux>/dev/null; then
 #	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 #fi
-#tmux source-file ~/config_files/tmux/.tmux.confk
+#tmux source-file ~/config_files/tmux/.tmux.conf
 #alias kill_sessions_tmux="tmux kill-session -a"
 
 #------------------------------------------------------------------------------------

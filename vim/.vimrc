@@ -23,7 +23,7 @@ set wrap
 
 " colorschemes and fonts and appearence related stuff
 set nocursorline
-colorscheme peachpuff
+colorscheme pablo
 if has("gui_running")
 	winpos 0 0
 	set lines=50 columns=1000
@@ -37,14 +37,15 @@ if has("gui_running")
 	" TODO(ram): change this
 	highlight Visual guibg=#aaaaaa guifg=#000000 gui=None 
 endif
+highlight StatusLineNC guibg=#111111 guifg=#444444
+highlight StatusLine guibg=#111111 guifg=#333333  
+
 set guifont=Inconsolata\ 10
 if has('win32')
 	set guifont=Consolas:h10
 	set noerrorbells visualbell t_vb=
 	autocmd GUIEnter * set visualbell t_vb=
 endif
-highlight StatusLineNC guibg=#111111 guifg=#444444
-highlight StatusLine guibg=#222222 guifg=grey
 set lines=70 columns=170 " window size when it opens up
 set statusline=
 set statusline+=%{&modified?'[+]':''}
@@ -53,8 +54,8 @@ set statusline+=%=        " Switch to the right side
 set statusline+=%l    " Current line
 set statusline+=/    " Separator
 set statusline+=%L   " Total lines
-highlight Pmenu ctermbg=grey ctermfg=darkgrey guibg=#333333 guifg=white
-highlight PmenuSel ctermbg=darkgrey ctermfg=black guibg=#000000 guifg=black
+highlight Pmenu ctermbg=black ctermfg=darkgrey guibg=#333333 guifg=white
+highlight PmenuSel ctermbg=blue ctermfg=black guibg=#000000 guifg=black
 
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
@@ -90,15 +91,27 @@ cnoremap <expr> ls<CR> (getcmdtype() == ':' && getcmdpos() == 1) ? "ls\<CR>:b" :
 cnoreabbrev vsp :vert sb
 
 " change cursor shape when entering insert mode
-if &term =~ "xterm\\|rxvt"
-  let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
-  let &t_EI = "\<Esc>]12;red\x7" " red in other modes
-  silent !echo -ne "\033]12;red\007"
-  autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
-endif
+" if &term =~ "xterm\\|rxvt"
+"   let &t_SI = "\<Esc>]12;green\x7" " green in insert mode
+"   let &t_EI = "\<Esc>]12;red\x7" " red in other modes
+"   silent !echo -ne "\033]12;red\007"
+"   autocmd VimLeave * silent !echo -ne "\033]112\007" "reset cursor when vim exits
+" endif
+
+" change cursor shape to I cursor in insert mode and block cursor in normal
+" mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+set ttimeoutlen=0
+
 
 " directory path can be obtained by typing fpath
-" cnoreabbrev fpath :echo expand('%:p')<CR>
+cnoreabbrev fpath :echo expand('%:p')<CR>
 
 " terminal and make commands
 " imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR>Gi<Esc><C-w><C-r>
@@ -183,5 +196,4 @@ endfunc
 
 " set the same kind of syntax highlighting for glsl files as c
 autocmd BufNewFile,BufRead *.vs,*.fs,*.frag,*.vert set filetype=c
-
 
