@@ -1,4 +1,3 @@
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -105,10 +104,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+#
+## enable programmable completion features (you don't need to enable
+## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+## sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -117,36 +116,47 @@ if ! shopt -oq posix; then
   fi
 fi
 
-force_color_prompt=yes
-PROMPT_DIRTRIM=1
-#export LD_LIBRARY_PATH="/usr/local/lib"
-#export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
-#export LD_LIBRARY_PATH="/home/ram/Downloads/libfreenect/build/lib/"
-#export LD_LIBRARY_PATH="/home/ram/Downloads/glfw/build/src"
-export TERM=xterm-256color
-alias vim="nvim"
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.txt"
-alias gdb="gdb -tui"
-alias tmux="tmux -2"
-alias run="make && ./main"
-alias ac="cd /home/ram/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
-alias opengl="cd /home/ram/Dropbox/study/opengl/cpp/glfw"
-alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py"
-#alias ac="~/.vim/bundle/YouCompleteMe/YCM-Generator/./config_gen.py -c clang-3.8"
-#alias ac="wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py"
-alias paper="cd ~/Dropbox/study/phd/paper_work/"
-#alias snippet="cd ~/.config/sublime-text-3/Packages/User"
-#alias cbproject="python ~/config_files/cbproject.py"
-alias texpackages="cd /usr/share/texlive/texmf-dist/tex/latex"
-alias book="cd ~/Dropbox/study/computervision/Augmented_Reality_book"
-alias python="python2"
-alias thesis="cd ~/Dropbox/study/phd/thesis"
+bind 'TAB:menu-complete'
+bind '"\e[Z":menu-complete-backward'
+set completion-ignore-case on
+#PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \w\[\033[0;32m\] - [$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\[\033[0;32m\]]\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\]\[\033[0m\] '
+git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
-if command -v tmux>/dev/null; then
-	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+export PS1="\u@\[\033[32m\]\w\[\033[33m\]\$(git_branch)\[\033[00m\]\$ " 
 
-tmux source-file ~/.tmux.conf
+export LD_LIBRARY_PATH="/usr/local/lib/"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+# softwares
+alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
+alias python="python3"
+alias idle='python -m idlelib.idle'
+# git related
+alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
+alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
+alias git_show='foo(){ python2 ~/config_files/system_files/gitshow.py "$1"}; foo '
+alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-bind -r '\C-s'
-stty -ixon
+#alias zathura='foo(){ python ~/config_files/zathura/zathura_file_history.py "$1";zathura "$1" > /dev/null 2>&1  &!}; foo '
+# tasks
+#alias create_cpp_project='python2 ~/config_files/cpp/organized_cpp_project.py'
+#alias create_notes='python2 ~/config_files/latex/setup_notes.py'
+#alias clean_cpp_project='python2 ~/config_files/cpp/remove_builds_bins.py'
+## commands
+alias tree="tree -hF"
+alias null='/dev/null 2>&1'
+alias enable_touchpad="xinput enable 14"
+alias disable_touchpad="xinput disable 14"
+alias tasklist="vim $HOME/workarea/tasklist.md"
+alias transparentbg='foo(){convert "$1" -transparent white "$1" .}; foo '
+alias lp_display_off="xrandr --output eDP-1 --off"
+alias lp_display_on="xrandr --output eDP-1 --auto --output DP-1 --right-of eDP-1"
+
+
+# quick code template -----------------------------------------------------------------
+alias quick_code="cp $HOME/config_files/cpp/main.cpp . && cp $HOME/config_files/cpp/build.sh ."
+
+
+# open exo-preferred-applications
