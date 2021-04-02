@@ -16,10 +16,42 @@ if __name__ == "__main__":
     filename = cwd + myfile + ".tex"
     os.system("touch " + filename)
     file_object = open(filename, 'w')
-    file_object.write("\documentclass[10pt]{article} \n\usepackage[letterpaper, portrait, margin=0.5in]{geometry} \n \n\\begin{document} \n\\title{} \n\\author{} \n\date{\\today} \n\maketitle \n\end{document} \n ")
+    file_object.write(r"""
+\documentclass[10pt]{article}
+\usepackage[letterpaper, portrait, margin=0.5in]{geometry}
+
+\begin{document}
+\title{}
+\author{}
+\date{\today}
+\maketitle
+
+\end{document}
+""")
 
     # create a Makefile
     filename = cwd + "Makefile"
     os.system("touch " + filename)
     file_object = open(filename, 'w')
-    file_object.write("# enter a filename without the extension \nFILENAME="+myfile+"\n\nall:\n\tpdflatex $(FILENAME).tex\n\tbibtex $(FILENAME).aux\n\tpdflatex $(FILENAME).tex\n\tpdflatex $(FILENAME).tex\n\nrun:\n\tbibtex $(FILENAME)\n\tpdflatex $(FILENAME).tex\n\tpdflatex $(FILENAME).tex\n\nclean:\n\trm $(FILENAME).log $(FILENAME).aux *.lof *.blg *.toc *.out *.lot *.bbl\n")
+    file_object.write(
+r"""
+# enter a filename without the extension 
+FILENAME="""+myfile+
+
+r"""
+all: 
+    pdflatex $(FILENAME).tex 
+    bibtex $(FILENAME).aux 
+    pdflatex $(FILENAME).tex
+    pdflatex $(FILENAME).tex
+
+run:
+    bibtex $(FILENAME)
+    pdflatex $(FILENAME).tex
+    pdflatex $(FILENAME).tex
+
+clean:
+    rm $(FILENAME).log 
+    $(FILENAME).aux *.lof *.blg *.toc *.out *.lot *.bbl
+"""
+)

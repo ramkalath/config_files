@@ -87,11 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# --------------------------------------------------------------------
-force_color_prompt=yes
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 #------------------------------------------------------------------------------------
 # to use tmux
@@ -105,8 +101,6 @@ export TERM=xterm-256color
 #vim mode
 #bindkey -v
 #export KEYTIMEOUT=1
-#------------------------------------------------------------------------------------
-bindkey '^[[Z' reverse-menu-complete
 #------------------------------------------------------------------------------------
 xset r rate 250 45
 
@@ -127,32 +121,27 @@ function recordpath() {
 zle -N recordpath
 bindkey '^b' recordpath
 
-VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-export PATH="$PATH:$HOME/Downloads/flutter/bin"
-export PATH="$PATH:$HOME/Downloads/flutter/bin/cache/dart-sdk/bin"
 # softwares
 alias zathura='foo(){python3 ~/config_files/zathura/zathura_file_history.py "$1";zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias python="python3"
-alias idle='python -m idlelib.idle'
 # git related
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
 alias git_origin_head='foo(){ git fetch origin; git reset --hard master}; foo '
-alias git_show='foo(){ python2 ~/config_files/system_files/gitshow.py "$1"}; foo '
-alias git_log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias git_show='foo(){ python3 ~/config_files/system_files/gitshow.py "$1"}; foo '
+alias git_log="git log --graph --pretty=form %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # tasks
-alias create_cpp_project='python2 ~/config_files/cpp/organized_cpp_project.py'
-alias create_notes='python2 ~/config_files/latex/setup_notes.py'
-alias clean_cpp_project='python2 ~/config_files/cpp/remove_builds_bins.py'
+alias create_cpp_project='python3 ~/config_files/cpp/cpp_templates/organized_cpp_project.py'
+alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME/config_files/cpp/cpp_templates/build.sh ."
+alias create_notes='foo(){ mkdir "$1"; cp ~/config_files/latex/main.tex "$1"; cp ~/config_files/latex/Makefile "$1"}; foo '
+
 # commands
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
-alias enable_touchpad="xinput enable 14"
-alias disable_touchpad="xinput disable 14"
-alias tasklist="vim ~/Dropbox/tasklist/tasklist.md"
-alias transparentbg='foo(){convert "$1" -transparent white "$1" .}; foo '
-. ~/.zsh_aliases
+alias lp_display_on="xrandr --output eDP-1 --auto --output DP-1 --right-of eDP-1"
+
