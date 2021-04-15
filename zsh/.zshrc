@@ -23,7 +23,7 @@ ZSH_THEME="plain"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -98,10 +98,10 @@ source $ZSH/oh-my-zsh.sh
 #alias kill_sessions_tmux="tmux kill-session -a"
 
 #------------------------------------------------------------------------------------
-#vim mode
 #bindkey -v
 #export KEYTIMEOUT=1
 #------------------------------------------------------------------------------------
+DISABLE_AUTO_UPDATE="true" 
 xset r rate 250 45
 
 
@@ -141,7 +141,13 @@ alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME
 alias create_notes='foo(){ mkdir "$1"; cp ~/config_files/latex/main.tex "$1"; cp ~/config_files/latex/Makefile "$1"}; foo '
 
 # commands
+
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
+
+alias lp_display_off="xrandr --output eDP-1 --off"
 alias lp_display_on="xrandr --output eDP-1 --auto --output DP-1 --right-of eDP-1"
 
+
+
+source ~/.zsh_aliases
