@@ -48,11 +48,13 @@ snippet	figure_many "this is to add many figures atonce" b
 endsnippet
 #----------------------------------------------------------------------
 snippet code_header_dark_theme "this is to add a code header" b
+
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{listings}
 \usepackage{courier}
 \definecolor{backgroundgray}{RGB}{40, 40, 40}
-\definecolor{black}{rgb}{1,1,1} % border around code
+\definecolor{backgrounddarkgray}{RGB}{10, 10, 10} % for terminal
+\definecolor{black}{rgb}{1,1,1} % border around code; dont edit this
 \definecolor{white}{rgb}{1,1,1} % border around code
 \definecolor{textgray}{rgb}{0.98,0.98,0.98} % basic text
 \definecolor{commentgray}{rgb}{0.5,0.5,0.5} % basic text
@@ -142,10 +144,9 @@ endsnippet
 
 snippet terminal_code_insert "this is to insert terminal commands" b
 
-\begin{mdframed}[backgroundcolor=black, roundcorner=0pt,leftmargin=0, rightmargin=0, innerleftmargin=0, innertopmargin=0, innerbottommargin=0, outerlinewidth=0, linecolor=black]
-\begin{lstlisting}
+\begin{mdframed}[backgroundcolor=backgrounddarkgray, roundcorner=3pt, leftmargin=3, rightmargin=3, innerleftmargin=5, innertopmargin=10, innerbottommargin=10, outerlinewidth=0, linecolor=white]
+	\small
 	<@ \textcolor{green}{} @>
-\end{lstlisting}
 \end{mdframed} 
 
 endsnippet
@@ -177,4 +178,10 @@ snippet hyperlink_header "inserts hyperlink headers" b
     filecolor=magenta,      
     urlcolor=cyan,
 }
+endsnippet
+#----------------------------------------------------------------------
+snippet angle_brackets_header "for inserting angle brackets" b
+\usepackage{textcomp, xspace}
+\newcommand\la{\textlangle\xspace}  % set up short-form macros
+\newcommand\ra{\textrangle\xspace}
 endsnippet

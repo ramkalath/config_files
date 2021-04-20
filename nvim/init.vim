@@ -159,6 +159,4 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
-" aliases
-command Tasklist tabedit /home/ram/Dropbox/tasklist/tasklist.txt
 ab _itbf \textit{\textbf{
