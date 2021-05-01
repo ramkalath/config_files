@@ -91,11 +91,11 @@ source $ZSH/oh-my-zsh.sh
 
 #------------------------------------------------------------------------------------
 # to use tmux
-# if command -v tmux>/dev/null; then
-#	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-#tmux source-file ~/config_files/tmux/.tmux.conf
-#alias kill_sessions_tmux="tmux kill-session -a"
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+tmux source-file ~/config_files/tmux/.tmux.conf
+alias kill_sessions_tmux="tmux kill-session -a"
 
 #------------------------------------------------------------------------------------
 #bindkey -v
@@ -142,13 +142,7 @@ alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME
 alias create_notes='foo(){ mkdir "$1"; cp ~/config_files/latex/main.tex "$1"; cp ~/config_files/latex/Makefile "$1"}; foo '
 
 # commands
-
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
-
-alias lp_display_off="xrandr --output eDP-1 --off"
-alias lp_display_on="xrandr --output eDP-1 --auto --output DP-1 --right-of eDP-1"
-
-
 
 source ~/.zsh_aliases
