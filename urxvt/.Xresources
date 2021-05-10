@@ -11,7 +11,7 @@ URxvt*boldItalicFont: xft:myfont:bold:italic:pixelsize=size:antialias=true:style
 
 URxvt.scrollBar: false
 URxvt*cursorColor: #00FF00
-URxvt*borderLess: false
+URxvt*borderLess: true
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 URxvt.iso14755: false
@@ -34,8 +34,8 @@ URxvt.keysym.F11: perl:fullscreen:switch
 ! gruvbox theme ----------------------------------------------------
 *hard contrast: *background: #1d2021
 !*background: #282828
-*background: #000000
-!*background: #171819
+!*background: #000000
+*background: #171819
 !soft contrast: *background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey

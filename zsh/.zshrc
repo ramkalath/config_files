@@ -140,7 +140,6 @@ alias git_log="git log --graph --pretty=form %Cgreen(%cr) %C(bold blue)<%an>%Cre
 alias create_cpp_project='python3 ~/config_files/cpp/cpp_templates/organized_cpp_project.py'
 alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME/config_files/cpp/cpp_templates/build.sh ."
 alias create_notes='foo(){ mkdir "$1"; cp ~/config_files/latex/main.tex "$1"; cp ~/config_files/latex/Makefile "$1"}; foo '
-
 # commands
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
