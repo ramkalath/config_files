@@ -126,7 +126,7 @@ export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # softwares
 alias vim="nvim"
-alias zathura='foo(){python3 ~/config_files/zathura/zathura_file_history.py "$1";zathura "$1" > /dev/null 2>&1  &!}; foo '
+alias zathura='foo(){zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'

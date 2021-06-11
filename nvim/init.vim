@@ -34,7 +34,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'brgmnn/vim-opencl'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -109,11 +109,11 @@ autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
 " nerdtree stuff
-map <C-f> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let NERDTreeMapOpenInTab='<ENTER>'
+"map <C-f> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let g:NERDTreeDirArrowExpandable = '+'
+"let g:NERDTreeDirArrowCollapsible = '-'
+"let NERDTreeMapOpenInTab='<ENTER>'
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
 

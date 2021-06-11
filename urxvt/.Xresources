@@ -1,6 +1,6 @@
 #define size 15
-#define myfont UbuntuMono
-!#define myfont Inconsolata
+!#define myfont UbuntuMono
+#define myfont Inconsolata
 
 URxvt*font: xft:myfont:pixelsize=size:antialias=true
 URxvt*boldFont: xft:myfont:bold:pixelsize=size:antialias=true:style=Bold
