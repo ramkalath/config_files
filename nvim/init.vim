@@ -25,6 +25,7 @@ set shiftwidth=4
 filetype plugin indent on "identify the kind of filetype automatically
 set shortmess=a
 set cmdheight=2
+set guitablabel=%t
 
 " ------------------------------------------------------------------------
 set rtp+=~/.config/nvim/autoload/plug.vim
@@ -93,7 +94,6 @@ cnoreabbrev Q :q
 cnoreabbrev Ww :w
 cnoreabbrev wW :w
 cnoreabbrev WW :w
-set guitablabel=%t  " show only the file name an not the path 
 au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test)
 imap vv <Esc>v
 nmap vv <Esc>v
@@ -125,8 +125,8 @@ vmap // <leader>c<space>
 tnoremap <Esc> <C-\><C-n>
 imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
 nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-cnoreabbrev shell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
-cnoreabbrev vshell :update<CR>\|<Esc>:vsp term://bash<CR><Esc><C-w><C-r>
+"cnoreabbrev shell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
+"cnoreabbrev vshell :update<CR>\|<Esc>:vsp term://bash<CR><Esc><C-w><C-r>
 
 " ------------------------------------------------------------------------------
 " UltiSnips stuff 
@@ -161,3 +161,4 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
 ab _itbf \textit{\textbf{
+
