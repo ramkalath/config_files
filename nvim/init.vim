@@ -34,8 +34,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
-Plug 'brgmnn/vim-opencl'
-"Plug 'preservim/nerdtree'
+Plug 'tikhomirov/vim-glsl'
+"Plug 'brgmnn/vim-opencl'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -45,8 +45,6 @@ colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='soft'
-"set ctermfg
-"silent colorscheme gruvbox
 highlight Normal ctermbg=None guibg=None
 highlight Comment cterm=italic
 
