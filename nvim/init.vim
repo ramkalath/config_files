@@ -159,4 +159,5 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
 ab _itbf \textit{\textbf{
+ab _cout std::cout << << std::endl;<Esc>hhhhhhhhhhhhhha
 
