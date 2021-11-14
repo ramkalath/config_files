@@ -125,7 +125,7 @@ VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # softwares
-#alias vim="nvim"
+alias vim="nvim"
 alias zathura='foo(){zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'

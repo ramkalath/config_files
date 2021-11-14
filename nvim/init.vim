@@ -158,6 +158,10 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 " clang completion for glew
 let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
 
+" latex shortcuts
 ab _itbf \textit{\textbf{
-ab _cout std::cout << << std::endl;<Esc>hhhhhhhhhhhhhha
 
+" cpp shortcuts
+ab _cout std::cout << << std::endl;<Esc>hhhhhhhhhhhhhha
+ab _readstring std::getline(std::cin >> std::ws, );<Esc>hhi
+ab _for for(uint i=0; i<; ++i)<Esc>hhhhhi
