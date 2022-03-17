@@ -32,7 +32,8 @@ URxvt.perl-ext-common: fullscreen
 URxvt.keysym.F11: perl:fullscreen:switch
 
 ! gruvbox theme ----------------------------------------------------
-*background: #2e2c2e
+*background: #000000
+!*background: #2e2c2e
 *foreground: #ebdbb2
 ! Black + DarkGrey
 *color0:  #282828
