@@ -145,4 +145,3 @@ alias tree="tree -hF"
 alias null='/dev/null 2>&1'
 
 source ~/.zsh_aliases
-

@@ -28,14 +28,10 @@ set cmdheight=2
 set guitablabel=%t
 
 " ------------------------------------------------------------------------
-set rtp+=~/.config/nvim/autoload/plug.vim
-call plug#begin()
+call plug#begin("~/.config/nvim/plugged")
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
-Plug 'tikhomirov/vim-glsl'
-"Plug 'brgmnn/vim-opencl'
 call plug#end()
 
 " -----------------------------------------------------------------------------------------
@@ -44,8 +40,8 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
-let g:gruvbox_contrast_dark='soft'
-highlight Normal ctermbg=None guibg=None
+let g:gruvbox_contrast_dark='hard'
+"highlight Normal ctermbg=None guibg=None
 highlight Comment cterm=italic
 
 " -----------------------------------------------------------------------------------------
@@ -107,13 +103,13 @@ autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
 " nerdtree stuff
-"map <C-f> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '-'
-"let NERDTreeMapOpenInTab='<ENTER>'
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+map <C-f> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let NERDTreeMapOpenInTab='<ENTER>'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>

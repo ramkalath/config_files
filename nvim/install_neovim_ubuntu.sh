@@ -3,7 +3,7 @@
 # installing dependencies --------------------------------------------------------------------------------------
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get -y update
-sudo apt-get -y install neovim git clang cmake xclip gdb curl powerline 
+sudo apt-get -y install neovim git clang cmake xclip gdb curl powerline python-dev python3-dev python3-pip
 sudo apt-get -y install g++-8
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 sudo apt-get -y python-pip python3-pip
