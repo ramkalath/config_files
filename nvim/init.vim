@@ -41,20 +41,21 @@ colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
-"highlight Normal ctermbg=None guibg=None
+highlight Normal ctermbg=None guibg=None
 highlight Comment cterm=italic
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
-" set nowrap
+ set nowrap
 
 " -----------------------------------------------------------------------------------------
 " this disables auto insertion of comments on a new line. Do no put this before enabling the plugins
 "autocmd FileType * setlocal formatoptions-=cro
 "autocmd FileType * setlocal formatoptions+=t
 autocmd FileType * setlocal formatoptions=
-autocmd FileType cpp set nowrap
+"autocmd FileType cpp set nowrap
+"autocmd FileType py set nowrap
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -103,13 +104,13 @@ autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
 " nerdtree stuff
-map <C-f> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let NERDTreeMapOpenInTab='<ENTER>'
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+"map <C-f> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let g:NERDTreeDirArrowExpandable = '+'
+"let g:NERDTreeDirArrowCollapsible = '-'
+"let NERDTreeMapOpenInTab='<ENTER>'
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
@@ -119,14 +120,6 @@ vmap // <leader>c<space>
 tnoremap <Esc> <C-\><C-n>
 imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
 nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-"cnoreabbrev shell :update<CR>\|<Esc>:sp term://bash<CR><Esc><C-w><C-r>
-"cnoreabbrev vshell :update<CR>\|<Esc>:vsp term://bash<CR><Esc><C-w><C-r>
-
-" ------------------------------------------------------------------------------
-" UltiSnips stuff 
-let g:UltiSnipsExpandTrigger = "<nop>"
-inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
-let g:UltiSnipsSnippetDirectories = ['/$HOME/.config/nvim/UltiSnips', 'UltiSnips']
 
 " -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
@@ -135,29 +128,4 @@ au BufReadPost *
 	\ execute("normal `\"") |
 \ endif
 
-" -------------------------------------------------------------------------------
-
-" highlight a TODO occurrence in bright red
-highlight TODO cterm=italic ctermfg=196 guifg=#ff0000
-syn keyword cTodo contained TODO FIXME 
-ab TODO TODO(ram):
-ab _todo TODO(ram):
-ab _fixme FIXME(ram):
-
-" highlight a DONE occurrence in bright green
-highlight DONE cterm=italic ctermfg=LightGreen guifg=#00ff00
-match DONE /DONE/
-" -------------------------------------------------------------------------------
-" spell check
-set spellfile=~/.config/nvim/spell/en.utf-8.add
-
-" clang completion for glew
-let g:clang_user_options = ' -DCLANG_COMPLETE_ONLY'
-
-" latex shortcuts
-ab _itbf \textit{\textbf{
-
-" cpp shortcuts
-ab _cout std::cout << << std::endl;<Esc>hhhhhhhhhhhhhha
-ab _readstring std::getline(std::cin >> std::ws, );<Esc>hhi
-ab _for for(uint i=0; i<; ++i)<Esc>hhhhhi
+source ~/config_files/nvim/snippets.vim
