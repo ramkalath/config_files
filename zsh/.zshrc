@@ -125,7 +125,13 @@ VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # softwares
-alias vim="nvim"
+alias gvim0="gvim --servername GVIM --remote $1"
+alias gvim1="gvim --servername GVIM --remote $1"
+alias gvim2="gvim --servername GVIM --remote $1"
+alias gvim3="gvim --servername GVIM --remote $1"
+alias gvim4="gvim --servername GVIM --remote $1"
+alias gvim5="gvim --servername GVIM --remote $1"
+alias gvim6="gvim --servername GVIM --remote $1"
 alias zathura='foo(){zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'

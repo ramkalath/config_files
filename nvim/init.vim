@@ -7,7 +7,6 @@ set guioptions-=L  "remove left-hand scroll bar
 " ------------------------------------------------------------------------
 " editor settings
 set hidden "unsaved buffer wont close when opening a new buffer/file
-set autochdir "keep up with the directory path when changing files
 set clipboard^=unnamed "This sets the clipboard as the default register. Useful for copy paste from tmux
 set nocompatible "This tells vim not to act like it predecessor vi
 syntax enable "enables syntax highlighting
@@ -30,6 +29,8 @@ set guitablabel=%t
 " ------------------------------------------------------------------------
 call plug#begin("~/.config/nvim/plugged")
 Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'ap/vim-buftabline'
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -80,8 +81,8 @@ let g:ycm_filetype_blacklist = { 'cuda': 1 }
 
 " -----------------------------------------------------------------------------------------
 " keyboard shortcuts 
-nmap <c-n> :tabnext<CR>
-nmap <c-p> :tabprevious<CR>
+nmap <c-n> :bnext<CR>
+nmap <c-p> :bprevious<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev W :w
 cnoreabbrev WQ :wq
@@ -94,7 +95,7 @@ imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
 ab fpath :echo expand('%:p')
-cnoreabbrev e tabedit
+"cnoreabbrev e tabedit
 nmap cap g~iwea
 cnoremap cap g~iwea
 
@@ -103,14 +104,29 @@ set showtabline=2
 autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
 autocmd GUIEnter * hi! TabLineSel  term=bold,reverse,underline
 " ----------------------------------------------------------------------------------------------------------------
-" nerdtree stuff
-"map <C-f> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '-'
-"let NERDTreeMapOpenInTab='<ENTER>'
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+" Explorer like emacs split
+let g:netrw_banner = 1
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 40
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+	if g:NetrwIsOpen
+		let i = bufnr("$")
+		while (i >= 1)
+			if (getbufvar(i, "&filetype") == "netrw")
+				silent exe "bwipeout " . i 
+			endif
+			let i-=1
+		endwhile
+		let g:NetrwIsOpen=0
+	else
+		let g:NetrwIsOpen=1
+		silent Vexplore
+	endif
+endfunction
+noremap <silent> <C-f> :call ToggleNetrw()<CR>
 
 " press // for comment using nerd commenter
 nmap // <leader>c<space>
