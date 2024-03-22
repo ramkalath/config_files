@@ -1,18 +1,13 @@
 /*
-	Name: Ramkumar Narayanan
-	Date:
-	Description:
-	Status:
+Problem:
+
+Description:
 */
 
-#include<bits/stdc++.h>
-
-#define ushort unsigned short
-#define uint unsigned int
+#include<iostream>
 
 int main()
 {
-	std::ios::sync_with_stdio(0);
-	std::cin.tie(0);
+
 	return 0;
 }

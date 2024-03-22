@@ -125,17 +125,18 @@ VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 export LD_LIBRARY_PATH="/usr/local/lib/"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # softwares
-alias gvim0="gvim --servername GVIM --remote $1"
-alias gvim1="gvim --servername GVIM --remote $1"
-alias gvim2="gvim --servername GVIM --remote $1"
-alias gvim3="gvim --servername GVIM --remote $1"
-alias gvim4="gvim --servername GVIM --remote $1"
-alias gvim5="gvim --servername GVIM --remote $1"
-alias gvim6="gvim --servername GVIM --remote $1"
+alias vim=nvim
+#alias gvim0="gvim --servername GVIM --remote $1"
+#alias vim="nvim"
+#alias gvim1="gvim --servername GVIM --remote $1"
+#alias gvim2="gvim --servername GVIM --remote $1"
+#alias gvim3="gvim --servername GVIM --remote $1"
+#alias gvim4="gvim --servername GVIM --remote $1"
+#alias gvim5="gvim --servername GVIM --remote $1"
+#alias gvim6="gvim --servername GVIM --remote $1"
 alias zathura='foo(){zathura "$1" > /dev/null 2>&1  &!}; foo '
 alias feh='foo(){feh --scale-down --auto-zoom "$1" .}; foo '
 alias popcorn='~/Downloads/popcorn/Popcorn-Time'
-alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias python="python3"
 # git related
 alias gitupdate='foo(){ git add -A; git commit -m "$1"; git push origin master}; foo '
@@ -144,10 +145,11 @@ alias git_show='foo(){ python3 ~/config_files/system_files/gitshow.py "$1"}; foo
 alias git_log="git log --graph --pretty=form %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # tasks
 alias create_cpp_project='python3 ~/config_files/cpp/cpp_templates/organized_cpp_project.py'
-alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME/config_files/cpp/cpp_templates/Makefile ."
+alias quick_code="cp $HOME/config_files/cpp/cpp_templates/main.cpp . && cp $HOME/config_files/cpp/cpp_templates/makefile ."
 alias create_notes='foo(){ mkdir "$1"; cp ~/config_files/latex/main.tex "$1"; cp ~/config_files/latex/Makefile "$1"}; foo '
 # commands
 alias tree="tree -hF"
 alias null='/dev/null 2>&1'
-
-source ~/.zsh_aliases
+alias tasklist="vim ~/workarea/tasklist.md"
+alias 1k="xrandr --output eDP-1 --mode 1920x1200"
+alias 2k="xrandr --output DVI-I-1-1 --mode 2560x1440"

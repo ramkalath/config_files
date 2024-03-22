@@ -11,5 +11,5 @@ if [ $1 ]; then
         scan $baseip
     done
 else
-    scan 192.168.1
+    scan 10.0.0
 fi

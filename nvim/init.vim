@@ -42,21 +42,18 @@ colorscheme gruvbox
 let g:gruvbox_italic='1'
 let g:gruvbox_italicize_comments='1'
 let g:gruvbox_contrast_dark='hard'
-highlight Normal ctermbg=None guibg=None
+"highlight Normal ctermbg=black guibg=black
 highlight Comment cterm=italic
 
 " -----------------------------------------------------------------------------------------
 " wrapping lines when arrows are pressed
 set whichwrap+=<,>,h,l,[,] "(TODO: check what this does)
- set nowrap
+autocmd FileType cpp set nowrap
+autocmd FileType py set nowrap
 
 " -----------------------------------------------------------------------------------------
 " this disables auto insertion of comments on a new line. Do no put this before enabling the plugins
-"autocmd FileType * setlocal formatoptions-=cro
-"autocmd FileType * setlocal formatoptions+=t
 autocmd FileType * setlocal formatoptions=
-"autocmd FileType cpp set nowrap
-"autocmd FileType py set nowrap
 
 " -----------------------------------------------------------------------------------------
 " scrolling up and down multiple lines atonce
@@ -75,6 +72,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 set backspace=indent,eol,start
 let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!GL'] }
 let g:ycm_filetype_blacklist = { 'cuda': 1 }
+nmap gf <Esc>:YcmCompleter GoToDeclaration<CR>
+nmap gd <Esc>:YcmCompleter GoToDefinition<CR>
+cnoreabbrev ycm :YcmCompleter
+
 "let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] } " gives autocomplete without the need to press C-Space
 "autocompelte using omnisharp
 "let g:OmniSharp_server_use_mono = 1
@@ -133,9 +134,9 @@ nmap // <leader>c<space>
 vmap // <leader>c<space>
 
 " terminal and make commands
-tnoremap <Esc> <C-\><C-n>
-imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
-nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
+"tnoremap <Esc> <C-\><C-n>
+"imap <c-x><c-x> <Esc>:update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
+"nmap <c-x><c-x> :update<CR>\|<Esc>:split term://make && make run<CR><Esc><C-w><C-r>G
 
 " -------------------------------------------------------------------------------
 " remember where the cursor was in the previous session; not if the file is gitcommit
@@ -145,3 +146,6 @@ au BufReadPost *
 \ endif
 
 source ~/config_files/nvim/snippets.vim
+set list
+set listchars=tab:\|\ 
+autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _cout std::cout << << std::endl;<Esc>bbbbhi
