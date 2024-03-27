@@ -1,4 +1,7 @@
+set belloff=all
+set guioptions+=!
 " editor settings
+set nocompatible             
 set hidden "unsaved buffer wont close when opening a new buffer/file
 set autochdir "keep up with the directory path when changing files
 set backspace=indent,eol,start "backspace in insert mode does not work without this
@@ -26,10 +29,11 @@ set splitright
 
 " -----------------------------------------------------------------------------------------------------
 " colorschemes and fonts and appearence related stuff
-colorscheme pablo
+colorscheme habamax 
+highlight LineNr ctermbg=black ctermfg=darkgray
 if has("gui_running")
-	winpos 0 0
-	set lines=80 columns=1000
+	winpos 942 0
+	set lines=110 columns=200
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
@@ -40,8 +44,6 @@ if has("gui_running")
 	highlight Cursor guifg=#000000 guibg=#00FF00
 	highlight LineNr guifg=#888888
 	set laststatus=2
-	highlight StatusLineNC guifg=#111111 guibg=#888888
-	highlight StatusLine guifg=#111111 guibg=#888888  
 	set statusline=
 	set statusline+=\ %f " filename
 	set statusline+=\ %m " indicate if file is modified
@@ -54,11 +56,27 @@ if has("gui_running")
 	set statusline+=\  
 	highlight Pmenu ctermbg=black ctermfg=darkgrey guibg=#333333 guifg=white
 	highlight PmenuSel ctermbg=blue ctermfg=black guibg=#000000 guifg=black
+	set noerrorbells visualbell t_vb=
+	autocmd GUIEnter * set visualbell t_vb=
 	set guifont=Liberation\ Mono\ Regular\ 10
+	set background=dark
+	highlight Normal guibg=#171717
+	highlight Cursor guibg=#00FF00 guifg=#000000
+	highlight StatusLineNC guibg=#111111 guifg=#888888
+	highlight VertSplit guibg=NONE guifg=red
+	highlight TabLineSel guifg=#111111 guibg=#F0F0B9
+	highlight TabLine guifg=#111111 guibg=#52523F
+	highlight TabLineFill guifg=#111111 guibg=#222222
+	set fillchars=vert:│ 
+	highlight Terminal guifg=#AAAAAA guibg=#000000
+	cnoremap hterm <Esc>:term ++rows=20
+	cnoremap vterm <Esc>:vert term
+	nmap <c-x><c-j> <Esc>:term ++rows=20<CR>make<CR>
+	nmap <c-x><c-l> <Esc>:vert term<CR>make<CR>
 endif
 
 if has('win32')
-	set guifont=Consolas:h10
+	set guifont=Consolas:h11
 	set noerrorbells visualbell t_vb=
 	autocmd GUIEnter * set visualbell t_vb=
 endif
@@ -70,21 +88,16 @@ if has('win32')
 endif
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'ap/vim-buftabline'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'morhetz/gruvbox'
+Plugin 'Valloric/YouCompleteMe' " c++ auto completion
+Plugin 'nvie/vim-flake8' " python auto completion
+Plugin 'dense-analysis/ale' " python auto completion
+Plugin 'moll/vim-bbye' " split management
 call vundle#end()
 
-colorscheme gruvbox
-let g:gruvbox_italic='1'
-let g:gruvbox_italicize_comments='1'
-let g:gruvbox_contrast_dark='hard'
-set background=dark
-highlight Cursor guibg=#000000 guifg=#00FF00
-highlight StatusLine guibg=#111111 guifg=#888888  
-
 " ycm section
-let g:ycm_global_ycm_extra_conf = "~/config_files/nvim/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "C:/Users/ramknara/.vim/.ycm_extra_conf.py"
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -93,6 +106,18 @@ let g:ycm_auto_trigger = 1
 set backspace=indent,eol,start
 let g:ycm_semantic_triggers =  { 'cpp,objcpp' : ['->', '.', '::', 're!gl', 're!GL'] }
 let g:ycm_filetype_blacklist = { 'cuda': 1 }
+nmap gd <Esc>:YcmCompleter GoTo<CR>
+
+" python linting;
+" pip install flake8
+" we also need to add the path of flake8.exe to the path variable - C:\Users\uname\AppData\Roaming\Python\Python312\Scripts
+let python_highlight_all=1
+let g:ale_linters = {'python': ['flake8']}
+
+" press // for comment using nerd commenter
+nmap // <leader>c<space>
+vmap // <leader>c<space>
+
 " -----------------------------------------------------------------------------------------------------
 
 " SHORTCUTS
@@ -108,7 +133,8 @@ vmap <c-k> -3
 " keyboard shortcuts 
 nmap <c-n> :bnext<CR>
 nmap <c-p> :bprevious<CR>
-cnoreabbrev bd :<C-U>bprevious <bar> bdelete #<CR>
+
+cnoreabbrev bd :<C-U>bprevious <bar> Bdelete #<CR>
 cnoreabbrev Wq :wq
 cnoreabbrev w :w
 cnoreabbrev W :w
@@ -122,7 +148,7 @@ au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
-set nocompatible "This tells vim not to act like it predecessor vi
+cnoreabbrev tasklist <Esc>:e ~/workarea/tasklist.md
 
 " -----------------------------------------------------------------------------------------------------
 " Explorer like emacs split
@@ -173,10 +199,10 @@ au BufReadPost *
 \ endif
 
 " highlight a TODO occurrence in red and DONE in green
-highlight TODO cterm=italic ctermfg=black ctermbg=red
-highlight DONE cterm=italic ctermfg=green ctermbg=black
-highlight TODO cterm=italic guifg=black guibg=red
-highlight DONE cterm=italic guifg=green guibg=black
+"highlight TODO cterm=italic ctermbg=red
+"highlight DONE cterm=italic ctermfg=green ctermbg=black
+highlight TODO cterm=italic guibg=red guifg=#171717
+highlight DONE cterm=italic guifg=green guibg=#171717
 match TODO /TODO/
 match DONE /DONE/
 
@@ -206,7 +232,7 @@ autocmd BufNewFile,BufRead *.py iab _pytemplate if __name__ == "__main__":
 " latex snippets -----------------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.tex inoremap <F5> <C-R>=LatexTriggers()<CR>
 func! LatexTriggers()
-    call complete(col('.'), ['_latextemplate', '_figureheader', '_onefigure', '_manyfigures', '_codeheader', '_code', 
+    call complete(col('.'), ['_latextemplate', '_figureheader', '_figureone', '_figuremany', '_codeheader', '_code', 
 				\ '_terminalcode', '_itemize', '_enumerate', '_hyperlinkheader'])
     return ''
 endfunc
