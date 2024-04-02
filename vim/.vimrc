@@ -1,5 +1,5 @@
 set belloff=all
-set guioptions+=!
+"set guioptions+=!
 " editor settings
 set nocompatible             
 set hidden "unsaved buffer wont close when opening a new buffer/file
@@ -26,7 +26,7 @@ set nowrap
 set number
 set splitbelow
 set splitright
-
+set colorcolumn=80
 " -----------------------------------------------------------------------------------------------------
 " colorschemes and fonts and appearence related stuff
 colorscheme habamax 
@@ -45,7 +45,7 @@ if has("gui_running")
 	highlight LineNr guifg=#888888
 	set laststatus=2
 	set statusline=
-	set statusline+=\ %f " filename
+	set statusline+=\ %F " filename
 	set statusline+=\ %m " indicate if file is modified
 	set statusline+=%= " move everything to the right
 	set statusline+=\ %y " filetype
@@ -58,7 +58,8 @@ if has("gui_running")
 	highlight PmenuSel ctermbg=blue ctermfg=black guibg=#000000 guifg=black
 	set noerrorbells visualbell t_vb=
 	autocmd GUIEnter * set visualbell t_vb=
-	set guifont=Liberation\ Mono\ Regular\ 10
+	"set guifont=Liberation\ Mono\ Regular\ 10
+	set guifont=Comic\ Code\ Ligatures\ Medium\ 10
 	set background=dark
 	highlight Normal guibg=#171717
 	highlight Cursor guibg=#00FF00 guifg=#000000
@@ -110,7 +111,8 @@ nmap gd <Esc>:YcmCompleter GoTo<CR>
 
 " python linting;
 " pip install flake8
-" we also need to add the path of flake8.exe to the path variable - C:\Users\uname\AppData\Roaming\Python\Python312\Scripts
+" we also need to add the path of flake8.exe to the path variable 
+	"- C:\Users\uname\AppData\Roaming\Python\Python312\Scripts
 let python_highlight_all=1
 let g:ale_linters = {'python': ['flake8']}
 
@@ -148,7 +150,10 @@ au FocusLost * :wa  " save when focus is lost (not sure if this is working. Test
 imap vv <Esc>v
 nmap vv <Esc>v
 imap <c-l> <Esc>la
+nnoremap S diw"0P
 cnoreabbrev tasklist <Esc>:e ~/workarea/tasklist.md
+nmap <c-x><c-x> <Esc>:make<CR>
+imap <c-x><c-x> <Esc>:w<CR><Esc>:make
 
 " -----------------------------------------------------------------------------------------------------
 " Explorer like emacs split
@@ -213,10 +218,10 @@ iab <expr> _date strftime("%d-%b-%Y")
 iab <expr> _today strftime("%d-%b-%Y")
 
 " comments ctrl-c to comment and shift-c to uncomment
-autocmd BufNewFile,BufRead,BufEnter *.sh,*.py,Makefile,makefile,CMakeLists.txt map <c-c> :s/^/# /<CR> | map <s-c> :s/# //<CR>
-autocmd BufNewFile,BufRead,BufEnter *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs map <c-c> :s/^/\/\/ /<CR> | map <s-c> :s/\/\/\ //<CR>
-autocmd BufNewFile,BufRead,BufEnter *.vimrc map <c-c> :s/^/" /<CR> | map <s-c> :s/" //<CR>
-autocmd BufNewFile,BufRead,BufEnter *.tex map <c-c> :s/^/% /<CR> | map <s-c> :s/% //<CR>
+"autocmd BufNewFile,BufRead,BufEnter *.sh,*.py,Makefile,makefile,CMakeLists.txt map <c-c> :s/^/# /<CR> | map <s-c> :s/# //<CR>
+"autocmd BufNewFile,BufRead,BufEnter *.c,*.cpp,*.h,*.hpp,*.vert,*.vs,*.frag,*.fs map <c-c> :s/^/\/\/ /<CR> | map <s-c> :s/\/\/\ //<CR>
+"autocmd BufNewFile,BufRead,BufEnter *.vimrc map <c-c> :s/^/" /<CR> | map <s-c> :s/" //<CR>
+"autocmd BufNewFile,BufRead,BufEnter *.tex map <c-c> :s/^/% /<CR> | map <s-c> :s/% //<CR>
 
 " ###############################################################################################################################################################################
 " SNIPPETS
@@ -264,7 +269,14 @@ autocmd BufNewFile,BufRead *.c,*.cpp iab <buffer> _cout std::cout << << std::end
 autocmd BufNewFile,BufRead CMakeLists.txt iab <buffer> _cmaketemplate cmake_minimum_required(VERSION 3.4)<CR><CR># set the project name properly for this<CR>set(project_name " ") # (TODO: add project name)<CR><CR># setting project name<CR>project(${project_name})<CR><CR># here add all the cpp files involved in the project<CR>add_executable(${project_name} ) # (TODO: enter the cpp files after the project name one after the other with the path)<CR><CR>set(CMAKE_BUILD_TYPE Debug)<CR>set(CMAKE_VERBOSE_MAKEFILE ON)<CR>set(EXECUTABLE_OUTPUT_PATH ../bin)<CR><CR># add all the include files<CR>target_include_directories(${project_name} PUBLIC ./include<CR> PUBLIC /usr/include <CR>PUBLIC /usr/local/include) # you can keep adding more if you want<CR><CR># here add all the libraries that you included<CR>#target_link_libraries(${project_name} glfw3 GLEW GL GLU SOIL dl Xinerama Xrandr Xi Xcursor X11 Xxf86vm pthread) # this is and example<CR>target_link_libraries(${project_name} ) # (TODO: add the required libraries here) 
 
 " make snippets -----------------------------------------------------------------------------------
-autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _make CC = g++<CR><CR>CFLAGS = -g<CR><CR>INCLUDE =<CR><CR>LIBS = <CR><CR># (TODO: enter filename without extension)<CR>FILENAME =<CR><CR>all: $(FILENAME).cpp<CR> @$(CC) $(CFLAGS) $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)<CR><CR>run:<CR> @./$(FILENAME)<CR><CR>clean:<CR> rm ./$(FILENAME) 
-autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _cmake # (TODO: enter project name here)<CR>PROJECT_NAME = assimp_0<CR><CR>all:<CR> echo "#define USE_GLEW" > use_glew.h<CR>@cd ../build && cmake .. && make<CR>rm use_glew.h && touch use_glew.h<CR>@echo -e "\033[92m ------------- Compilation Successful ------------------- \033[0m"<CR><CR>run:<CR> @../bin/$(PROJECT_NAME)<CR>@echo -e "\033[92m ------------- Execution Successful ------------------- \033[0m"<CR><CR>clean:<CR> rm -rf ../build/*<CR>rm ../bin/*
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _maketemplate CC = g++<CR><CR>CFLAGS = -g<CR><CR>INCLUDE =<CR><CR>LIBS = <CR><CR># (TODO: enter filename without extension)<CR>FILENAME =<CR><CR>all: $(FILENAME).cpp<CR> @$(CC) $(CFLAGS) $(INCLUDE) $(FILENAME).cpp -o $(FILENAME) $(LIBS)<CR><CR>run:<CR> @./$(FILENAME)<CR><CR>clean:<CR> rm ./$(FILENAME) 
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _cmaketemplate # (TODO: enter project name here)<CR>PROJECT_NAME = assimp_0<CR><CR>all:<CR> echo "#define USE_GLEW" > use_glew.h<CR>@cd ../build && cmake .. && make<CR>rm use_glew.h && touch use_glew.h<CR>@echo -e "\033[92m ------------- Compilation Successful ------------------- \033[0m"<CR><CR>run:<CR> @../bin/$(PROJECT_NAME)<CR>@echo -e "\033[92m ------------- Execution Successful ------------------- \033[0m"<CR><CR>clean:<CR> rm -rf ../build/*<CR>rm ../bin/*
 autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _makelatex # enter a filename without the extension<CR>FILENAME=<CR><CR>all:<CR> pdflatex $(FILENAME).tex<CR>bibtex $(FILENAME).aux<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>run:<CR> bibtex $(FILENAME)<CR>pdflatex $(FILENAME).tex<CR>pdflatex $(FILENAME).tex<CR><CR>clean:<CR> rm $(FILENAME).log $(FILENAME).aux *.lof *.blg *.toc *.out *.lot
+autocmd BufNewFile,BufRead *makefile,*Makefile iab <buffer> _makemd #enter a filename without the extension<CR>FILENAME=<CR><CR>.SILENT:all<CR><CR>all:<CR> pandoc --variable colorlinks=true $(FILENAME).md --pdf-engine=xelatex --highlight-style=tango -V mainfont="DejaVu Sans" -V fontsize=12pt -o $(FILENAME).pdf<CR>
+
+" markdown snippets -----------------------------------------------------------------------------------
+autocmd BufNewFile,BufRead *.md iab <buffer> _mdtemplate ---<CR>title: "**Title**"<CR>author: Ramkumar Narayanan Kutty<CR>date:<CR>geometry: margin=2cm<CR>---<CR>
+autocmd BufNewFile,BufRead *.md iab <buffer> _figureone ![caption](path){ width=250px }
+autocmd BufNewFile,BufRead *.md iab <buffer> _hyperlink [text](link).
 " ###############################################################################################################################################################################
+
